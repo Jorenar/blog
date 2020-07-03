@@ -1,0 +1,37 @@
+author:
+  name: Jorengarenar
+
+title: Jorengarenar's blog
+description: Programming? Programming!
+
+baseurl: /blog
+
+remote_theme: jekyll/minima
+
+show_excerpts: true
+
+permalink: /:categories/:title
+
+minima:
+  date_format: "%F"
+  social_links:
+    devto:         Jorengarenar
+    github:        Jorengarenar
+    instagram:     Jorengarenar
+    linkedin:      jakub-lukasiewicz
+    stackoverflow: "10247460"
+    twitter:       Jorengarenar
+
+disqus:
+  shortname: jorengarenar
+
+header_pages:
+  - categories.html
+
+header_external_links:
+  - title: Home
+    url:   https://joren.ga
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag

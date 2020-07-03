@@ -1,0 +1,52 @@
+@import url(https://joren.ga/css/switch.css);
+
+body {
+  font-family: monospace;
+  color: #353535;
+}
+
+p {
+  text-align: justify;
+  text-justify: inner-word;
+}
+
+.site-header {
+  border-top: none;
+}
+
+#toggleTheme {
+  position: initial;
+  margin-right: 1em;
+}
+
+@media screen and (min-width: $on-medium) {
+  #toggleTheme {
+    position: absolute;
+    right: 50px;
+  }
+}
+
+/* Poor man's dark theme */
+html[data-theme="dark"] {
+
+  body {
+    background-color: #151515;
+    filter: invert(100%);
+  }
+
+  img, svg, iframe {
+    filter: invert(100%) !important; /* revert images to normal colors */
+  }
+
+  p > code {
+    background-color: #f0d9ad;
+  }
+
+}
+
+html[data-theme="light"] {
+  #disqus_thread {
+    padding: 1em;
+    background-color: #999;
+  }
+}
