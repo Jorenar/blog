@@ -26,7 +26,8 @@ disqus:
   shortname: jorengarenar
 
 header_pages:
-  - categories.html
+  - pages/categories.html
+  - pages/tags.html
 
 header_external_links:
   - title: Home

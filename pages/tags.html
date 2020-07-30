@@ -1,0 +1,29 @@
+---
+layout: page
+permalink: /tags/
+title: Tags
+---
+
+<div id="tags-expo">
+  <div class="tags-expo-list">
+    {% for tag in site.tags %}
+    {% capture tag_name %}{{ tag | first }}{% endcapture %}
+    <a href="#{{ tag_name | slugify }}" class="tag">{{ tag_name }}</a>
+    {% endfor %}
+  </div>
+
+  <hr/>
+
+  <div class="tags-expo-section">
+    {% for tag in site.tags %}
+    {% capture tag_name %}{{ tag | first }}{% endcapture %}
+    <h3 id="{{ tag_name | slugify }}">{{ tag_name }}</h3>
+
+    <ul class="tags-expo-posts">
+      {% for post in tag[1] %}
+      <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+      {% endfor %}
+    </ul>
+    {% endfor %}
+  </div>
+</div>

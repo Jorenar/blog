@@ -1,3 +1,4 @@
+| Categories:
 <span class="post-categories">
   {% if post %}
     {% assign categories = post.categories %}
@@ -5,6 +6,6 @@
     {% assign categories = page.categories %}
   {% endif %}
   {% for category in categories %}
-  <a href="{{site.baseurl}}/categories/#{{category|slugize}}">{{category}}</a>&nbsp;
+  <a href="{{site.baseurl}}/categories/#{{category|slugize}}">{{category}}</a>
   {% endfor %}
 </span>
