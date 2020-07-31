@@ -9,12 +9,12 @@ tags: [ advice, C ]
 
 Such questions I've heard already countless of times, be it in direct conversation
 or on a forum. Every time my answer is basically the same: **yes**.
-Of course, hardly anyone would be content with such short response, so in this
+Of course, hardly anyone would be content with such brief response, so in this
 short article I will share my thoughts on this topic.
 
 ### C is base for many modern languages
 
-C influences innumerous amount of languages, which in turn influenced anothers.
+C influences innumerous amount of languages, which in turn influence next ones.
 C++, Java, Go, D, Rust, Perl, even Python and JavaScript - those are but few examples.
 Obviously, knowledge of C isn't necessary to learn any of them, but if you have
 some, you will feel kind of familiarity right away. It's especially the case
@@ -69,8 +69,8 @@ Week to get the general idea. But, but, but, but! Don't get the wrong idea! To
 master anything you will need a lot more practice! **A lot!**
 
 Pointers are usually what scares beginners. Don't be afraid, it's just a type
-of variable. You will need to deal with sooner or letter. However, from my
-observations, people who started with C are often more happy to use them.
+of a variable. You will need to deal with them sooner or letter. However, from
+my observations, people who started with C are often happier to use them.
 
 ### You actually needs to learn how things work
 
@@ -80,7 +80,7 @@ going under the hood. Of course, you can learn the principles in any language,
 but in Java, for example, to copy array you will be
 tempted to call method `arraycopy()`. But how does it work?
 
-Remember part about no needless code, but the existing one being fast?
+Remember the part about no needless code, but the existing one being fast?
 In C, there is no such function (no such obvious one), because in various
 situations, different ways of making copy are more optimal than others.
 You need to actually learn what's going on there.
