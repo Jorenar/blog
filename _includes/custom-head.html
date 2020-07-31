@@ -1,25 +1,27 @@
-<head>
+<link rel="apple-touch-icon" sizes="180x180" href="{{ "/assets/favicon/apple-touch-icon.png" | relative_url }}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ "/assets/favicon/favicon-32x32.png" | relative_url }}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ "/assets/favicon/favicon-16x16.png" | relative_url }}">
+<link rel="manifest" href="{{ "/assets/favicon/site.webmanifest" | relative_url }}">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
 
-  <link rel="apple-touch-icon" sizes="180x180" href="{{ "/assets/favicon/apple-touch-icon.png" | relative_url }}">
-  <link rel="icon" type="image/png" sizes="32x32" href="{{ "/assets/favicon/favicon-32x32.png" | relative_url }}">
-  <link rel="icon" type="image/png" sizes="16x16" href="{{ "/assets/favicon/favicon-16x16.png" | relative_url }}">
-  <link rel="manifest" href="{{ "/assets/favicon/site.webmanifest" | relative_url }}">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="theme-color" content="#ffffff">
+{% if page.image %}
+  <meta property="og:image" content="{{ page.image }}">
+{% else %}
+  <meta property="og:image" content="assets/avatar.png">
+{% endif %}
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
-  <script type="text/javascript" src="{{ "/assets/scripts/toggleTheme.js" | relative_url }}"></script>
-  <script>
-    window.onload = () => {
-      document.querySelector("header .trigger").insertAdjacentElement('afterbegin', s);
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+<script type="text/javascript" src="{{ "/assets/scripts/toggleTheme.js" | relative_url }}"></script>
+<script>
+  window.onload = () => {
+    document.querySelector("header .trigger").insertAdjacentElement('afterbegin', s);
 
-      document.querySelector("html").dataset.theme = x;
-      if (document.querySelector("html").dataset.theme == "light") {
-        document.querySelector("#toggleTheme input").checked = true;
-      }
-
-      document.querySelector("footer").insertAdjacentHTML("afterend", '<a href="{{ site.baseurl }}/sitemap.xml"></a>');
+    document.querySelector("html").dataset.theme = x;
+    if (document.querySelector("html").dataset.theme == "light") {
+      document.querySelector("#toggleTheme input").checked = true;
     }
-  </script>
 
-</head>
+    document.querySelector("footer").insertAdjacentHTML("afterend", '<a href="{{ site.baseurl }}/sitemap.xml"></a>');
+  }
+</script>
