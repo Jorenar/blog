@@ -6,9 +6,9 @@
 <meta name="theme-color" content="#ffffff">
 
 {% if page.image %}
-  <meta property="og:image" content="{{ page.image }}">
+<meta property="og:image" content="{{ site.url }}{{ page.image | relative_url }}">
 {% else %}
-  <meta property="og:image" content="assets/avatar.png">
+<meta property="og:image" content="{{ site.url }}{{ "assets/avatar.png" | relative_url }}">
 {% endif %}
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
