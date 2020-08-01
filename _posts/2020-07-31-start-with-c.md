@@ -29,6 +29,10 @@ Why do I even mention C++ here? Because it's one of most widely used languages
 today and you needing to encounter it has even more probability. Particularly
 if you are interested in GameDev, as there C++ is **the** language.
 
+Actually, C++ isn't alone in this matter. When implementing
+[FFI](https://en.wikipedia.org/wiki/Foreign_function_interface), most languages
+choose C.
+
 C++ was created as direct descendant of C and committee goes to great lengths
 to keep the compatibility with it. Don't get me wrong, C++ isn't by any means
 a superset of C - the code isn't always going to work with C++ and a good C
@@ -165,4 +169,5 @@ some can be found on my [list of URLs](https://joren.ga/urlsList/).
 Learning C is valuable experience and it's worth it. If not as your first
 language, then as second, third, fourth or whatever. There are a lot of advantages,
 but also some disadvantages. At least trying won't hurt. Give it a chance, who
-knows, you may truly get to like it, just like me.
+knows, you may truly get to like it, just like me. The end choice is always
+yours; I'm just a guy from the Internet.
