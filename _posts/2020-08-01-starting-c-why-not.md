@@ -88,8 +88,8 @@ code to Assembly instead to binary and examine what instructions CPU will execut
 Does there exist any significant platform with no C compiler available?
 I've never heard of one. C programs are present on your high-end gaming PC,
 on NASA spacecrafts and in ticket machine. Literally everywhere. C software runs
-the world. In accordance to previous paraghrap, C is peculiarly strong choice
-for microcontrolers and other forms of embeded systems, which surround us every day.
+the world. In accordance to previous paragraph, C is peculiarly strong choice
+for microcontrollers and other forms of embedded systems, which surround us every day.
 
 ### In all it's greatness, C is fairly simple
 
@@ -139,7 +139,7 @@ You need to actually learn what's going on there.
 
 ### "Program in C" song
 
-_Just listen, just listen_
+_Listen, just listen_
 
 <div class="yt-container">
   <iframe class="yt-video" src="https://www.youtube.com/embed/tas0O586t80" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
