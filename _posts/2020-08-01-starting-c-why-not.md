@@ -5,7 +5,7 @@ categories: programming
 tags: [ advice, C ]
 ---
 
-> "Is C good for beginners?" "Is C good as first language?" "Is there still future with C?"
+> "Can I learn C as a beginner?" "Is C good as first language?" "Is there still future with C?"
 
 Such questions I've heard already countless of times, be it in direct conversation
 or on a forum. Every time my answer is basically the same: **yes**.
@@ -88,7 +88,8 @@ code to Assembly instead to binary and examine what instructions CPU will execut
 Does there exist any significant platform with no C compiler available?
 I've never heard of one. C programs are present on your high-end gaming PC,
 on NASA spacecrafts and in ticket machine. Literally everywhere. C software runs
-the world.
+the world. In accordance to previous paraghrap, C is peculiarly strong choice
+for microcontrolers and other forms of embeded systems, which surround us every day.
 
 ### In all it's greatness, C is fairly simple
 
@@ -101,7 +102,7 @@ out there!
 ### Learn damn pointers, it's important!
 
 This part is the most anecdotal so far and will be the longest. But I must say
-it, I just must.
+it, I just must. Sorry for the rant.
 
 Out of almost everybody I know, those who started with higher languages (especially
 Python), they always seem to struggle even more with pointers, memory management, etc.
