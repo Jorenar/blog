@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "Start with C!"
+title:  "Starting with C? Why not!"
 categories: programming
 tags: [ advice, C ]
 ---
 
-> "Is C good for beginners?" "Is C good as first language?"
+> "Is C good for beginners?" "Is C good as first language?" "Is there still future with C?"
 
 Such questions I've heard already countless of times, be it in direct conversation
 or on a forum. Every time my answer is basically the same: **yes**.
