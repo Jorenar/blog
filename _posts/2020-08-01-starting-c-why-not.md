@@ -5,23 +5,30 @@ categories: programming
 tags: [ advice, C ]
 ---
 
-> "Can I learn C as a beginner?" "Is C good as first language?" "Is there still future with C?"
+> "Can I learn C as a beginner?" "Is C good as first language?"
+> "Is&nbsp;there still future with C?" "Is learning C worth it?"
 
 Such questions I've heard already countless of times, be it in direct conversation
 or on a forum. Every time my answer is basically the same: **yes**.
+
 Of course, hardly anyone would be content with such brief response, so in this
 short article I will share my thoughts on this topic.
 
-Without dwelling into needless descriptions of C, which are easily obtainable with
-simple Internet search (_the most important skill_), let's get to it!
+Without dwelling into needless [descriptions of C](https://en.wikipedia.org/wiki/C_%28programming_language%29),
+which are easily obtainable with simple Internet search (_the most important skill_), let's get to it!
 
-### C is base for many modern languages
+### The influencer
 
-C influenced innumerous amount of languages, which in turn influence next ones.
-C++, Java, Go, D, Rust, Perl, even Python and JavaScript - those are but few examples.
-Obviously, knowledge of C isn't necessary to learn any of them, but if you have
-some, you will feel kind of familiarity right away. It's especially the case
-with C++, what brings us to the next point...
+C has both directly and indirectly influenced innumerous amount of languages.
+C++, Java, Go, D, Rust, Perl, even Python - those are but few examples.
+Obviously, knowledge of C isn't necessary to learn any of them and sometimes
+may even push you to use not the best practices. Nevertheless, if you are
+cautious, familiarity with C might give you some foothold. It's especially
+the case with C++, what brings us to the next point...
+
+<!-- Uncomment after list will be corrected
+[List of C-family programming languages](https://en.wikipedia.org/wiki/List_of_C-family_programming_languages)
+-->
 
 ### C++ is highly backward compatible
 
@@ -44,8 +51,8 @@ Perfectly good in C, but in C++ there ought to be `(int*)` before `malloc()`,
 for it to work, not to mention you should use `new int[10]` instead.
 
 Although in most cases you can use C library safely in your C++ project.
-All examples in the following paragraph not only can be, but are often used in
-such way.
+All examples in the following paragraph not only **can be**, but **often are**
+used in such way.
 
 ### Rich collection of libraries
 
@@ -54,6 +61,7 @@ created library for it. It may be so obscure, you won't find it for all the worl
 but it does exists. You want garbage collector? [Boehm GC](https://www.hboehm.info/gc/)
 has you covered. TUI? Nothing like timeless [ncurses](https://invisible-island.net/ncurses/).
 Examples can be listed almost infinitely:
+[GTK](https://gtk.org/),
 [PDCurses](https://pdcurses.org/),
 [libcurl](https://curl.haxx.se/libcurl/),
 [ALSA](https://www.alsa-project.org/),
@@ -75,13 +83,17 @@ operating system or other programming language!
 
 ### Fast, minimal, "mid-level"
 
-C is high-level, but the goal when it was designed was to create language
-close to low-level Assembly, hence I like to call it "mid-level". There is little
-of needless code in standard library and what is, is fast. There is less
-abstraction, so programmer has more control over the program&nbsp;- it makes it
+C is high-level, but back when it was created, most of the work was still being
+done in low-level Assembly. As a result, C is closer to low-level Assembly,
+than other languages (still in widely use), hence I like to call it "mid-level".
+
+You can also easily compile code to Assembly (usually `-S` flag) instead to
+binary and examine what instructions CPU will execute.
+
+There is little of needless code in standard library and what is, is fast. There is
+less abstraction, so programmer has more control over the program&nbsp;- it makes C
 an ideal choice for OS kernels (Linux, Windows NT or MacOS's Darwin are most
-popular examples) or language (e.g. Python is written in C). You can also compile
-code to Assembly instead to binary and examine what instructions CPU will execute.
+popular examples) or languages (e.g. Python).
 
 ### Ubiquitous
 
@@ -124,19 +136,6 @@ assuming everybody who has already some kind of experience, will really bother
 with basics is vain hope and you won't be eager too - that much about human
 nature I do know well.
 
-### You actually needs to learn how things work
-
-Although there are languages appearing simpler than C, they achieve it with
-higher level of abstraction, meaning you actually understand less of what is
-going under the hood. Of course, you can learn the principles in any language,
-but in Java, for example, to copy array you will be
-tempted to call method `arraycopy()`. But how does it work?
-
-Remember the part about no needless code, but the existing one being fast?
-In C, there is no such function (no such obvious one), because in various
-situations, different ways of making copy are more optimal than others.
-You need to actually learn what's going on there.
-
 ### "Program in C" song
 
 _Listen, just listen_
@@ -147,15 +146,18 @@ _Listen, just listen_
 
 ---
 
-### ... although it's not ideal
+### A blot on the landscape...
 
-A blot on the landscape. C was created in year 1972 on the foundation of B language,
-so over the years it acquired some quirks, some things became obsolete, some
-useless and are kept only for compatibility.
+C was created in year 1972 on the foundation of B language, so over the years
+it acquired some quirks (`memcpy()` is defined in string header!), some things
+became obsolete, some useless and are kept only for compatibility with old code.
 
 As a beginner likely burn a lot of time chasing down strange behavior caused
 by memory corruption you have no idea how to reason about, you may actually
 become discouraged.
+
+[Undefined behavior](https://en.wikipedia.org/wiki/Undefined_behavior) (UB)
+is the term you need to learn early on.
 
 It's also important to take into account that C is not the introduction to
 Computer Science. Learning none of languages is. You need to study it properly
@@ -172,3 +174,18 @@ language, then as second, third, fourth or whatever. There are a lot of advantag
 but also some disadvantages. At least trying won't hurt. Give it a chance, who
 knows, you may truly get to like it, just like me. The end choice is always
 yours; I'm just a guy from the Internet.
+
+---
+
+## Useful resources
+
+* [The GNU C Library](ihttps://www.gnu.org/software/libc/manual/html_node/index.html)
+* [C reference - cppreference.com](https://en.cppreference.com/w/c)
+* [C99 with Technical corrigenda TC1, TC2, and TC3 included](http://www.open-std.org/JTC1/SC22/WG14/www/docs/n1256.pdf)
+* [The C Book](https://publications.gbdirect.co.uk/c_book/)
+* [Using the GNU Compiler Collection (GCC)](https://gcc.gnu.org/onlinedocs/gcc/)
+* [A beginners' guide away from `scanf()`](http://sekrit.de/webdocs/c/beginners-guide-away-from-scanf.html)
+* [Compiler Explorer](https://godbolt.org/)
+* [OOP in C](https://www.state-machine.com/doc/AN_OOP_in_C.pdf)
+* [comp.lang.c FAQ](http://c-faq.com/)
+* [POSIX.1-2008](https://pubs.opengroup.org/onlinepubs/9699919799/)
