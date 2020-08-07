@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Starting with C? Why not!"
+title:  "Maybe start with C?"
 categories: programming
 tags: [ advice, C ]
 ---
