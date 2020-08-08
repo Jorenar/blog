@@ -15,7 +15,7 @@ Of course, hardly anyone would be content with such brief response, so in this
 short article I will share my thoughts on this topic.
 
 Without dwelling into needless [descriptions of C](https://en.wikipedia.org/wiki/C_%28programming_language%29),
-which are easily obtainable with simple Internet search (_the most important skill_), let's get to it!
+which are easily obtainable with simple Internet search, let's get to it!
 
 ### The influencer
 
