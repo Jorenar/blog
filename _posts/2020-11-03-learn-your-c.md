@@ -1,0 +1,226 @@
+---
+layout: post
+title:  "Learn your C!"
+categories: programming
+tags: [ advice, C ]
+---
+
+> "Is C good as first language?" "Is&nbsp;there still future with C?"
+> "Why should I even bother with C?" "C is old!" ...
+
+Have you heard such words? Well, I have. Countless of times, be it
+in direct conversation or on a forum. The response is, as always, "it depends",
+but in my humble opinion learning C is really valuable experience.
+
+In this not too long text I hope to show you what I think makes C great.
+
+### "Mid-level"
+
+In regards of level, there are two types of languages: low and high.
+
+Low-level languages are close to the hardware. The only closer thing to CPU
+would be electricity itself. Those languages are divided into machine code and
+Assembly. The former is a stream of raw, usually binary, data. If somebody is
+required to work with it, usually does it using more "readable" hexadecimal form.
+
+Second-generation languages - Assembly - provide one abstraction level on top
+of the machine code. Those languages are mostly only a mapping of human-readable
+symbols, including symbolic addresses, to opcodes, addresses, numeric constants,
+strings and so on. Also are different for each processor.
+
+How do high-level languages, providing more abstraction, compare? Quoting Wikipedia:
+
+> In contrast to low-level programming languages, it may use natural language
+> elements, be easier to use, or may automate (or even hide entirely) significant
+> areas of computing systems (e.g. memory management), making the process of
+> developing a program simpler and more understandable than when using a
+> lower-level language. The amount of abstraction provided defines how
+> "high-level" a programming language is.
+
+In short: low = more machine friendly, high = more human friendly.
+
+C is high-level, but back when it was created, most of the work was still being
+done in low-level Assembly. As a result, C has lower level of abstraction than
+other (still) widely used languages, hence I like to call it "mid-level".
+
+You can also easily (with less language bloat) compile C code to Assembly
+(`-S` flag for GCC) instead to binary and examine what instructions CPU will execute.
+
+And if it there is a need, in C you can go level lower and use inline Assembly
+to squeeze everything out of CPU. Not really many other languages implement such
+a thing.
+
+### Fairly simple
+
+Low-level languages are harder to program in. Not because they are more complicated,
+but because they are more error prone and thus require way more commitment,
+memorizing and fiddling.
+
+C is mid-level, so "by definition" it's easier. But there comes the surprise,
+learning it is easier compared to higher level languages. Why? Because of really
+simple syntax. It doesn't take so much to learn the basics. Loops, functions,
+structures, pointers, variables, types - the core of language. Intense week to
+get the general idea. The rest is "just" maths and CS theorem.
+
+But, but, but, but! Don't get me wrong! To master anything you will
+need a lot more practice! **A lot!** And it's truth for anything out there!
+
+### Fast and lightweight
+
+There is little of needless code in standard library. And what there is, believe me,
+over the decades was really polished.
+
+Maturity, emphasis on proper memory management, inline Assembly and to less
+abstraction and little bloat, gives programmer really good control over the program.
+
+This makes C an ideal choice for OS kernels (Linux, Windows NT or macOS's XNU to
+name a few) or other languages (e.g. Python). That's also why C is so popular
+on embedded systems, where you cannot afford to waste resources.
+
+### Ubiquitous
+
+Does there exist any (still) significant platform with no C compiler available?
+Except for those which run only Assembly, I've never heard about one.
+C programs are present on your high-end gaming PC, on NASA spacecrafts and
+in ticket machines. Literally everywhere. C software runs the world.
+
+In accordance to previous paragraphs, C is peculiarly strong choice for
+microcontrollers and other forms of embedded systems, which surround us every day.
+
+And have you heard about [FFI](https://en.wikipedia.org/wiki/Foreign_function_interface)?
+Turns out many other languages like to have some kind of compatibility with C.
+
+### The influencer
+
+C has both directly and indirectly influenced innumerous amount of languages.
+C++, Java, Go, D, Rust, Perl, even PHP and Python - those are but few examples.
+
+Obviously, knowledge of C isn't needed to learn any of them and sometimes
+may even push you to use not the best practices.
+
+Nevertheless, I think it's important to remember the roots. And if you are
+cautious, familiarity with C might give you some foothold. It's especially the
+case with C++.
+
+### Rich collection of libraries
+
+I suspect all this talk about fastness, lightness, mid-level, Assembly etc. might
+have give you an idea, you will need to implement everything yourself. There may
+be not any [`LinkedHashMap`](https://docs.oracle.com/javase/8/docs/api/java/util/LinkedHashMap.html)
+like in Java or other garbage collector. True, true, except...  not entirely.
+
+C is mature and popular language. Name a thing and believe me, somebody somewhere
+already created library for it (although if think about something too obscure,
+you won't find it for all the world, but it does exists).
+
+You want garbage collector? [Boehm GC](https://www.hboehm.info/gc/) has you covered.
+TUI? Nothing like timeless [ncurses](https://invisible-island.net/ncurses/).
+Examples can be listed almost infinitely:
+[GTK](https://gtk.org/),
+[PDCurses](https://pdcurses.org/),
+[libcurl](https://curl.haxx.se/libcurl/),
+[ALSA](https://www.alsa-project.org/),
+[Genann](https://codeplea.com/genann),
+[libsoundio](http://libsound.io/),
+[SDL](https://libsdl.org),
+[SQLite](https://www.sqlite.org/index.html),
+[getopt](https://www.gnu.org/software/libc/manual/html_node/Getopt.html),
+[OpenGL](https://www.opengl.org/),
+[inih](https://github.com/benhoyt/inih),
+[GMP](https://gmplib.org/),
+[cJSON](https://github.com/DaveGamble/cJSON),
+[MuPDF](https://mupdf.com/),
+[OpenSSL](https://www.openssl.org/)...
+
+It's very universal language - you can program basically anything: web server,
+video game (e.g. [classics from _id Software_](https://github.com/id-Software)),
+operating system, other programming language or wrapper forcing Firefox to obey
+[XDG Base Directory specification](https://wiki.archlinux.org/index.php/XDG_Base_Directory),
+because when I'm an administrator, the programs will do exacly what I told them to!
+
+However, please, remember - the fact you can, doesn't mean you should. For example,
+if you want to create a video game, you really ought to turn your eyes to C++, which...
+
+### ... is highly backward compatible
+
+Why do I even make the whole point out of C++ here? Because it's one of most
+widely used languages today and you needing to encounter it is more than certain.
+Particularly, as I've said, if you are interested in GameDev, as there C++
+is **the** language.
+
+C++ was created as direct descendant of C and committee goes to great lengths
+to keep the compatibility with it. Don't get me wrong, C++ isn't by any means
+a superset of C - the code isn't always going to work with C++ and a good C
+code isn't necessary good C++ code. Consider example:
+```c
+int* x = malloc(10 * sizeof(*x));
+```
+Perfectly good in C, but in C++ there ought to be `(int*)` before `malloc()`,
+for it to work, not to mention you should use `new int[10]` instead.
+
+Although in most cases you can use C library safely in your C++ project.
+All examples from the previous point not only **can be**, but **often are**
+used in such way. E.g. I myself used _ncurses_ in my C++ code for hex editor
+[Bym](https://joren.ga/bym/).
+
+### "Program in C" song
+
+_Listen, just listen_
+
+<div class="yt-container">
+  <iframe class="yt-video" src="https://www.youtube.com/embed/tas0O586t80" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+---
+
+### A blot on the landscape...
+
+C was created in year 1972 on the foundation of B language, so over the years
+it acquired some quirks (`memcpy()` is defined in string header!), some things
+became obsolete, some useless and are kept only for compatibility with old code.
+
+A beginner is likely to burn a lot of time chasing down strange behavior caused
+by memory corruption with no idea how to reason about, what may lead actually
+big discouraged to programming in general.
+
+[Undefined behavior](https://en.wikipedia.org/wiki/Undefined_behavior) (UB)
+is the term one needs to learn early on, because there is no mechanism to prevent
+you from shooting yourself in the foot.
+
+It's also important to take into account that C is not the introduction to
+Computer Science. Learning none of languages is. You need to study it properly
+to get a true understanding of this vast field. If not formal education in
+university, then online one will be good too. The Internet is full of resources,
+some can be found on my [list of URLs](https://joren.ga/urlsList/).
+
+---
+
+## Conclusion
+
+Learning C is valuable experience and it's worth it. If not as your first
+language, then as second, third, fourth or whatever. There are a lot of advantages,
+but also some disadvantages. At least trying won't hurt. Give it a chance, who
+knows, you may truly get to like it, just like me.
+
+And don't believe people saying "C is dead" or "It will soon be replaced"
+(I'm looking at you Rust fans). C is fine and will be relevant for few next decades too.
+Heck! COBOL, nearly forgotten, yet there are still job openings! How is C supposed
+to become obscure when, in the moment I write those words, there is planned new
+standard revision (working name C2x) with preview release from last month!
+
+---
+
+## Useful resources
+
+* [The GNU C Library](ihttps://www.gnu.org/software/libc/manual/html_node/index.html)
+* [C reference - cppreference.com](https://en.cppreference.com/w/c)
+* [C99 with Technical corrigenda TC1, TC2, and TC3 included](http://www.open-std.org/JTC1/SC22/WG14/www/docs/n1256.pdf)
+* [The C Book](https://publications.gbdirect.co.uk/c_book/)
+* [Using the GNU Compiler Collection (GCC)](https://gcc.gnu.org/onlinedocs/gcc/)
+* [A beginners' guide away from `scanf()`](http://sekrit.de/webdocs/c/beginners-guide-away-from-scanf.html)
+* [Compiler Explorer](https://godbolt.org/)
+* [OOP in C](https://www.state-machine.com/doc/AN_OOP_in_C.pdf)
+* [comp.lang.c FAQ](http://c-faq.com/)
+* [POSIX.1-2008](https://pubs.opengroup.org/onlinepubs/9699919799/)
+* [History of C](https://en.cppreference.com/w/c/language/history)
+* [Jacob Sorber](https://www.youtube.com/channel/UCwd5VFu4KoJNjkWJZMFJGHQ)
