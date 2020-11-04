@@ -37,3 +37,6 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
+
+kramdown:
+    smart_quotes: ["apos", "apos", "quot", "quot"]
