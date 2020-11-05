@@ -14,6 +14,7 @@ permalink: /:categories/:title
 
 minima:
   date_format: "%F"
+  skin: dark
   social_links:
     devto:         Jorengarenar
     github:        Jorengarenar

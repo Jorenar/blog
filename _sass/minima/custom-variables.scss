@@ -1,1 +1,3 @@
-$border-color-01: #CCC;
+$border-color-01:       #CCC;
+$link-base-color:       #d5851d;
+$link-visited-color:    darken($link-base-color, 15%) !default;
