@@ -23,9 +23,6 @@ minima:
     stackoverflow: "10247460"
     twitter:       Jorengarenar
 
-disqus:
-  shortname: jorengarenar
-
 header_pages:
   - pages/categories.html
   - pages/tags.html
