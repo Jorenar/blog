@@ -4,6 +4,10 @@ body {
   font-family: monospace;
 }
 
+a:visited {
+  color: $link-base-color; /* because $link-visited-color var doesn't work */
+}
+
 p {
   text-align: justify;
   text-justify: inner-word;
