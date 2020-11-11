@@ -1,0 +1,11 @@
+| Tags:
+<span class="post-tags">
+  {% if post %}
+    {% assign tags = post.tags %}
+  {% else %}
+    {% assign tags = page.tags %}
+  {% endif %}
+  {% for tag in tags %}
+  <a href="{{site.baseurl}}/categories/#{{tag|slugize}}">{{tag}}</a>
+  {% endfor %}
+</span>

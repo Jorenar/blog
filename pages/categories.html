@@ -1,0 +1,29 @@
+---
+layout: page
+permalink: /categories/
+title: Categories
+---
+
+<div id="categories-expo">
+  <div class="categories-expo-list">
+    {% for category in site.categories %}
+    {% capture category_name %}{{ category | first }}{% endcapture %}
+    <a href="#{{ category_name | slugify }}" class="category">{{ category_name }}</a>
+    {% endfor %}
+  </div>
+
+  <hr/>
+
+  <div class="categories-expo-section">
+    {% for category in site.categories %}
+    {% capture category_name %}{{ category | first }}{% endcapture %}
+    <h3 id="{{ category_name | slugify }}">{{ category_name }}</h3>
+
+    <ul class="categories-expo-posts">
+      {% for post in category[1] %}
+      <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endfor %}
+</div>
