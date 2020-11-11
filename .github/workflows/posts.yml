@@ -1,0 +1,18 @@
+name: Posts
+on:
+  push:
+    branches: [ posts ]
+  pull_request:
+    branches: [ posts ]
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./
+          destination_dir: _posts
+          enable_jekyll: true
