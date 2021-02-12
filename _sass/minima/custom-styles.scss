@@ -1,11 +1,5 @@
-@import url(https://joren.ga/css/switch.css);
-
 body {
   font-family: monospace;
-}
-
-a:visited {
-  color: $link-base-color; /* because $link-visited-color var doesn't work */
 }
 
 p {
@@ -15,11 +9,6 @@ p {
 
 .site-header {
   border-top: none;
-}
-
-#toggleTheme {
-  position: initial;
-  margin-right: 1em;
 }
 
 .yt-container {
@@ -35,28 +24,4 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
-}
-
-@media screen and (min-width: $on-medium) {
-  #toggleTheme {
-    position: absolute;
-    right: 50px;
-  }
-}
-
-/* Poor man's light theme */
-html[data-theme="light"] {
-  body {
-    background-color: #FFF;
-    filter: invert(100%);
-  }
-
-  img, svg, iframe {
-    filter: invert(100%) !important; /* revert images to normal colors */
-  }
-
-  #disqus_thread {
-    padding: 1em;
-    background-color: #999;
-  }
 }
