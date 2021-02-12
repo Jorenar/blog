@@ -13,16 +13,9 @@
   <meta prefix="og: http://ogp.me/ns#" property="twitter:image" content="{{ "assets/avatar.png" | relative_url }}">
 {% endif %}
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
-<script type="text/javascript" src="{{ "/assets/scripts/toggleTheme.js" | relative_url }}"></script>
 <script>
   window.onload = () => {
     document.querySelector("header .trigger").insertAdjacentElement('afterbegin', s);
-
-    document.querySelector("html").dataset.theme = x;
-    if (document.querySelector("html").dataset.theme == "light") {
-      document.querySelector("#toggleTheme input").checked = true;
-    }
 
     document.querySelector("footer").insertAdjacentHTML("afterend", '<a href="{{ site.baseurl }}/sitemap.xml"></a>');
   }
