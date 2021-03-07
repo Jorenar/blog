@@ -22,5 +22,7 @@ A quick list of what to do in order to learn how to use Vim
 11. Read humorous [Vim Kōans](https://blog.sanctum.geek.nz/vim-koans)
 12. [How to Do 90% of What Plugins Do (With Just Vim)](https://www.youtube.com/watch?v=XA2WjJbmmoM)
 13. [Learn Vimscript the Hard Way](https://learnvimscriptthehardway.stevelosh.com)
-14. My [list of resources](https://resources.joren.ga) on various topics (filter by "_Vim_" tag)
-15. The most important: **actually use it!**
+14. Check out [Vimways](https://vimways.org/2018)
+15. Read configs of more experienced users ([here's mine](https://github.com/Jorengarenar/dotfiles/tree/master/vim) for example)
+16. My [list of resources](https://resources.joren.ga) on various topics (filter by "_Vim_" tag)
+17. The most important: **actually use it!**
