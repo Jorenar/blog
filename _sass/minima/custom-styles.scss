@@ -25,3 +25,20 @@ p {
   width: 100%;
   height: 100%;
 }
+
+
+
+#share-buttons {
+  margin-bottom: 1em;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#share-buttons > a {
+  text-decoration: none;
+  color: #B9B9B9;
+}
+
+#share-buttons > a:hover {
+  color: #999;
+}
