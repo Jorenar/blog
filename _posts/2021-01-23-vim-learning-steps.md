@@ -24,6 +24,6 @@ A quick list of what to do in order to learn how to use Vim
 13. [Learn Vimscript the Hard Way](https://learnvimscriptthehardway.stevelosh.com)
 14. Check out [Vimways](https://vimways.org/2018)
 15. [Why do Vim experts prefer buffers over tabs?](https://stackoverflow.com/a/26710166/10247460)
-16. Read configs of more experienced users ([here's mine](https://github.com/Jorengarenar/dotfiles/tree/master/vim) for example)
+16. Read configs of more experienced users ([here's mine](https://github.com/Jorengarenar/dotfiles/tree/master/vim), for example)
 17. My [list of resources](https://resources.joren.ga) on various topics (filter by "_Vim_" tag)
 18. The most important: **actually use it!**
