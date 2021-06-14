@@ -1,6 +1,5 @@
 author:
   name: Jorengarenar
-  email: mail@joren.ga
 
 title: Joren
 description: Programming? Programming!
@@ -28,7 +27,7 @@ header_pages:
 
 header_external_links:
   - title: Home
-    url:   https://joren.ga
+    url:   https://jorengarenar.github.io
 
 plugins:
   - jekyll-feed
