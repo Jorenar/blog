@@ -27,7 +27,7 @@ header_pages:
 
 header_external_links:
   - title: Home
-    url:   https://jorengarenar.github.io
+    url:   https://joren.ga
 
 plugins:
   - jekyll-feed
