@@ -12,6 +12,19 @@ aside {
 }
 
 .post-content {
+  > h1, > h2, > h3, > h4, > h5 {
+    & {
+      display: flex;
+      align-items: center;
+    }
+
+    > a {
+      font-size: 0.5em;
+      margin-left: 1em;
+      text-decoration: none;
+    }
+  }
+
   > h1 {
     font-size: 2rem;
   }
