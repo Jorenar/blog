@@ -32,6 +32,16 @@ layout: default
 
   <div class="post-content e-content" itemprop="articleBody">
     {{ content }}
+
+    <script>
+      document.querySelector(".post-content")
+        .querySelectorAll("h1, h2, h3, h4, h5")?.forEach((h) => {
+          const a = document.createElement("a");
+          a.href = "#" + h.id;
+          a.textContent = "🔗";
+          h.appendChild(a);
+        });
+    </script>
   </div>
 
   {% include share-buttons.html %}
