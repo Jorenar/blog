@@ -1,8 +1,5 @@
-author:
-  name: Jorengarenar
-  email: mail@joren.ga
-
-title: Joren Blog
+author: Jorengarenar
+title:  Joren Blog
 
 remote_theme: jekyll/minima
 
@@ -13,12 +10,6 @@ permalink: /:categories/:title
 minima:
   date_format: "%F"
   skin: dark
-  social_links:
-    github:        Jorengarenar
-    instagram:     Jorengarenar
-    linkedin:      jakub-lukasiewicz
-    stackoverflow: "10247460"
-    twitter:       Jorengarenar
 
 header_pages:
   - pages/categories.html
