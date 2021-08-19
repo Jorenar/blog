@@ -24,8 +24,14 @@ aside {
 }
 
 blockquote {
-  font-size: 1em;
-  font-style: normal;
+  & {
+    font-size: 1em;
+    font-style: normal;
+  }
+
+  em {
+    font-style: italic;
+  }
 }
 
 .site-header {
