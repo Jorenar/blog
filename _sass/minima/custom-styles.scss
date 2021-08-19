@@ -50,23 +50,6 @@ aside {
   }
 }
 
-#share-buttons {
-  & {
-    display: inline-block;
-    margin-bottom: 1em;
-    vertical-align: middle;
-  }
-
-  > a {
-    color: #B9B9B9;
-    text-decoration: none;
-  }
-
-  > a:hover {
-    color: #999;
-  }
-}
-
 .yt-container {
   & {
     height: 0;
