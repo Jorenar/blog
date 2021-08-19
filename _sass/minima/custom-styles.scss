@@ -10,11 +10,22 @@ a {
 }
 
 aside {
-  background: #171717;
-  border: 1px solid #5555;
-  font-size: 0.9em;
-  margin: 1em auto;
-  padding: 0.5em 1em;
+  & {
+    background: #171717;
+    border: 1px solid #5555;
+    font-size: 0.9em;
+    margin: 1em auto;
+    padding: 0.5em 1em;
+  }
+
+  > p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+blockquote {
+  font-size: 1em;
+  font-style: normal;
 }
 
 .site-header {
