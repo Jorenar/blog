@@ -16,7 +16,7 @@ header_pages:
   - pages/tags.html
 
 header_external_links:
-  - title: Home
+  - title: About
     url:   https://joren.ga
 
 plugins:
