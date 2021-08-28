@@ -5,14 +5,13 @@ remote_theme: jekyll/minima
 
 show_excerpts: true
 
-permalink: /:categories/:title
+permalink: /:title
 
 minima:
   date_format: "%F"
   skin: dark
 
 header_pages:
-  - pages/categories.html
   - pages/tags.html
 
 header_external_links:
