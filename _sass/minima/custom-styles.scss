@@ -63,28 +63,17 @@ blockquote {
   > h5 {
     font-size: 1.15rem;
   }
-
-  .headingAnchor {
-    font-size: 0.5em;
-    margin-left: 1em;
-    text-decoration: none;
-    line-height: 1;
-  }
 }
 
 .yt-container {
   & {
-    height: 0;
     padding-bottom: 56.25%;
     position: relative;
-    width: 100%;
   }
 
   .yt-video {
     height: 100%;
-    left: 0;
     position: absolute;
-    top: 0;
     width: 100%;
   }
 }

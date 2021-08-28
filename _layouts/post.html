@@ -30,18 +30,7 @@ layout: default
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    {{ content }}
-
-    <script>
-      document.querySelector(".post-content")
-        .querySelectorAll("h1, h2, h3, h4, h5")?.forEach((h) => {
-          const a = document.createElement("a");
-          a.href = "#" + h.id;
-          a.textContent = "🔗";
-          a.className = "headingAnchor";
-          h.appendChild(a);
-        });
-    </script>
+    {% include anchor_headings.html html=content anchorBody="#" %}
   </div>
 
   {%- if site.disqus.shortname -%}
