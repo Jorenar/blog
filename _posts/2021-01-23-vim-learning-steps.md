@@ -2,8 +2,7 @@
 
 layout: post
 title:  "Steps to learn Vim"
-categories: tools
-tags: [ advice, vim ]
+tags: [ advice, vim, tools ]
 
 ---
 
