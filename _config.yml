@@ -8,11 +8,7 @@ show_excerpts: true
 permalink: /:title
 
 minima:
-  date_format: "%F"
   skin: dark
-
-header_pages:
-  - pages/tags.html
 
 header_external_links:
   - title: About
