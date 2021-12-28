@@ -8,6 +8,7 @@ show_excerpts: true
 permalink: /:title
 
 minima:
+  date_format: "%F"
   skin: dark
 
 header_external_links:
