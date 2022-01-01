@@ -20,7 +20,7 @@ jobs:
           enable_jekyll: true
           cname: blog.joren.ga
       - name: Checkout posts
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
         with:
           ref: 'posts'
           clean: false
