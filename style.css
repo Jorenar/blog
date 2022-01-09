@@ -75,9 +75,9 @@ a:visited {
 }
 
 blockquote {
-  color: #999;
+  opacity: 0.9;
   border-left: 4px solid #404040;
-  padding-left: 15px;
+  padding-left: 0.5em;
 }
 
 img {
