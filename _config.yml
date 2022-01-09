@@ -1,15 +1,7 @@
 author: Jorengarenar
 title:  Jorengarenar
 
-remote_theme: jekyll/minima
-
-show_excerpts: true
-
 permalink: /:title
-
-minima:
-  date_format: "%F"
-  skin: dark
 
 header_external_links:
   - title: About
@@ -17,8 +9,9 @@ header_external_links:
 
 plugins:
   - jekyll-feed
-  - jekyll-seo-tag
   - jekyll-sitemap
 
 kramdown:
-    smart_quotes: ["apos", "apos", "quot", "quot"]
+  smart_quotes: ["apos", "apos", "quot", "quot"]
+  syntax_highlighter_opts:
+    disable : true
