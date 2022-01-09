@@ -123,9 +123,9 @@ pre > code {
 }
 
 
-.post-list > li {
+.post-list {
   font-size: 1.3em;
-  margin: 5px;
+  text-align: left;
 }
 
 .yt-container {
