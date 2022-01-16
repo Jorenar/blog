@@ -3,10 +3,6 @@ title:  Jorengarenar
 
 permalink: /:title
 
-header_external_links:
-  - title: About
-    url:   https://joren.ga
-
 plugins:
   - jekyll-feed
   - jekyll-sitemap
