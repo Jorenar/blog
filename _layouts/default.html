@@ -14,10 +14,8 @@
   <header>
     <h1><a rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a></h1>
     <nav>
-      {%- for link in site.header_external_links -%}
-      <a href="{{ link.url }}">{{ link.title | escape }}</a>
-      {%- endfor -%}
-      <a href="{{ 'feed.xml' | relative_url }}">Feed</a>
+      <a href="https://joren.ga">About</a>
+      <a href="{{ 'feed.xml' | relative_url }}">RSS</a>
     </nav>
   </header>
   <main>
