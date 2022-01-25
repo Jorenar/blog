@@ -1,8 +1,8 @@
 ---
-
 layout: post
 title:  "Steps to learn Vim"
-
+redirect_from:
+  - /tools/vim-learning-steps
 ---
 
 A quick list of what to do in order to learn how to use Vim
