@@ -37,7 +37,7 @@ additional abbreviation - _aVLA_ for automatic VLA.
 <aside class="notice" markdown="1">
 Still at the beginning, I would like to point out that there are situations
 where VLA is a good solution; not many, but they do exist. In the future
-I will try to describe them as well and link to the article here.
+I will do my best to describe them as well and link to the article here.
 </aside>
 
 # Allocation on stack
