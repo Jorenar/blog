@@ -1,0 +1,356 @@
+---
+layout: post
+title:  "Pitfalls of VLA in C"
+redirect_from:
+  - /programming/vla-bad
+  - /vla-bad
+---
+
+> It generates much more code, and much _slower_ code (and more fragile code),
+  than just using a fixed key size would have done ~ [Linus Torvalds](https://lkml.org/lkml/2018/3/7/621)
+
+_VLA_ is an acronym of **variable-length array**, which is an **array** (actual
+array, not just block of memory acting like one) that have size determined
+during runtime (instead of at compile time).
+
+<aside class="notice" markdown="1">
+Languages supporting VLAs in one form or another include: Ada, Algol 68, APL,
+C, C#, COBOL, Fortran, J and Object Pascal. As you may notice, beside C and C#,
+those aren't languages one would call mainstream nowadays.
+</aside>
+
+VLAs were introduced with the revision C99 of the C standard.
+At first glance they seem convenient and efficient, but it's just
+an illusion. In reality they are just sources of constant issues.
+
+<aside class="notice" markdown="1">
+As you could have guessed by the quote at the beginning, project which used to
+rely on VLA quite extensively is nothing else than Linux kernel. Maintainers
+spent a lot of effort to get rid of all VLA and as of version 4.20 (year 2018)
+it's completely VLA-free.
+</aside>
+
+Most of the criticism in this article concerns so called _automatic VLA_
+and not all instances of VLA, thus I will differentiate between them using
+additional abbreviation - _aVLA_ for automatic VLA.
+
+<aside class="notice" markdown="1">
+Still at the beginning, I would like to point out that there are situations
+where VLA is a good solution; not many, but they do exist. In the future
+I will do my best to describe them as well and link to the article here.
+</aside>
+
+# Allocation on stack
+
+aVLAs are usually allocated on stack and this is the source of the most of the
+problems. Let's consider a painfully simple, very favourable to aVLA, example:
+```c
+#include <stdio.h>
+
+int main(void) {
+    int n;
+    scanf("%d", &n);
+    long double arr[n];
+    printf("%Lf", arr[0]);
+    return 0;
+}
+```
+
+As we can see, it takes a number from user then makes array of that size. Compile
+and try it. Check how big values you can input before getting segfault caused
+by stack overflow. In my case, it was around half a million. With primitive type!
+Imagine what would be the limit for structure! Or what if it wasn't just `main()`?
+Maybe a recursive function? The limit shrinks tremendously.
+
+And you don't have any (portable, standard) way to react after a stack
+overflow - the program already crashed, you lost control. So you either need
+to make elaborate checks before declaring an array or betting that user won't
+input too large values (the outcome of such gamble ought to be obvious).
+
+So the programmer **must** ensure that aVLA size doesn't exceed some safe maximum,
+but in reality, if you know safe maximum, there is rarely any reason for not using
+it always.
+
+## Worst of it is...
+
+... that segfault is actually one of the best outcomes of improperly handled aVLA.
+The worst case is an exploitable vulnerability, where attacker may choose a value
+that causes an array to overlap with other allocations, giving them control over
+those values as well. A security nightmare.
+
+<aside class="notice" markdown="1">
+At the cost of further drop of efficiency, in GCC you can
+enable `-fstack-clash-protection` option. It adds _extra_ instructions around
+variable length stack memory allocations to probe each page of memory at
+allocation time. This mitigates stack-clash attacks by ensuring all stack
+memory allocations are valid or by throwing a segfault if they are not, thus
+turning a possible code-execution attack into a denial of service.
+</aside>
+
+## So how to fix this example?
+
+What if I need to let user define size and creating ridiculously large fixed
+array would be too wasteful? It's simple - use `malloc()`!
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+    int n;
+    scanf("%d", &n);
+    long double* arr = malloc(n * (sizeof *arr));
+    printf("%Lf", arr[0]);
+    free(arr);
+    return 0;
+}
+```
+
+In this case I was able to input over 1.3 **billion** on my machine before
+segfault. Almost 2500 times larger size! But I still got the segfault, right?
+Well, the difference is in possibility of checking the value returned by `malloc()`
+and thus being able to, for example, inform the user about the error:
+```c
+    long double* arr = malloc(n * (sizeof *arr));
+    if (arr == NULL) {
+        perror("malloc()"); // output: "malloc(): Cannot allocate memory"
+    }
+```
+
+<aside class="notice" markdown="1">
+I've encountered a counterargument, that as C is often used as a systems/embedded
+language, there are situations where using `malloc()` may not even be possible.
+
+_\*Sigh\*_ I'm basically going to repeat myself here, but it is really important.
+
+On such device you're not going to have a lot of stack either. So instead of
+dynamically allocating on stack, you should determine how much you need and
+just always use that fixed amount.
+
+When using aVLA on system with small amounts of stack, it's really easy to
+make something which seems to work, but which blows your stack if your function
+gets called from a deep call stack combined with the large amount of data.
+
+If you always allocate fixed amounts of stack space everywhere, and you test it,
+you know you're good. If you dynamically allocate on stack, you have to test all
+your code paths with all the largest sizes of allocated space, which is much
+harder and much easier to make a mistake. Don't make it even easier to shoot
+yourself in the foot for no real advantage.
+</aside>
+
+# Creation by accident
+
+Unlike most other dangerous C functionality, aVLA doesn't have the barrier
+of being not known. Many newbies learn to use them via trial and error, but
+don't learn about the pitfalls. Sometimes even an experienced programmer will
+make an mistake and create an aVLA when not intended. The following will
+silently create an aVLA when it's clearly not necessary:
+```c
+const int n = 10;
+int A[n];
+```
+Thankfully, any half-decent compiler would notice and optimize aVLA away, but...
+what if it doesn't notice? Or what if for some reason (safety?) the optimizations
+were not turned on? But it surely isn't so much worse, right? Well...
+
+# Slower than fixed size
+
+Without compiler optimizations a function with [aVLA from previous example](https://godbolt.org/z/c7nPvGGcP)
+will result in **7 times** more Assembly instructions than its
+[fixed size counterpart](https://godbolt.org/z/jx94vx84T) before moving past
+the array definition (look at the body before `jmp .L5`).
+But it's without optimizations - with them the produced Assembly is exactly the same.
+
+So [an example where aVLA isn't by mistake](https://godbolt.org/z/vnf174eej):
+```c
+#include <stdio.h>
+void bar(int*, int);
+
+#if 1 // 1 for aVLA, 0 for aVLA-free
+
+void foo(int n) {
+    int A[n];
+    for (int i = n; i--;) {
+        scanf("%d", &A[i]);
+    }
+    bar(A, n);
+}
+
+#else
+
+void foo(int n) {
+    int A[1000];  // Let's make it bigger than 10! (or there won't be what to examine)
+    for (int i = n; i--;) {
+        scanf("%d", &A[i]);
+    }
+    bar(A, n);
+}
+
+#endif
+
+int main(void) {
+    foo(10);
+    return 0;
+}
+
+void bar(int* B, int n) {
+    for (int i = n; i--;) {
+        printf("%d %d", i, B[i]);
+    }
+}
+```
+For our educational purposes in this example, `-O1` level of optimisation will
+work best (as Assembly will be more clear and `-O2` won't help aVLA's case here
+really much).
+
+When we compile aVLA version, before instructions corresponding to `for` loop, we get:
+```nasm
+push    rbp
+mov     rbp, rsp
+push    r14
+push    r13
+push    r12
+push    rbx
+mov     r13d, edi
+movsx   r12, edi       ; here aVLA "starts"...
+sal     r12, 2         ;
+lea     rax, [r12+15]  ;
+and     rax, -16       ;
+sub     rsp, rax       ;
+mov     r14, rsp       ; ... and there "ends"
+```
+
+aVLA-free version on the other hand generates:
+```nasm
+push    r12
+push    rbp
+push    rbx
+sub     rsp, 4000      ; this is caused by array definition
+mov     r12d, edi
+```
+
+So not only fixed array spawns less code, but also way simpler code.
+Why, aVLA even causes more overhead at the beginning of the function.
+It's not so much more in the grand scheme of things, but it still isn't
+just a pointer bump.
+
+But are those differences significant enough to care?
+[Yes, they are](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=02361bc77888).
+
+# No initialization
+
+To add more to the issue with inadvertent aVLA, the following isn't allowed:
+```c
+int n = 10;
+int A[n] = { 0 };
+```
+Even with optimizations, initialisation isn't allowed for aVLAs. So despite
+wanting fixed size array and compiler being technically able to provide one,
+it's won't work.
+
+# Mess for compiler writers
+
+Few months ago I saved a [comment](https://www.reddit.com/r/C_Programming/comments/jz2213/are_vlas_bad_even_if_theyre_not_allocated_on_the/gdc3hz6)
+on Reddit listing problems encountered with VLA from compiler writer perspective. I will cite it:
+
+> * A VLA applies to a type, not an actual array. So you can create a `typedef`
+>   of a VLA type, which "freezes" the value of the expression used, even if
+>   elements of that expression change at the time the VLA type is applied
+> * VLAs can occur inside blocks, and inside loops. This means allocating and
+>   deallocating variable-sized data on the stack, and either screwing up all
+>   the offsets, or needing to do things indirectly via pointers.
+> * You can use `goto` into and out of blocks with active VLAs, with some things
+>   restricted and some not, but the compiler needs to keep track of the mess.
+> * VLAs can be used with multi-dimensional arrays.
+> * VLAs can be used as pointer targets (so no allocation is done, but it still
+>   needs to keep track of the variable size).
+> * Some compilers allow VLAs inside structure definitions (I really have no idea
+>   how that works, or at what point the VLA size is frozen, so that all instances
+>   have the same VLA(s) sizes.)
+> * A function can have dozens of VLAs active at any one time, with some being
+>   created or destroyed at different times, or conditionally, or in loops.
+> * `sizeof` needs to be specially implemented for VLAs, and all the necessary
+>   info (for actual VLAs, VLA-types, and hybrid VLA/fixed-size types and
+>   arrays and pointed-to VLAs).
+> * 'VLA' is also the term used for multi-dimensional array parameters, where
+>   the dimensions are passed by other parameters.
+> * On Windows, with some compilers (GCC at least), declaring local arrays which
+>   make the stack frame size over 4 KiB, mean calling a special allocator
+>   (`__chkstk()`), as the stack can only grow a page at a time. When a VLA is
+>   declared, since the compiler doesn't know the size, it needs to call
+>   `__chkstk` for every such function, even if the size turns out to be small.
+
+And believe me, if you take a stroll around some C forums you will see even
+more different complaints.
+
+# Reduced portability
+
+Due to all previously presented problems, some compiler providers decided to
+not fully support C99. The primary example is Microsoft with its MSVC.
+The C Standard's Committee also noticed the problem and with C11 revision
+VLAs were made optional.
+
+<aside class="notice" markdown="1">
+C2x is supposed to revert that decision, but aVLA still won't be mandated.
+</aside>
+
+That means code using a VLA won't necessarily be compiled by a C11 compiler,
+so you need to check whether it is supported with `__STDC_NO_VLA__` macro and
+make version without VLA as fallback. Wait... if you need to implement VLA-free
+version either way then what's the point of doubling the code and creating VLA
+in the first place?!
+
+<aside class="notice" markdown="1">
+As a side note - C++ doesn't have VLA and nothing suggests it ever will.
+Not a dealbreaker, but still point against VLA in C.
+</aside>
+
+# (nitpick) Breaking conventions
+
+This one is more of a nitpick, but still another reason to dislike VLA. There
+is a widely used convention of first passing object then its parameters, what
+in terms of arrays means:
+```c
+void foo(int** arr, int n, int m) { /* arr[i][j] = ... */ }
+```
+
+C99 specified that array sizes need to be parsed immediately when encountered
+within a function definition's parameter list, what means that when using VLA
+you cannot do an equivalent of the above:
+```c
+void foo(int arr[n][m], int n, int m) { /* arr[i][j] = ... */ } // INVALID!
+```
+
+You either need to:
+  * break up with the convention:
+```c
+void foo(int n, int m, int arr[n][m]) { /* arr[i][j] = ... */ }
+```
+
+  * or make use of the obsolescent (and soon to be removed from standard) syntax:
+```c
+void foo(int[*][*], int, int);
+void foo(arr, n, n)
+        int n;
+        int m;
+        int arr[n][m]
+{
+        // arr[i][j] = ...
+}
+```
+
+# Conclusion
+
+In short, **avoid VLA**, compile with `-Wvla` flag.
+
+VLA feature poses dangers, often without giving anything really useful in return.
+
+If you find yourself in one of the situations where VLA is a valid solution,
+do use them, but keep in mind the limits I've outlined here.
+
+<aside class="notice" markdown="1">
+It's probably also worth mentioning that VLAs were inter alia supposed
+to be a solution to even more problematic (non-standard) `alloca()`.
+</aside>
+
+And for the very end, an example of vla lacking all those problems: <br>
+[![Chocolate vla](https://upload.wikimedia.org/wikipedia/commons/b/bb/Chocoladevla.jpg)](https://en.wikipedia.org/wiki/Vla)
