@@ -348,8 +348,8 @@ If you find yourself in one of the situations where VLA is a valid solution,
 do use them, but keep in mind the limits I've outlined here.
 
 <aside class="notice" markdown="1">
-It's probably also worth mentioning that VLAs were inter alia supposed
-to be a solution to even more problematic (non-standard) `alloca()`.
+It's probably also worth mentioning that VLAs were inter alia partially
+supposed to be a solution to also problematic, non-standard `alloca()`.
 </aside>
 
 And for the very end, an example of vla lacking all those problems: <br>
