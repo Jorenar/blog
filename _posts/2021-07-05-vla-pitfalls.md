@@ -10,34 +10,32 @@ redirect_from:
   than just using a fixed key size would have done ~ [Linus Torvalds](https://lkml.org/lkml/2018/3/7/621)
 
 _VLA_ is an acronym of **variable-length array**, which is an **array** (actual
-array, not just block of memory acting like one) that have size determined
-during runtime (instead of at compile time).
+array, not just block of memory acting like one) that has size determined during
+runtime instead of at compile time.
+
+VLAs were introduced with the revision C99 of the C standard.
+At first glance they seem convenient and efficient, but it's just
+an illusion. In reality they are just sources of constant issues.
+
+Most of the criticism in this article falls on so called _automatic VLA_
+and not all instances of VLA, thus I will differentiate between them using
+additional abbreviation - _aVLA_ for automatic VLA.
 
 <aside class="notice" markdown="1">
 Languages supporting VLAs in one form or another include: Ada, Algol 68, APL,
 C, C#, COBOL, Fortran, J and Object Pascal. As you may notice, beside C and C#,
 those aren't languages one would call mainstream nowadays.
 </aside>
-
-VLAs were introduced with the revision C99 of the C standard.
-At first glance they seem convenient and efficient, but it's just
-an illusion. In reality they are just sources of constant issues.
-
 <aside class="notice" markdown="1">
 As you could have guessed by the quote at the beginning, project which used to
 rely on VLA quite extensively is nothing else than Linux kernel. Maintainers
 spent a lot of effort to get rid of all VLA and as of version 4.20 (year 2018)
 it's completely VLA-free.
 </aside>
-
-Most of the criticism in this article concerns so called _automatic VLA_
-and not all instances of VLA, thus I will differentiate between them using
-additional abbreviation - _aVLA_ for automatic VLA.
-
 <aside class="notice" markdown="1">
-Still at the beginning, I would like to point out that there are situations
-where VLA is a good solution; not many, but they do exist. In the future
-I will do my best to describe them as well and link to the article here.
+And while we are still at the beginning, I would like to point out that there
+are situations where VLA is a good solution; not many, but they do exist. In the
+future I will do my best to describe them as well and link to the article here.
 </aside>
 
 # Allocation on stack
