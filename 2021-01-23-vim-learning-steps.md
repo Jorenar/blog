@@ -10,7 +10,7 @@ A quick list of what to do to learn how to use Vim
 
 {:start="0"}
  0. Learn [how to ask a good question](https://stackoverflow.com/help/how-to-ask) and [to type it into search engine before asking](https://ddg.gg/?q=vim+start+learning)
-<br>
+<br><br>
  1. Do [`vimtutor`](https://vimhelp.org/usr_01.txt.html#vimtutor) - it's a 30-minute tutorial that teaches the most basic Vim functionality hands-on \
     Additionaly you can also:
    * Play free levels of [VIM Adventures](https://vim-adventures.com)
@@ -24,7 +24,7 @@ A quick list of what to do to learn how to use Vim
  8. [Your problem with Vim is that you don't grok vi](https://stackoverflow.com/a/1220118/10247460)
  9. [Seven habits of effective text editing](https://www.moolenaar.net/habits.html) by Bram Moolenaar
 10. [Proverbs](https://www.vi-improved.org/vim-proverbs) and [recommendations](https://www.vi-improved.org/recommendations) from [#vim](https://www.vi-improved.org/)
-<br>
+<br><br>
 11. Read humorous [Vim Kōans](https://blog.sanctum.geek.nz/vim-koans)
 12. [How to Do 90% of What Plugins Do (With Just Vim)](https://www.youtube.com/watch?v=XA2WjJbmmoM)
 13. [Learn Vimscript the Hard Way](https://learnvimscriptthehardway.stevelosh.com)
