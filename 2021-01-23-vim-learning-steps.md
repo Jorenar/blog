@@ -22,10 +22,10 @@ A quick list of what to do to learn how to use Vim
  6. [idiomatic vimrc](https://github.com/romainl/idiomatic-vimrc) by [romainl](http://romainl.github.io/)
  7. [Proverbs](https://www.vi-improved.org/vim-proverbs) and [recommendations](https://www.vi-improved.org/recommendations) from [#vim](https://www.vi-improved.org/)
  8. [Seven habits of effective text editing](https://www.moolenaar.net/habits.html) by Bram Moolenaar
+ 9. [Your problem with Vim is that you don't grok vi](https://stackoverflow.com/a/1220118/10247460)
 <br><br>
- 9. [vimrctips](https://www.reddit.com/r/vim/wiki/vimrctips) of [r/vim](https://www.reddit.com/r/vim)
-10. [Your problem with Vim is that you don't grok vi](https://stackoverflow.com/a/1220118/10247460)
-11. Read humorous [Vim Kōans](https://blog.sanctum.geek.nz/vim-koans)
+10. Read humorous [Vim Kōans](https://blog.sanctum.geek.nz/vim-koans)
+11. [vimrctips](https://www.reddit.com/r/vim/wiki/vimrctips) of [r/vim](https://www.reddit.com/r/vim)
 12. [How to Do 90% of What Plugins Do (With Just Vim)](https://www.youtube.com/watch?v=XA2WjJbmmoM)
 13. [Learn Vimscript the Hard Way](https://learnvimscriptthehardway.stevelosh.com)
 14. Watch some [Vimcasts](http://vimcasts.org/episodes)
