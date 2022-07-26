@@ -8,6 +8,7 @@ redirect_from:
 A quick list of what to do to learn how to use Vim
 <br><sup>(keeping order isn't necessary)</sup>
 
+{:start="0"}
  0. Learn [how to ask a good question](https://stackoverflow.com/help/how-to-ask) and [to type it into search engine before asking](https://ddg.gg/?q=vim+start+learning) \
  1. Do [`vimtutor`](https://vimhelp.org/usr_01.txt.html#vimtutor) - it's a 30-minute tutorial that teaches the most basic Vim functionality hands-on \
     Additionaly you can also:
