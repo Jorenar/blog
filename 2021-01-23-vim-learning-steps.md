@@ -15,8 +15,8 @@ A quick list of what to do to learn how to use Vim
     Additionaly you can also:
    * Play free levels of [VIM Adventures](https://vim-adventures.com)
    * Follow [OpenVim](https://openvim.com/) - an interactive Vim tutorial online
- 2. [RTFM](https://en.wikipedia.org/wiki/RTFM)! User manual (`:h user-manual`) will guide you through every feature from basic to advanced
- 3. `:help` and `:helpgrep` to find more detailed documentation of specific feature
+ 2. [RTFM](https://en.wikipedia.org/wiki/RTFM)! User manual ([`:h user-manual`](https://vimhelp.org/usr_toc.txt.html)) will guide you through every feature from basic to advanced
+ 3. [`:help`](https://vimhelp.org/) and `:helpgrep` to find more detailed documentation of specific feature
  4. [`:h faq`](https://vimhelp.org/vim_faq.txt.html) - Frequently Asked Questions
  5. [`:h quickref`](https://vimhelp.org/quickref.txt.html) - quick reference guide
  6. [idiomatic vimrc](https://github.com/romainl/idiomatic-vimrc) by [romainl](http://romainl.github.io/)
