@@ -22,7 +22,7 @@ A quick list of what to do to learn how to use Vim
  5. [`:h quickref`](https://vimhelp.org/quickref.txt.html) - quick reference guide
  6. [idiomatic vimrc](https://github.com/romainl/idiomatic-vimrc) by [romainl](http://romainl.github.io/)
 
-Further down the road: \
+<span>Further down the road:</span>
   * Read humorous [Vim Kōans](https://blog.sanctum.geek.nz/vim-koans)
   * [Your problem with Vim is that you don't grok vi](https://stackoverflow.com/a/1220118/10247460)
   * [Proverbs](https://www.vi-improved.org/vim-proverbs) and [recommendations](https://www.vi-improved.org/recommendations) from [#vim](https://www.vi-improved.org/)
