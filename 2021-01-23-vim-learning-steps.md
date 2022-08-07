@@ -12,17 +12,21 @@ A quick list of what to do to learn how to use Vim
  0. Learn [how to ask a good question](https://stackoverflow.com/help/how-to-ask) and [to type it into search engine before asking](https://ddg.gg/?q=vim+start+learning)
 <br><br>
  1. Do [`vimtutor`](https://vimhelp.org/usr_01.txt.html#vimtutor) - it's a 30-minute tutorial that teaches the most basic Vim functionality hands-on \
-    Additionaly you can also:
-   * Play free levels of [VIM Adventures](https://vim-adventures.com)
-   * Follow [OpenVim](https://openvim.com/) - an interactive Vim tutorial online
-   * Try yourself in online [Vim Quiz](https://vim.morzel.net)
  2. [RTFM](https://en.wikipedia.org/wiki/RTFM)! User manual ([`:h user-manual`](https://vimhelp.org/usr_toc.txt.html)) will guide you through every feature from basic to advanced
  3. [`:help`](https://vimhelp.org/) and `:helpgrep` to find more detailed documentation of specific feature
  4. [`:h faq`](https://vimhelp.org/vim_faq.txt.html) - Frequently Asked Questions
  5. [`:h quickref`](https://vimhelp.org/quickref.txt.html) - quick reference guide
  6. [idiomatic vimrc](https://github.com/romainl/idiomatic-vimrc) by [romainl](http://romainl.github.io/)
 
-<aside class="notice" markdown="1">Further down the road:
+<aside class="notice" markdown="1">
+**_Ad 1:_** Additionaly you can also:
+  * Play free levels of [VIM Adventures](https://vim-adventures.com)
+  * Follow [OpenVim](https://openvim.com/) - an interactive Vim tutorial online
+  * Try yourself in online [Vim Quiz](https://vim.morzel.net)
+</aside>
+
+<aside class="notice" markdown="1">
+Further down the road:
   * Read humorous [Vim Kōans](https://blog.sanctum.geek.nz/vim-koans)
   * [Your problem with Vim is that you don't grok vi](https://stackoverflow.com/a/1220118/10247460)
   * [Proverbs](https://www.vi-improved.org/vim-proverbs) and [recommendations](https://www.vi-improved.org/recommendations) from [#vim](https://www.vi-improved.org/)
