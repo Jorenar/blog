@@ -13,9 +13,9 @@ _VLA_ is an acronym of **variable-length array**, which is an **array** (actual
 array, not just block of memory acting like one) that has size determined during
 runtime instead of at compile time.
 
-VLAs were introduced with the revision C99 of the C standard.
-At first glance they seem convenient and efficient, but it's just
-an illusion. In reality they are just sources of constant issues.
+VLAs were introduced with the revision C99 of the C standard. They may seem
+innocent, quite convenient, natural even, but it's just an illusion: in reality
+they often are sources of non-trivial issues.
 
 Most of the criticism in this article falls on so called _automatic VLA_
 and not all instances of VLA, thus I will differentiate between them using
