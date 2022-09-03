@@ -298,7 +298,7 @@ version either way then what's the point of doubling the code and creating VLA
 in the first place?!
 
 <aside class="notice" markdown="1">
-As a side note - C++ doesn't have VLA and nothing suggests it ever will.
+As a side note - C++ doesn't have VLA and nothing suggests it ever will.<br>
 Not a dealbreaker, but still point against VLA in C.
 </aside>
 
@@ -324,7 +324,7 @@ You either need to:
 void foo(int n, int m, int arr[n][m]) { /* arr[i][j] = ... */ }
 ```
 
-  * or make use of the obsolescent (and soon to be removed from standard) syntax:
+  * or make use of the obsolescent (and removed from C23 standard) syntax:
 ```c
 void foo(int[*][*], int, int);
 void foo(arr, n, n)
