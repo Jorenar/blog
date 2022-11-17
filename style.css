@@ -43,10 +43,6 @@ main > header > time {
   margin-left: auto;
 }
 
-main :is(h1, h2, h3, h4, h5) > a:last-child {
-  opacity: 0.4;
-}
-
 footer {
   text-align: center;
   border-top: 1px solid #404040;
@@ -105,22 +101,18 @@ code {
   font-size: 0.8em;
 }
 
-p > code {
-  padding: 2px;
-}
-
 pre, code {
   background: #212121;
-  border: 1px solid #404040;
 }
 
 pre {
-  overflow: scroll;
+  overflow: auto;
   padding: 10px;
 }
 
-pre > code {
-  border: none;
+pre, p > code {
+  padding: 2px;
+  border: 1px solid #404040;
 }
 
 
