@@ -9,39 +9,27 @@ redirect_from:
 > It generates much more code, and much _slower_ code (and more fragile code),
   than just using a fixed key size would have done ~ [Linus Torvalds](https://lkml.org/lkml/2018/3/7/621)
 
-_VLA_ is an acronym of **variable-length array**, which is an **array** (actual
-array, not just block of memory acting like one) that has size determined during
-runtime instead of at compile time.
+VLA (**variable-length array**, an array - *array*, not just block of memory
+acting like one - that has size determined during runtime instead of at compile
+time) is a feature introduced to C with the revision C99 of the standard.
+A very useful feature one may think, and indeed... in some cases...
+But since the world we live in is less than ideal, one needs to know well what
+are the pitfalls of using VLA in their code before doing so.
 
-VLAs were introduced with the revision C99 of the C standard. They may seem
-innocent, quite convenient, natural even, but it's just an illusion: in reality
-they often are sources of non-trivial issues.
+In this text I will divide VLA into two categories:
 
-Most of the criticism in this article falls on so called _automatic VLA_
-and not all instances of VLA, thus I will differentiate between them using
-additional abbreviation - _aVLA_ for automatic VLA.
+  * automatic VLA (_aVLA_) - most of the criticism in this article falls on them
+  * pointers to VLA (_pVLA_) - the useful side of the feature which will be covered in another post
 
-<aside class="notice" markdown="1">
-Languages supporting VLAs in one form or another include: Ada, Algol 68, APL,
-C, C#, COBOL, Fortran, J and Object Pascal. As you may notice, beside C and C#,
-those aren't languages one would call mainstream nowadays.
-</aside>
-<aside class="notice" markdown="1">
-As you could have guessed by the quote at the beginning, project which used to
-rely on VLA quite extensively is nothing else than Linux kernel. Maintainers
-spent a lot of effort to get rid of all VLA and as of version 4.20 (year 2018)
-it's completely VLA-free.
-</aside>
-<aside class="notice" markdown="1">
-And while we are still at the beginning, I would like to point out that there
-are situations where VLA is a good solution; not many, but they do exist. In the
-future I will do my best to describe them as well and link to the article here.
-</aside>
 
 # Allocation on stack
 
-aVLAs are usually allocated on stack and this is the source of the most of the
-problems. Let's consider a painfully simple, very favourable to aVLA, example:
+Let's address the elephant in the room: aVLA usually are allocated on stack.
+This is the source of the most of the problems, the source of discontent among
+programmers, the reason why even allowing any VLA into the codebase it's usually
+a code smell.
+
+Let's consider a painfully simple, very favourable to aVLA, example:
 ```c
 #include <stdio.h>
 
@@ -61,7 +49,7 @@ Imagine what would be the limit for structure! Or what if it wasn't just `main()
 Maybe a recursive function? The limit shrinks tremendously.
 
 And you don't have any (portable, standard) way to react after a stack
-overflow - the program already crashed, you lost control. So you either need
+overflow - the program already *crashed, you lost control*. So you either need
 to make elaborate checks before declaring an array or betting that user won't
 input too large values (the outcome of such gamble ought to be obvious).
 
@@ -77,8 +65,8 @@ that causes an array to overlap with other allocations, giving them control over
 those values as well. A security nightmare.
 
 <aside class="notice" markdown="1">
-At the cost of further drop of efficiency, in GCC you can
-enable `-fstack-clash-protection` option. It adds _extra_ instructions around
+At the cost of further drop of efficiency, in GCC you can enable
+`-fstack-clash-protection` option. It adds _extra_ instructions around
 variable length stack memory allocations to probe each page of memory at
 allocation time. This mitigates stack-clash attacks by ensuring all stack
 memory allocations are valid or by throwing a segfault if they are not, thus
@@ -121,7 +109,7 @@ language, there are situations where using `malloc()` may not even be possible.
 _\*Sigh\*_ I'm basically going to repeat myself here, but it is really important.
 
 On such device you're not going to have a lot of stack either. So instead of
-dynamically allocating on stack, you should determine how much you need and
+allocating dynamically, you (probably) should determine how much you need and
 just always use that fixed amount.
 
 When using aVLA on system with small amounts of stack, it's really easy to
@@ -139,18 +127,19 @@ yourself in the foot for no real advantage.
 
 Unlike most other dangerous C functionality, aVLA doesn't have the barrier
 of being not known. Many newbies learn to use them via trial and error, but
-don't learn about the pitfalls. Sometimes even an experienced programmer will
-make an mistake and create an aVLA when not intended. The following will
-silently create an aVLA when it's clearly not necessary:
+don't learn about the pitfalls. \\
+The following is a simple mistake I observed even experienced developers making
+(especially those with C++ background); it will silently create an aVLA when
+it's clearly not necessary:
 ```c
 const int n = 10;
 int A[n];
 ```
 Thankfully, any half-decent compiler would notice and optimize aVLA away, but...
-what if it doesn't notice? Or what if for some reason (safety?) the optimizations
+what if it doesn't notice? Or what if, for some reason (safety?), the optimizations
 were not turned on? But it surely isn't so much worse, right? Well...
 
-# Slower than fixed size
+# Way slower than fixed size
 
 Without compiler optimizations a function with [aVLA from previous example](https://godbolt.org/z/c7nPvGGcP)
 will result in **7 times** more Assembly instructions than its
@@ -158,7 +147,7 @@ will result in **7 times** more Assembly instructions than its
 the array definition (look at the body before `jmp .L5`).
 But it's without optimizations - with them the produced Assembly is exactly the same.
 
-So [an example where aVLA isn't by mistake](https://godbolt.org/z/vnf174eej):
+So [an example where aVLA is not used by mistake](https://godbolt.org/z/vnf174eej):
 ```c
 #include <stdio.h>
 void bar(int*, int);
@@ -197,7 +186,7 @@ void bar(int* B, int n) {
 }
 ```
 For our educational purposes in this example, `-O1` level of optimisation will
-work best (as Assembly will be more clear and `-O2` won't help aVLA's case here
+work best (as Assembly will be clearer and `-O2` won't help aVLA's case here
 really much).
 
 When we compile aVLA version, before instructions corresponding to `for` loop, we get:
@@ -217,7 +206,7 @@ sub     rsp, rax       ;
 mov     r14, rsp       ; ... and there "ends"
 ```
 
-aVLA-free version on the other hand generates:
+The aVLA-free version on the other hand generates:
 ```nasm
 push    r12
 push    rbp
@@ -285,17 +274,14 @@ more different complaints.
 Due to all previously presented problems, some compiler providers decided to
 not fully support C99. The primary example is Microsoft with its MSVC.
 The C Standard's Committee also noticed the problem and with C11 revision
-VLAs were made optional.
-
-<aside class="notice" markdown="1">
-C2x is supposed to revert that decision, but aVLA still won't be mandated.
-</aside>
+all VLAs were made optional. C2x is supposed to revert that decision,
+but aVLA still won't be mandated.
 
 That means code using a VLA won't necessarily be compiled by a C11 compiler,
-so you need to check whether it is supported with `__STDC_NO_VLA__` macro and
-make version without VLA as fallback. Wait... if you need to implement VLA-free
-version either way then what's the point of doubling the code and creating VLA
-in the first place?!
+so you need, assuming you target for portability, to check whether it is
+supported with `__STDC_NO_VLA__` macro and make version without (a)VLA as
+fallback. Wait... if you need to implement VLA-free version either way then
+what's the point of doubling the code and creating VLA in the first place?!
 
 <aside class="notice" markdown="1">
 As a side note - C++ doesn't have VLA and nothing suggests it ever will.<br>
@@ -336,19 +322,29 @@ void foo(arr, n, n)
 }
 ```
 
+<aside class="notice" markdown="1">
+There is a chance a GCC extension, _forward declaration of parameters_,
+will be standardized in C2x, assuming we reach consensus on the revision
+of [N2780](https://www.open-std.org/jtc1/sc22/wg14/www/docs/n2780.pdf).
+</aside>
+
 # Conclusion
 
-In short, **avoid VLA**, compile with `-Wvla` flag.
+In short, **avoid VLA**, rather compile with `-Wvla` flag (and definitely with `-Wvla-larger-than=0`).
 
-VLA feature poses dangers, often without giving anything really useful in return.
+VLA feature poses dangers; aVLA often without giving anything really useful in return.
 
-If you find yourself in one of the situations where VLA is a valid solution,
-do use them, but keep in mind the limits I've outlined here.
+If you find yourself in one of the situations where VLA is a valid/good
+solution, of course, do use them, but keep in mind the limits I've outlined here.
 
 <aside class="notice" markdown="1">
 It's probably also worth mentioning that VLAs were inter alia partially
 supposed to be a solution to also problematic, non-standard `alloca()`.
 </aside>
 
-And for the very end, an example of vla lacking all those problems: <br>
-[![Chocolate vla](https://upload.wikimedia.org/wikipedia/commons/b/bb/Chocoladevla.jpg)](https://en.wikipedia.org/wiki/Vla)
+<aside class="notice" markdown="1">
+As you could have guessed by the quote at the beginning, project which used to
+rely on VLA quite extensively is nothing else than Linux kernel. Maintainers
+spent a lot of effort to get rid of all VLA and as of version 4.20 (year 2018)
+it's completely VLA-free.
+</aside>
