@@ -81,6 +81,10 @@ img {
   max-width: 100%;
 }
 
+p + ul, p + ol {
+  margin-top: -1em;
+}
+
 aside {
   background: #171717;
   border: 1px solid #5555;
