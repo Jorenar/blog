@@ -16,10 +16,10 @@ A very useful feature one may think, and indeed... in some cases...
 But since the world we live in is less than ideal, one needs to know well what
 are the pitfalls of using VLA in their code before doing so.
 
-In this text I will divide VLA into two categories:
-
-  * automatic VLA (_aVLA_) - most of the criticism in this article falls on them
-  * pointers to VLA (_pVLA_) - the useful side of the feature which will be covered in another post
+Most of the text will focus on problems caused by automatic VLA, thus to
+further highlight that fact an abbreiviation _aVLA_ will be used. \\
+About good sides of the featue (which mostly include _variably-modified
+types_ - essentialy pointers to VLA) an another article will be written.
 
 
 # Allocation on stack
@@ -330,16 +330,18 @@ of [N2780](https://www.open-std.org/jtc1/sc22/wg14/www/docs/n2780.pdf).
 
 # Conclusion
 
-In short, **avoid VLA**, rather compile with `-Wvla` flag (and definitely with `-Wvla-larger-than=0`).
+In short, refrain from using VLA and **avoid automatic VLA like devil avoids
+holy water**; if your compiler has it, rather compile with `-Wvla` flag
+or similar (and definitely with `-Wvla-larger-than=0` - this allows VM types,
+while warning about aVLA).
 
-VLA feature poses dangers; aVLA often without giving anything really useful in return.
-
-If you find yourself in one of the situations where VLA is a valid/good
+If you find yourself in one of the situations where VLA (or VM type) is a valid/good
 solution, of course, do use them, but keep in mind the limits I've outlined here.
 
 <aside class="notice" markdown="1">
-It's probably also worth mentioning that VLAs were inter alia partially
-supposed to be a solution to also problematic, non-standard `alloca()`.
+It's probably also worth mentioning that VLAs were partially supposed to be
+a solution to also problematic, non-standard `alloca()`. Personally, I would
+rather have `alloca()` standardized (and fixed) instead of VLA.
 </aside>
 
 <aside class="notice" markdown="1">
