@@ -16,8 +16,8 @@ A very useful feature one may think, and indeed... in some cases...
 But since the world we live in is less than ideal, one needs to know well what
 are the pitfalls of using VLA in their code before doing so.
 
-Most of the text will focus on problems caused by automatic VLA, thus to
-further highlight that fact an abbreviation _aVLA_ will be used.
+A fair share of the text will focus on problems caused by automatic VLA,
+thus to further reflect on that an abbreviation _aVLA_ will be used.
 About good sides of the feature (which mostly include _variably-modified
 types_ - essentially pointers to VLA) an another article will be written.
 
