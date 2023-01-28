@@ -266,16 +266,18 @@ on Reddit listing problems encountered with VLA from compiler writer perspective
 >   declared, since the compiler doesn't know the size, it needs to call
 >   `__chkstk` for every such function, even if the size turns out to be small.
 
-And believe me, if you take a stroll around some C forums you will see even
-more different complaints.
+And believe me, if you take a stroll around some C forums (or the meeting of
+standard committee [sic!]) you will see even more different complaints.
 
 # Reduced portability
 
 Due to all previously presented problems, some compiler providers decided to
 not fully support C99. The primary example is Microsoft with its MSVC.
 The C Standard's Committee also noticed the problem and with C11 revision
-all VLAs were made optional. C2x is supposed to revert that decision,
-but aVLA still won't be mandated.
+all instances of VLAs were made optional; C2x is partially reverts that decision
+mandating VM types (aVLA are still optional; there is even a slight sentiment
+towards deprecating them entirely, but removing something from the, nomen omen,
+standard is way harder than putting it in).
 
 That means code using a VLA won't necessarily be compiled by a C11 compiler,
 so you need, assuming you target for portability, to check whether it is
@@ -304,13 +306,15 @@ you cannot do an equivalent of the above:
 void foo(int arr[n][m], int n, int m) { /* arr[i][j] = ... */ } // INVALID!
 ```
 
-You either need to:
-  * break up with the convention:
+You need to break up with the convention and write:
 ```c
 void foo(int n, int m, int arr[n][m]) { /* arr[i][j] = ... */ }
 ```
 
-  * or make use of the obsolescent (and removed from C23 standard) syntax:
+Alternatively, you could use the obsolete syntax (obsolescent even in
+ANSI&nbsp;C; finally removed in C2x), but that would be pointless, as
+compilers don't make parameters checks in such case, so any benefits
+from using VLA would be lost.
 ```c
 void foo(int[*][*], int, int);
 void foo(arr, n, n)
@@ -323,9 +327,9 @@ void foo(arr, n, n)
 ```
 
 <aside class="notice" markdown="1">
-There is a chance a GCC extension, _forward declaration of parameters_,
-will be standardized in C2x, assuming we reach consensus on the revision
-of [N2780](https://www.open-std.org/jtc1/sc22/wg14/www/docs/n2780.pdf).
+There is a chance a GCC extension - _forward declaration of parameters_ - will
+be standardized in C2x (assuming we reach consensus on the revision
+of [N2780](https://www.open-std.org/jtc1/sc22/wg14/www/docs/n2780.pdf)).
 </aside>
 
 # Conclusion
