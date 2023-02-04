@@ -16,6 +16,7 @@ redirect_from:
 
 <aside class="notice" markdown="1">
 **_Ad 1:_** Additionaly you can also:
+  * [Learn Vim the Smart Way](https://learnvim.irian.to)
   * Play free levels of [VIM Adventures](https://vim-adventures.com)
   * Follow [OpenVim](https://openvim.com/) - an interactive Vim tutorial online
   * Try yourself in online [Vim Quiz](https://vim.morzel.net)
