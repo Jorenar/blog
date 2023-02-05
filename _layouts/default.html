@@ -12,11 +12,9 @@
 </head>
 <body>
   <header>
+    <a href="{{ "/" | relative_url }}">Home</a>
     <b>Author: <a rel="author" href="https://joren.ga">Jorengarenar</a></b>
-    <nav>
-      <a href="{{ "/" | relative_url }}">Home</a>
-      <a href="{{ 'feed.xml' | relative_url }}">RSS</a>
-    </nav>
+    <a href="{{ 'feed.xml' | relative_url }}">RSS</a>
   </header>
   <main>
 {{ content }}
