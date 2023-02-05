@@ -147,7 +147,7 @@ will result in **7 times** more Assembly instructions than its
 the array definition (look at the body before `jmp .L5`).
 But it's without optimizations - with them the produced Assembly is exactly the same.
 
-So [an example where aVLA is not used by mistake](https://godbolt.org/z/8c4bYad6T):
+So [an example where aVLA is not used by mistake](https://godbolt.org/z/EYc8n9nva):
 ```c
 #include <stdio.h>
 void bar(int*, int);
