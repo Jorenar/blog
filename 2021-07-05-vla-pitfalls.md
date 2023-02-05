@@ -18,15 +18,14 @@ are the pitfalls of using VLA in their code before doing so.
 
 A fair share of the text will focus on problems caused by automatic VLA,
 thus to further reflect on that an abbreviation _aVLA_ will be used.
-About good sides of the feature (which mostly include _variably-modified
-types_ - essentially pointers to VLA) an another article will be written.
-
+About _variably-modified types_ -- the good (well, relatively) part of
+the feature -- another article will be written.
 
 # Allocation on stack
 
 Let's address the elephant in the room: aVLA usually are allocated on stack.
 This is the source of the most of the problems, the source of discontent among
-programmers, the reason why even allowing any VLA into the codebase it's usually
+programmers, the reason why even allowing any VLA into the codebase is usually
 a code smell.
 
 Let's consider a painfully simple, very favourable to aVLA, example:
@@ -91,10 +90,10 @@ int main(void) {
 }
 ```
 
-In this case I was able to input over 1.3 **billion** on my machine before
-segfault. Almost 2500 times larger size! But I still got the segfault, right?
-Well, the difference is in possibility of checking the value returned by `malloc()`
-and thus being able to, for example, inform the user about the error:
+In this case I was able to input over 1.3 **billion** on my machine before segfault.
+Almost 2500 times larger size! But I still got the segfault, right? Well, the difference
+is in getting at least some chance of checking the value returned by `malloc()` and thus
+being able to, for example, inform the user about the error:
 ```c
     long double* arr = malloc(n * (sizeof *arr));
     if (arr == NULL) {
@@ -112,15 +111,15 @@ On such device you're not going to have a lot of stack either. So instead of
 allocating dynamically, you (probably) should determine how much you need and
 just always use that fixed amount.
 
-When using aVLA on system with small amounts of stack, it's really easy to
-make something which seems to work, but which blows your stack if your function
-gets called from a deep call stack combined with the large amount of data.
+When using aVLA on system with small amounts of stack, it's really easy to make
+something which seems to work, but which blows your stack if your function gets
+called from a deep call stack combined with the large amount of data.
 
-If you always allocate fixed amounts of stack space everywhere, and you test it,
-you know you're good. If you dynamically allocate on stack, you have to test all
-your code paths with all the largest sizes of allocated space, which is much
-harder and much easier to make a mistake. Don't make it even easier to shoot
-yourself in the foot for no real advantage.
+If you always allocate fixed amounts of stack space everywhere, and you test
+it, you know you're good. If you dynamically allocate on stack, you have to
+test all your code paths with all the largest sizes of allocated space, which
+is much harder and much easier to make a mistake. Don't make it even easier to
+shoot yourself in the foot for no real advantage.
 </aside>
 
 # Creation by accident
@@ -141,13 +140,13 @@ were not turned on? But it surely isn't so much worse, right? Well...
 
 # Way slower than fixed size
 
-Without compiler optimizations a function with [aVLA from previous example](https://godbolt.org/z/c7nPvGGcP)
-will result in **7 times** more Assembly instructions than its
-[fixed size counterpart](https://godbolt.org/z/jx94vx84T) before moving past
-the array definition (look at the body before `jmp .L5`).
-But it's without optimizations - with them the produced Assembly is exactly the same.
+Without compiler optimizations a function with [aVLA from previous
+example](https://godbolt.org/z/Pe6sqEqv1) will result in **7 times** more Assembly
+instructions than its [fixed size counterpart](https://godbolt.org/z/7h9zevrPq)
+before moving past the array definition (look at the body before `jmp .L2`).
+But it's without optimizations, with them the produced Assembly is exactly the same.
 
-So [an example where aVLA is not used by mistake](https://godbolt.org/z/EYc8n9nva):
+So [an example where aVLA is not used by mistake](https://godbolt.org/z/4qeYhzTbn):
 ```c
 #include <stdio.h>
 void bar(int*, int);
@@ -169,12 +168,6 @@ void foo(int n) {
 int main(void) {
     foo(10);
     return 0;
-}
-
-void bar(int* B, int n) {
-    for (int i = n; i--;) {
-        printf("%d %d", i, B[i]);
-    }
 }
 ```
 For our educational purposes in this example, `-O1` level of optimisation will
@@ -229,7 +222,8 @@ it's won't work.
 # Mess for compiler writers
 
 Few months ago I saved a [comment](https://www.reddit.com/r/C_Programming/comments/jz2213/are_vlas_bad_even_if_theyre_not_allocated_on_the/gdc3hz6)
-on Reddit listing problems encountered with VLA from compiler writer perspective. I will cite it:
+on Reddit listing problems encountered with VLA from compiler writer perspective.
+I'll allow myself to cite the listed issues:
 
 > * A VLA applies to a type, not an actual array. So you can create a `typedef`
 >   of a VLA type, which "freezes" the value of the expression used, even if
@@ -265,7 +259,7 @@ standard committee [sic!]) you will see even more different complaints.
 
 Due to all previously presented problems, some compiler providers decided to
 not fully support C99. The primary example is Microsoft with its MSVC.
-The C Standard's Committee also noticed the problem and with C11 revision
+The C Standard Committee also noticed the problem and with C11 revision
 all instances of VLAs were made optional; C2x is partially reverts that decision
 mandating VM types (aVLA are still optional; there is even a slight sentiment
 towards deprecating them entirely, but removing something from the, nomen omen,
@@ -278,7 +272,8 @@ fallback. Wait... if you need to implement VLA-free version either way then
 what's the point of doubling the code and creating VLA in the first place?!
 
 <aside class="notice" markdown="1">
-As a side note - C++ doesn't have VLA and nothing suggests it ever will.<br>
+As a side note: C++ doesn't have VLA and nothing suggests
+it ever will (other than as implementation extension).<br>
 Not a dealbreaker, but still point against VLA in C.
 </aside>
 
@@ -310,11 +305,11 @@ from using VLA would be lost.
 ```c
 void foo(int[*][*], int, int);
 void foo(arr, n, n)
-        int n;
-        int m;
-        int arr[n][m]
+    int n;
+    int m;
+    int arr[n][m]
 {
-        // arr[i][j] = ...
+    // arr[i][j] = ...
 }
 ```
 
@@ -328,7 +323,7 @@ of [N2780](https://www.open-std.org/jtc1/sc22/wg14/www/docs/n2780.pdf)).
 
 In short, refrain from using VLA and **avoid automatic VLA like devil avoids
 holy water**; if your compiler has it, rather compile with `-Wvla` flag
-or similar (and definitely with `-Wvla-larger-than=0` - this allows VM types,
+or similar (and definitely with `-Wvla-larger-than=0` - this allows VM&nbsp;types,
 while warning about aVLA).
 
 If you find yourself in one of the situations where VLA (or VM type) is a valid/good
@@ -336,8 +331,8 @@ solution, of course, do use them, but keep in mind the limits I've outlined here
 
 <aside class="notice" markdown="1">
 It's probably also worth mentioning that VLAs were partially supposed to be
-a solution to also problematic, non-standard `alloca()`. Personally, I would
-rather have `alloca()` standardized (and fixed) instead of VLA.
+a solution to non-standard `alloca()` function, which even more problematic
+when it comes to stack.
 </aside>
 
 <aside class="notice" markdown="1">
