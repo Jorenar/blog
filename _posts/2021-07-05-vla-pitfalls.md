@@ -147,32 +147,24 @@ will result in **7 times** more Assembly instructions than its
 the array definition (look at the body before `jmp .L5`).
 But it's without optimizations - with them the produced Assembly is exactly the same.
 
-So [an example where aVLA is not used by mistake](https://godbolt.org/z/vnf174eej):
+So [an example where aVLA is not used by mistake](https://godbolt.org/z/8c4bYad6T):
 ```c
 #include <stdio.h>
 void bar(int*, int);
 
-#if 1 // 1 for aVLA, 0 for aVLA-free
-
 void foo(int n) {
+
+#if VLA
     int A[n];
-    for (int i = n; i--;) {
-        scanf("%d", &A[i]);
-    }
-    bar(A, n);
-}
-
 #else
-
-void foo(int n) {
     int A[1000];  // Let's make it bigger than 10! (or there won't be what to examine)
+#endif
+
     for (int i = n; i--;) {
         scanf("%d", &A[i]);
     }
     bar(A, n);
 }
-
-#endif
 
 int main(void) {
     foo(10);
