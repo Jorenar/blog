@@ -13,12 +13,10 @@ body {
 
 body > header {
   display: flex;
+  border-bottom: 1px solid #404040;
   justify-content: space-between;
-  margin: 1em 0;
-}
-
-body > header nav > * {
-  margin-left: 1em;
+  margin: 0.5em 0;
+  padding-bottom: 0.1em;
 }
 
 main {
@@ -33,7 +31,6 @@ main > header > h1 {
 
 main > header > time {
   font-size: 0.8em;
-  margin-left: auto;
 }
 
 footer {
@@ -94,6 +91,7 @@ aside > :last-child {
   margin-bottom: 0;
 }
 
+
 code {
   font-size: 0.8em;
 }
@@ -117,6 +115,7 @@ pre, p > code {
   font-size: 1.3em;
   text-align: left;
 }
+
 
 .yt-container {
   padding-bottom: 56.25%;
