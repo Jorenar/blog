@@ -13,7 +13,7 @@
 <body>
   <header>
     <a href="{{ "/" | relative_url }}">Home</a>
-    <b>Author: <a rel="author" href="https://joren.ga">Jorengarenar</a></b>
+    <b>Author: <a rel="author" href="https://joren.ga">{{ site.author | escape }}</a></b>
     <a href="{{ 'feed.xml' | relative_url }}">RSS</a>
   </header>
   <main>
