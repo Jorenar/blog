@@ -98,10 +98,6 @@ code {
   font-size: 0.8em;
 }
 
-pre, code {
-  background: #212121;
-}
-
 pre {
   overflow: auto;
   padding: 10px;
