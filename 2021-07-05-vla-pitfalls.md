@@ -18,8 +18,8 @@ are the pitfalls of using VLA in their code before doing so.
 
 A fair share of the text will focus on problems caused by automatic VLA,
 thus to further reflect on that an abbreviation _aVLA_ will be used.
-About _variably-modified types_ -- the good (well, relatively) part of
-the feature -- another article will be written.
+About _variably-modified types_ -- the better (well, relatively) part of
+the feature, another article will be written.
 
 # Allocation on stack
 
@@ -35,17 +35,18 @@ Let's consider a painfully simple, very favourable to aVLA, example:
 int main(void) {
     int n;
     scanf("%d", &n);
-    long double arr[n];
-    printf("%Lf", arr[0]);
+    char arr[n];
+    printf("%d", arr[0]);
     return 0;
 }
 ```
 
 As we can see, it takes a number from user then makes array of that size. Compile
 and try it. Check how big values you can input before getting segfault caused
-by stack overflow. In my case, it was around half a million. With primitive type!
-Imagine what would be the limit for structure! Or what if it wasn't just `main()`?
-Maybe a recursive function? The limit shrinks tremendously.
+by stack overflow. [In my case, it was around 8 MiB](https://godbolt.org/z/45arWxWo7).
+How much is that? One raw image? a MP3 or two? few seconds of video? And the program
+wasn't doing anything meaningful - what if it wasn't just `main()`? Maybe a recursive
+function? The limit shrinks tremendously.
 
 And you don't have any (portable, standard) way to react after a stack
 overflow - the program already *crashed, you lost control*. So you either need
@@ -75,7 +76,7 @@ turning a possible code-execution attack into a denial of service.
 ## So how to fix this example?
 
 What if I need to let user define size and creating ridiculously large fixed
-array would be too wasteful? It's simple - use `malloc()`!
+array would be too wasteful? It's&nbsp;simple:&nbsp;use&nbsp;`malloc()`!
 ```c
 #include <stdio.h>
 #include <stdlib.h>
@@ -83,44 +84,49 @@ array would be too wasteful? It's simple - use `malloc()`!
 int main(void) {
     int n;
     scanf("%d", &n);
-    long double* arr = malloc(n * (sizeof *arr));
-    printf("%Lf", arr[0]);
+    char* arr = malloc(n * (sizeof *arr));
+    printf("%d", arr[0]);
     free(arr);
     return 0;
 }
 ```
 
-In this case I was able to input over 1.3 **billion** on my machine before segfault.
-Almost 2500 times larger size! But I still got the segfault, right? Well, the difference
-is in getting at least some chance of checking the value returned by `malloc()` and thus
-being able to, for example, inform the user about the error:
+In this case I was able to request over 4.5 GB before segfault. Almost few orders
+of magnitude more! But I still got the segfault, right? Well, the difference
+is in getting at least some\* chance of checking the value returned by `malloc()`
+and thus being able to, for example, inform the user about the error:
 ```c
-    long double* arr = malloc(n * (sizeof *arr));
+    char* arr = malloc(n * (sizeof *arr));
     if (arr == NULL) {
         perror("malloc()"); // output: "malloc(): Cannot allocate memory"
     }
 ```
-
 <aside class="notice" markdown="1">
+\* Only "some" chance because while it usually doesn't cause problems,
+operating systems may (and do) use something called [memory overcommitment](https://en.wikipedia.org/wiki/Memory_overcommitment)
+which rarely, but still, may be a little... [broken sometimes](https://www.win.tue.nl/~aeb/linux/lk/lk-9.html#ss9.6).
+</aside>
+
+### "but I cannot use `malloc()`!"
+
 I've encountered a counterargument, that as C is often used as a systems/embedded
 language, there are situations where using `malloc()` may not even be possible.
 
-_\*Sigh\*_ I'm basically going to repeat myself here, but it is really important.
+I'm basically going to repeat myself here, but it is really important:
 
-On such device you're not going to have a lot of stack either. So instead of
-allocating dynamically, you (probably) should determine how much you need and
-just always use that fixed amount.
+1. Such device rather is not going to have a lot of stack either. So instead of
+   allocating dynamically, you (probably) should determine how much you need and
+   just always use that fixed amount.
 
-When using aVLA on system with small amounts of stack, it's really easy to make
-something which seems to work, but which blows your stack if your function gets
-called from a deep call stack combined with the large amount of data.
+2. When using aVLA on system with small amounts of stack, it's really easy to make
+   something which seems to work, but which blows your stack if your function gets
+   called from a deep call stack combined with the large amount of data.
 
-If you always allocate fixed amounts of stack space everywhere, and you test
-it, you know you're good. If you dynamically allocate on stack, you have to
-test all your code paths with all the largest sizes of allocated space, which
-is much harder and much easier to make a mistake. Don't make it even easier to
-shoot yourself in the foot for no real advantage.
-</aside>
+3. If you always allocate fixed amounts of stack space everywhere, and you test
+   it, you know you're good. If you dynamically allocate on stack, you have to
+   test all your code paths with all the largest sizes of allocated space, which
+   is much harder and much easier to make a mistake. Don't make it even easier to
+   shoot yourself in the foot for no real advantage.
 
 # Creation by accident
 
@@ -215,9 +221,9 @@ To add more to the issue with inadvertent aVLA, the following isn't allowed:
 int n = 10;
 int A[n] = { 0 };
 ```
-Even with optimizations, initialisation isn't allowed for aVLAs. So despite
+Even with optimizations, initialisation isn't allowed for aVLA. So despite
 wanting fixed size array and compiler being technically able to provide one,
-it's won't work.
+it's won't work (and if it does... it's breaking the specification...).
 
 # Mess for compiler writers
 
@@ -337,7 +343,7 @@ when it comes to stack.
 
 <aside class="notice" markdown="1">
 As you could have guessed by the quote at the beginning, project which used to
-rely on VLA quite extensively is nothing else than Linux kernel. Maintainers
-spent a lot of effort to get rid of all VLA and as of version 4.20 (year 2018)
-it's completely VLA-free.
+rely on VLA quite extensively (209 unique locations reported in 60 directories!)
+is nothing else than Linux kernel. Maintainers spent a lot of effort to get rid
+of all VLA and as of version 4.20 (year 2018) it's completely VLA-free.
 </aside>
