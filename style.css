@@ -1,6 +1,6 @@
 body {
-  background-color: #151518;
-  color: #ccc;
+  background-color: #000;
+  color: #dddd;
   display: flex;
   flex-direction: column;
   font-family: Times, serif;
@@ -11,7 +11,7 @@ body {
   text-align: justify;
 }
 
-body > header {
+nav {
   display: flex;
   border-bottom: 1px solid #404040;
   justify-content: space-between;
@@ -24,12 +24,12 @@ main {
   padding: 10px;
 }
 
-main > header > h1 {
+header > h1 {
   font-size: 2em;
   margin-top: 0;
 }
 
-main > header > time {
+header > time {
   font-size: 0.8em;
 }
 
@@ -52,13 +52,13 @@ h1, h2, h3, h4, h5 {
 }
 
 a {
-  color: #ccc;
+  color: inherit;
   text-decoration: underline dotted 1px #666;
   text-underline-offset: 3px;
 }
 
 a:visited {
-  color: #ccc;
+  color: inherit;
 }
 
 blockquote {
@@ -76,8 +76,7 @@ p + ul, p + ol {
 }
 
 aside {
-  background: #171717;
-  border: 1px solid #5555;
+  border: 1px solid #8883;
   font-size: 0.9em;
   margin: 1em auto;
   padding: 0.5em;
@@ -91,6 +90,9 @@ aside > :last-child {
   margin-bottom: 0;
 }
 
+aside:not(:hover) {
+  color: #bbbb;
+}
 
 code {
   font-size: 0.8em;
@@ -105,11 +107,13 @@ pre {
   padding: 10px;
 }
 
-pre, p > code {
-  padding: 2px;
-  border: 1px solid #404040;
+p > code {
+  padding: 0 2px;
 }
 
+pre, p > code {
+  border: 1px solid #4444;
+}
 
 .post-list {
   font-size: 1.3em;
