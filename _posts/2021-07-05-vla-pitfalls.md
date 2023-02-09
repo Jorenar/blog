@@ -17,9 +17,8 @@ But since the world we live in is less than ideal, one needs to know well what
 are the pitfalls of using VLA in their code before doing so.
 
 A fair share of the text will focus on problems caused by automatic VLA,
-thus to further reflect on that an abbreviation _aVLA_ will be used.
-About _variably-modified types_ -- the better (well, relatively) part of
-the feature, another article will be written.
+thus to further reflect on that an abbreviation _aVLA_ will be used. About the
+better (well, relatively) part of the feature, another article will be written.
 
 # Allocation on stack
 
