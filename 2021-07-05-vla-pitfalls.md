@@ -9,16 +9,18 @@ redirect_from:
 > It generates much more code, and much _slower_ code (and more fragile code),
   than just using a fixed key size would have done ~ [Linus Torvalds](https://lkml.org/lkml/2018/3/7/621)
 
-VLA (**variable-length array**, an array - *array*, not just block of memory
-acting like one - that has size determined during runtime instead of at compile
+VLA (**variable-length array**, an array -- *array*, not just block of memory
+acting like one -- that has size determined during runtime instead of at compile
 time) is a feature introduced to C with the revision C99 of the standard.
 A very useful feature one may think, and indeed... in some cases...
 But since the world we live in is less than ideal, one needs to know well what
 are the pitfalls of using VLA in their code before doing so.
 
-A fair share of the text will focus on problems caused by automatic VLA,
-thus to further reflect on that an abbreviation _aVLA_ will be used. About the
-better (well, relatively) part of the feature, another article will be written.
+If you want to know when VLA may be useful, you can check [my other blogpost](/vla-usecases).
+
+A fair share of the text here will focus on problems caused by automatic VLA,
+thus to further reflect on that an abbreviation _aVLA_ will be used when
+refferng to those cases.
 
 # Allocation on stack
 
