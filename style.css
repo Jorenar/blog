@@ -13,6 +13,7 @@ body {
 
 nav {
   display: flex;
+  font-size: 0.8em;
   border-bottom: 1px solid #404040;
   justify-content: space-between;
   margin: 0.5em 0;
@@ -24,12 +25,12 @@ main {
   padding: 10px;
 }
 
-header > h1 {
+header h1 {
   font-size: 2em;
   margin-top: 0;
 }
 
-header > time {
+header time {
   font-size: 0.8em;
 }
 
@@ -71,27 +72,20 @@ img {
   max-width: 100%;
 }
 
-p + ul, p + ol {
-  margin-top: -1em;
+p {
+  margin: 0;
+}
+
+p + p {
+  margin-top: 1em;
 }
 
 aside {
   border: 1px solid #8883;
+  color: #bbbb;
   font-size: 0.9em;
   margin: 1em auto;
   padding: 0.5em;
-}
-
-aside > :first-child {
-  margin-top: 0;
-}
-
-aside > :last-child {
-  margin-bottom: 0;
-}
-
-aside:not(:hover) {
-  color: #bbbb;
 }
 
 code {
@@ -103,12 +97,8 @@ pre {
   padding: 10px;
 }
 
-p > code {
-  padding: 0 2px;
-}
-
-pre, p > code {
-  border: 1px solid #4444;
+pre {
+  border: 1px dashed #111;
 }
 
 .post-list {
