@@ -11,16 +11,13 @@
   <link type="application/atom+xml" rel="alternate" href="{{ "/feed.xml" | relative_url }}" title="Jorengarenar">
 </head>
 <body>
-  <nav>
-    <a href="{{ "/" | relative_url }}">Home</a>
-    <b>Author: <a rel="author" href="https://joren.ga">{{ site.author | escape }}</a></b>
-    <a href="{{ 'feed.xml' | relative_url }}">RSS</a>
-  </nav>
   <main>
 {{ content }}
   </main>
   <footer>
-    <span>Copyright &copy; {{ site.author }}</span>
+    <a href="{{ "/" | relative_url }}">Index</a>
+    <span>Copyright &copy; <a rel="author" href="https://joren.ga">{{ site.author | escape }}</a></span>
+    <a href="{{ 'feed.xml' | relative_url }}">RSS</a>
     <a href="{{ site.baseurl }}/sitemap.xml"></a>
   </footer>
 </body>
