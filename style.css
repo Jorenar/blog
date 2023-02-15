@@ -11,15 +11,6 @@ body {
   text-align: justify;
 }
 
-nav {
-  display: flex;
-  font-size: 0.8em;
-  border-bottom: 1px solid #404040;
-  justify-content: space-between;
-  margin: 0.5em 0;
-  padding-bottom: 0.1em;
-}
-
 main {
   flex: 1 0 auto;
   padding: 10px;
@@ -38,6 +29,8 @@ footer {
   text-align: center;
   border-top: 1px solid #404040;
   padding: 10px;
+  display: flex;
+  justify-content: space-between;
 }
 
 
@@ -95,9 +88,6 @@ code {
 pre {
   overflow: auto;
   padding: 10px;
-}
-
-pre {
   border: 1px dashed #111;
 }
 
