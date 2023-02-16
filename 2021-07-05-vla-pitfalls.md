@@ -338,7 +338,7 @@ solution, of course, do use them, but keep in mind the limits I've outlined here
 
 <aside class="notice" markdown="1">
 It's probably also worth mentioning that VLAs were partially supposed to be
-a solution to non-standard `alloca()` function, which even more problematic
+a solution to non-standard `alloca()` function, which is even more problematic
 when it comes to stack.
 </aside>
 
