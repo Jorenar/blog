@@ -89,11 +89,21 @@ aside {
   padding: 0.5em;
 }
 
+table {
+  border-collapse: collapse;
+  margin: 1em auto;
+}
+
+tr, td, th {
+  border: 1px solid #ddd;
+  padding: 0.5em;
+}
+
 code {
   font-size: 0.8em;
 }
 
-p > code {
+:not(pre) > code {
   padding: 2px;
   border: 1px dashed #333;
 }
