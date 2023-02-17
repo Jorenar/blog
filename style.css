@@ -16,13 +16,16 @@ main {
   padding: 10px;
 }
 
-header h1 {
+header {
   font-size: 2em;
-  margin: 0 auto 0.5em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
 }
 
-header time {
+time {
+  float: right;
   font-size: 0.8em;
+  margin-top: 1em;
 }
 
 footer {
