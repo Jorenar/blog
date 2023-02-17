@@ -2,9 +2,8 @@
 layout: default
 ---
 
-<header>
-  <time datetime="{{ page.date | date_to_xmlschema }}"> {{ page.date | date: "%F" }} </time>
-  <h1>{{ page.title | escape }}</h1>
-</header>
+<header>{{ page.title | escape }}</header>
 
 {{ content }}
+
+<time datetime="{{ page.date | date_to_xmlschema }}"> {{ page.date | date: "%F" }} </time>
