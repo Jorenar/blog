@@ -16,7 +16,8 @@ A very useful feature one may think, and indeed... in some cases...
 But since the world we live in is less than ideal, one needs to know well what
 are the pitfalls of using VLA in their code before doing so.
 
-If you want to know when VLA may be useful, you can check [my other blogpost](/vla-usecases).
+If you want to know the few cases when VLA may actually
+be useful you can check [my other blogpost](/vla-usecases).
 
 A fair share of the text here will focus on problems caused by automatic VLA,
 thus to further reflect on that an abbreviation _aVLA_ will be used when
