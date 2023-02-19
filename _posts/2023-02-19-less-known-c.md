@@ -404,13 +404,17 @@ about whitespace.
 
 `n --> 0` is equivalent of `(n--) > 0`
 
-## Negative array indexes
+## `5[arr]`
 
-I think the following relation is actually quite well known and understood:
+Square brace notation of accessing array elements is a syntactinc sugar for pointer arithmetics:
 
 <div markdown="1" style="width:100%; text-align:center">
 `arr[5]` &equiv; `*(arr + 5)` &equiv; `*(5 + arr)` &equiv; `5[arr]`
 </div>
+
+## Negative array indexes
+
+I had an array
 
 ## Constant string concatenation
 
