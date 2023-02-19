@@ -465,7 +465,7 @@ int main(void)
 The compiler will probably scream warnings at you
 as it's really uncommon to do this in C code.
 
-## [Compile-time assumption-checking using `enum`s](https://stackoverflow.com/a/1715239/10247460)
+## [Compile time assumption checking using `enum`s](https://stackoverflow.com/a/1715239/10247460)
 
 ```c
 #define D 1
