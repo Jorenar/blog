@@ -729,3 +729,17 @@ int main(void)
 > reconfigures stock GCC and Clang to output a POSIX-approved polyglot format
 > that runs natively on Linux + Mac + Windows + FreeBSD + OpenBSD + NetBSD + BIOS
 > with the best possible performance and the tiniest footprint imaginable.
+
+## Inline assembly
+
+For a high-level language C communicates quite well with low-level world. You
+can write Assembly code and link it against program written in C quite easily.
+In addition to that, many compilers offer as an extension (listed as common
+in Annex J of the C Standard) a feature called _inline assembly_, typically
+introduced to the code by the `asm` keyword.
+
+* [Inline Assembly - OSDev Wiki](https://wiki.osdev.org/Inline_assembly)
+* [Inline assembly - cppreference.com](https://en.cppreference.com/w/c/language/asm)
+* [Inline Assembler (C) | Microsoft Learn](https://learn.microsoft.com/en-us/cpp/c-language/inline-assembler-c)
+* [Writing inline assembly code - Arm Compiler for Embedded User Guide](https://developer.arm.com/documentation/100748/0619/Using-Assembly-and-Intrinsics-in-C-or-C---Code/Writing-inline-assembly-code)
+* [Inline Assembly in C/C++ - University of Alaska Fairbanks](https://www.cs.uaf.edu/courses/cs301/2014-fall/notes/inline-assembly/)
