@@ -414,8 +414,6 @@ Square brace notation of accessing array elements is a syntactinc sugar for poin
 
 ## Negative array indexes
 
-I had an array
-
 ## Constant string concatenation
 
 You don't need `sprintf()` (nor `strcat()`!) to concatenate strings literals:
