@@ -523,7 +523,7 @@ int main()
 }
 ```
 
-## Flat Initializer Lists
+## Flat initializer lists
 
 ```
 int arr[3][3] = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
@@ -740,6 +740,6 @@ introduced to the code by the `asm` keyword.
 
 * [Inline Assembly - OSDev Wiki](https://wiki.osdev.org/Inline_assembly)
 * [Inline assembly - cppreference.com](https://en.cppreference.com/w/c/language/asm)
-* [Inline Assembler (C) | Microsoft Learn](https://learn.microsoft.com/en-us/cpp/c-language/inline-assembler-c)
+* [Inline Assembler (C) \| Microsoft Learn](https://learn.microsoft.com/en-us/cpp/c-language/inline-assembler-c)
 * [Writing inline assembly code - Arm Compiler for Embedded User Guide](https://developer.arm.com/documentation/100748/0619/Using-Assembly-and-Intrinsics-in-C-or-C---Code/Writing-inline-assembly-code)
 * [Inline Assembly in C/C++ - University of Alaska Fairbanks](https://www.cs.uaf.edu/courses/cs301/2014-fall/notes/inline-assembly/)
