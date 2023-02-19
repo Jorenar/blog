@@ -104,7 +104,7 @@ code {
 }
 
 pre, :not(pre) > code {
-  padding: 2px;
+  padding: 0 2px;
   background: #0a0a0a;
   border: 1px dashed #333;
 }
