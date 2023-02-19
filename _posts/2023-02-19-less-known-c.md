@@ -384,6 +384,24 @@ send(to, from, count)
 }
 ```
 
+## `-->` "operator"
+
+The following is correct C code:
+
+```c
+size_t n = 10;
+while (n --> 0) {
+    printf("%d\n", n);
+}
+```
+
+You may ask, since when C has such operator and the answer is: since never.
+`-->` is not an operator, but two separate operators `--` and `>` written
+in a way they look like one. It's possible, because C cares less than more
+about whitespace.
+
+`n --> 0` is equivalent of `(n--) > 0`
+
 ## Constant string concatenation
 
 You don't need `sprintf()` (nor `strcat()`!) to concatenate strings literals:
