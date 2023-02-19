@@ -717,6 +717,7 @@ int main(void)
 >     };
 > };
 > ```
+
 ## Garbage collector
 
 [Boehm GC](https://www.hboehm.info/gc/) is a library providing garbage collector for C and C++
