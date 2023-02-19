@@ -20,7 +20,7 @@ sloppier short explanation and/or examples (or quote of thereof).
 </aside>
 
 <aside markdown="1">
-**WARNING:** Something being listed here does **_not_** mean encouragement to use it!
+**WARNING:** Something being listed here does **_not_** automatically mean encouragement to use it!
 </aside>
 
 ## Array pointers
