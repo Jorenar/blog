@@ -414,6 +414,17 @@ Square brace notation of accessing array elements is a syntactinc sugar for poin
 
 ## Negative array indexes
 
+For quick and dirty debugging purposes I wanted to check if padding at the end
+of an array is filled with correct value, but I didn't know where the padding
+starts. Thus I did the following:
+
+```c
+int* end = arr + (len - 1);
+if (end[0] == VAL && end[-1] == VAL && end[-5] == VAL) {
+    puts("Correct padding");
+}
+```
+
 ## Constant string concatenation
 
 You don't need `sprintf()` (nor `strcat()`!) to concatenate strings literals:
