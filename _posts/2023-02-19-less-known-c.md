@@ -186,30 +186,47 @@ struct cat {
 
 ## 0 bit fields
 
-An example taken from the [SO answer](https://stackoverflow.com/a/4286818/10247460):
+* [What does an unnamed zero length bit-field mean in C? - Stack Overflow](https://stackoverflow.com/q/45916894/10247460)
+* [Practical Use of Zero-Length Bitfields - Stack Overflow](https://stackoverflow.com/q/4297095/10247460)
+* [IBM Documentation - IBM Documentation](https://www.ibm.com/docs/en/xcafbg/9.0.0?topic=SS3KZ4_9.0.0/com.ibm.xlcpp9.bg.doc/proguide/calgnbit.html)
+* [Bit fields - cppreference.com](https://en.cppreference.com/w/c/language/bit_field)
 
-> I discovered recently 0 bit fields.
->
+Description from [Arm Compiler 6 docs](https://developer.arm.com/documentation/ka004594/latest):
+
+> A zero-length bit-field can be used to make the following changes:
+>   * Creates a boundary between any bit-fields before the zero-length bit-field
+>     and any bit-fields after the zero-length bit-field. Any bit-fields on
+>     opposite sides of the boundary are treated as non-overlapping memory
+>     locations. This has a consequence for C and C++ programs. The C and C++
+>     standards require both load and store accesses to a bit-field on one side
+>     of the boundary to not access any bit-fields on the other side of the boundary.
+>   * Insert padding to align any bit-fields after the zero-length bit-field to
+>     the next available natural boundary based on the type of the zero-length
+>     bit-field. For example, `char:0` can be used to align to the next available
+>     byte boundary, and `int:0` can be used to align to the next available word boundary.
+
+An example taken from the [SO answer](https://stackoverflow.com/a/26725041/10247460) (with slight changes):
+
 > ```c
-> struct {
->    int a : 3;
->    int b : 2;
->    int   : 0;
->    int c : 4;
->    int d : 3;
-> };
+> struct bar {
+>     unsigned char x : 5;
+>     unsigned short  : 0;
+>     unsigned char y : 7;
+> }
 > ```
 >
-> which will give a layout of:
+> The above in memory would look like this (assuming 16-bit `short`, ignoring endian):
 >
-> <code><mark>000</mark>aaabb <mark>0</mark>ccccddd</code>
+> ```
+> char pad pad      short boundary
+>  |    |   |        |
+>  v    v   v        v
+>  xxxxx000 00000000 yyyyyyy0
+> ```
 >
-> instead of without the `:0`:
->
-> <code><mark>0000</mark>aaab bccccddd</code>
->
-> The 0 width field tells that the following bit fields should be set on the
-> next atomic entity (`char`).
+> The zero-length bit field causes the position to move to next `short` boundary
+> (or: be placed on the nearest natural alignment for the target platform).
+> We defined `short` to be 16-bit, so 16 minus 5 gives 11 bits of padding.
 
 ## `volatile` type qualifier
 
