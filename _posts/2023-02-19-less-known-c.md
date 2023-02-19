@@ -406,10 +406,11 @@ about whitespace.
 
 ## Negative array indexes
 
-I think the following relation is actually quite well known and understood:  
-<span markdown="1" style="width:100%; text-align:center">
-`arr[5]` = `*(arr + 5)` = `*(5 + arr)` = `5[arr]`
-</span>
+I think the following relation is actually quite well known and understood:
+
+<div markdown="1" style="width:100%; text-align:center">
+`arr[5]` &equiv; `*(arr + 5)` &equiv; `*(5 + arr)` &equiv; `5[arr]`
+</div>
 
 ## Constant string concatenation
 
