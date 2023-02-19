@@ -14,7 +14,7 @@ redirect_from:
  5. [`:h quickref`](https://vimhelp.org/quickref.txt.html) - quick reference guide
  6. [idiomatic vimrc](https://github.com/romainl/idiomatic-vimrc) by [romainl](http://romainl.github.io/)
 
-<aside class="notice" markdown="1">
+<aside markdown="1">
 **_Ad 1:_** Additionaly you can also:
   * [Learn Vim the Smart Way](https://learnvim.irian.to)
   * Play free levels of [VIM Adventures](https://vim-adventures.com)
@@ -22,7 +22,7 @@ redirect_from:
   * Try yourself in online [Vim Quiz](https://vim.morzel.net)
 </aside>
 
-<aside class="notice" markdown="1">
+<aside markdown="1">
 Further down the road:
   * Read humorous [Vim Kōans](https://blog.sanctum.geek.nz/vim-koans)
   * [Your problem with Vim is that you don't grok vi](https://stackoverflow.com/a/1220118/10247460)

@@ -66,7 +66,7 @@ The worst case is an exploitable vulnerability, where attacker may choose a valu
 that causes an array to overlap with other allocations, giving them control over
 those values as well. A security nightmare.
 
-<aside class="notice" markdown="1">
+<aside markdown="1">
 At the cost of further drop of efficiency, in GCC you can enable
 `-fstack-clash-protection` option. It adds _extra_ instructions around
 variable length stack memory allocations to probe each page of memory at
@@ -103,7 +103,7 @@ and thus being able to, for example, inform the user about the error:
         perror("malloc()"); // output: "malloc(): Cannot allocate memory"
     }
 ```
-<aside class="notice" markdown="1">
+<aside markdown="1">
 \* Only "some" chance because while it usually doesn't cause problems,
 operating systems may (and do) use something called [memory overcommitment](https://en.wikipedia.org/wiki/Memory_overcommitment)
 which rarely, but still, may be a little... [broken sometimes](https://www.win.tue.nl/~aeb/linux/lk/lk-9.html#ss9.6).
@@ -279,7 +279,7 @@ supported with `__STDC_NO_VLA__` macro and make version without (a)VLA as
 fallback. Wait... if you need to implement VLA-free version either way then
 what's the point of doubling the code and creating VLA in the first place?!
 
-<aside class="notice" markdown="1">
+<aside markdown="1">
 As a side note: C++ doesn't have VLA and nothing suggests
 it ever will (other than as implementation extension).<br>
 Not a dealbreaker, but still point against VLA in C.
@@ -321,7 +321,7 @@ void foo(arr, n, n)
 }
 ```
 
-<aside class="notice" markdown="1">
+<aside markdown="1">
 There is a chance a GCC extension - _forward declaration of parameters_ - will
 be standardized in C2x (assuming we reach consensus on the revision
 of [N2780](https://www.open-std.org/jtc1/sc22/wg14/www/docs/n2780.pdf)).
@@ -337,13 +337,13 @@ while warning about aVLA).
 If you find yourself in one of the situations where VLA (or VM type) is a valid/good
 solution, of course, do use them, but keep in mind the limits I've outlined here.
 
-<aside class="notice" markdown="1">
+<aside markdown="1">
 It's probably also worth mentioning that VLAs were partially supposed to be
 a solution to non-standard `alloca()` function, which is even more problematic
 when it comes to stack.
 </aside>
 
-<aside class="notice" markdown="1">
+<aside markdown="1">
 As you could have guessed by the quote at the beginning, project which used to
 rely on VLA quite extensively (209 unique locations reported in 60 directories!)
 is nothing else than Linux kernel. Maintainers spent a lot of effort to get rid

@@ -9,7 +9,7 @@ the language!) which seems to throw even experienced developers off the track.
 Thus I did a sloppy job of gathering some of them in this post with even
 sloppier short explanation and/or examples (or quote of thereof).
 
-<aside class="notice" markdown="1">
+<aside markdown="1">
 * [Hidden features of C - Stack Overflow](https://stackoverflow.com/q/132241/10247460)
 * [Lesser known C features](https://d3s.mff.cuni.cz/legacy/~holub/c_features.html)
 * [Mildly interesting quirks of C \| Hacker News](https://news.ycombinator.com/item?id=33680239)
@@ -75,7 +75,7 @@ treated by the compiler as other characters.
 | -------- | ----------- | | -------- | ----------- | | `xor`    | `^`  |
 | -------- | ----------- | | -------- | ----------- | | `xor_eq` | `^=` |
 
-<aside class="notice" markdown="1">
+<aside markdown="1">
 Despite there being small opposition, the C Standard Committee
 decided to remove support for trigraphs from C23.
 </aside>
