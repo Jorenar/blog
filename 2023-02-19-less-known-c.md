@@ -195,6 +195,8 @@ struct cat {
 * [IBM Documentation - IBM Documentation](https://www.ibm.com/docs/en/xcafbg/9.0.0?topic=SS3KZ4_9.0.0/com.ibm.xlcpp9.bg.doc/proguide/calgnbit.html)
 * [Bit fields - cppreference.com](https://en.cppreference.com/w/c/language/bit_field)
 
+<span></span>
+
 Description from [Arm Compiler 6 docs](https://developer.arm.com/documentation/ka004594/latest):
 
 > A zero-length bit-field can be used to make the following changes:
@@ -381,6 +383,45 @@ send(to, from, count)
     case 1:      *to = *from++;
             } while (--n > 0);
     }
+}
+```
+
+## `-->` "operator"
+
+The following is correct C code:
+
+```c
+size_t n = 10;
+while (n --> 0) {
+    printf("%d\n", n);
+}
+```
+
+You may ask, since when C has such operator and the answer is: since never.
+`-->` is not an operator, but two separate operators `--` and `>` written
+in a way they look like one. It's possible, because C cares less than more
+about whitespace.
+
+`n --> 0` is equivalent of `(n--) > 0`
+
+## `5[arr]`
+
+Square brace notation of accessing array elements is a syntactinc sugar for pointer arithmetics:
+
+<div markdown="1" style="width:100%; text-align:center">
+`arr[5]` &equiv; `*(arr + 5)` &equiv; `*(5 + arr)` &equiv; `5[arr]`
+</div>
+
+## Negative array indexes
+
+For quick and dirty debugging purposes I wanted to check if padding at the end
+of an array is filled with correct value, but I didn't know where the padding
+starts. Thus I did the following:
+
+```c
+int* end = arr + (len - 1);
+if (end[0] == VAL && end[-1] == VAL && end[-5] == VAL) {
+    puts("Correct padding");
 }
 ```
 
