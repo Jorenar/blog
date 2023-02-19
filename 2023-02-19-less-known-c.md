@@ -19,6 +19,10 @@ sloppier short explanation and/or examples (or quote of thereof).
 * [Rob's Programming Blog: How Well Do You Know C?](http://www.robertgamble.net/2011/05/how-well-do-you-know-c.html)
 </aside>
 
+<aside markdown="1">
+**WARNING:** Something being listed here does **_not_** mean encouragement to use it!
+</aside>
+
 ## Array pointers
 
 Decay-to-pointer makes regular pointers to array usually not needed:
