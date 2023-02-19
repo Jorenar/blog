@@ -195,6 +195,8 @@ struct cat {
 * [IBM Documentation - IBM Documentation](https://www.ibm.com/docs/en/xcafbg/9.0.0?topic=SS3KZ4_9.0.0/com.ibm.xlcpp9.bg.doc/proguide/calgnbit.html)
 * [Bit fields - cppreference.com](https://en.cppreference.com/w/c/language/bit_field)
 
+<span></span>
+
 Description from [Arm Compiler 6 docs](https://developer.arm.com/documentation/ka004594/latest):
 
 > A zero-length bit-field can be used to make the following changes:
@@ -401,6 +403,13 @@ in a way they look like one. It's possible, because C cares less than more
 about whitespace.
 
 `n --> 0` is equivalent of `(n--) > 0`
+
+## Negative array indexes
+
+I think the following relation is actually quite well known and understood:  
+<span markdown="1" style="width:100%; text-align:center">
+`arr[5]` = `*(arr + 5)` = `*(5 + arr)` = `5[arr]`
+</span>
 
 ## Constant string concatenation
 
