@@ -756,17 +756,11 @@ int main(void)
 > };
 > ```
 
-## Matching character classes with `scanf()`
-
-<aside markdown="1">
-> Rule 0: Don't use `scanf()`. <sub markdown="1">(Unless, you know **exactly** what you do.)</sub>
->
->  &nbsp; ~ [A beginners' guide away from `scanf()`](https://www.sekrit.de/webdocs/c/beginners-guide-away-from-scanf.html)
-</aside>
+## Matching character classes with `sscanf()`
 
 From [this comment](https://www.reddit.com/r/programming/comments/116iij3/few_lesser_known_tricks_quirks_and_features_of_c/j98zxu5/) on Reddit:
 
-> `scanf()` can be used as an ersatz "RegEx" (not really, only character classes) matcher.
+> `sscanf()` can be used as an ersatz "regex" (not really, only character classes) matcher.
 > For example, one can write something like this to check if the input consists of letters of underscores:
 >
 > ```c
@@ -784,6 +778,14 @@ From [this comment](https://www.reddit.com/r/programming/comments/116iij3/few_le
 > sscanf(input, "%255[\r\n]%n", buf, &len);
 > input += len;
 > ```
+
+<aside markdown="1">
+By the way, since we are already on topic:
+
+> **Rule 0:** Don't use `scanf()`. <sub markdown="1">(Unless, you know **exactly** what you do.)</sub>
+>
+>  &nbsp; ~ [A beginners' guide _away_ from `scanf()`](https://www.sekrit.de/webdocs/c/beginners-guide-away-from-scanf.html)
+</aside>
 
 ## Garbage collector
 
