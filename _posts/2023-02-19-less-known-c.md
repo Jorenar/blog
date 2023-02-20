@@ -23,6 +23,9 @@ sloppier short explanation and/or examples (or quote of thereof).
 **WARNING:** Something being listed here does **_not_** automatically mean encouragement to use it!
 </aside>
 
+* Table of Contents
+{:toc}
+
 ## Array pointers
 
 Decay-to-pointer makes regular pointers to array usually not needed:
