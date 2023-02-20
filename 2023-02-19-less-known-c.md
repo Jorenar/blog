@@ -827,7 +827,26 @@ introduced to the code by the `asm` keyword.
 
 C11 added `_Generic` to language, but turns out metaprogramming
 by inhumanely abusing the preporcessor is possible even in pure C99:
-meet [Metalang99](https://metalang99.readthedocs.io) library.
+meet [**Metalang99**](https://metalang99.readthedocs.io) library.
+
+```
+#include <datatype99.h>
+
+datatype(
+    BinaryTree,
+    (Leaf, int),
+    (Node, BinaryTree *, int, BinaryTree *)
+);
+
+int sum(const BinaryTree *tree) {
+    match(*tree) {
+        of(Leaf, x) return *x;
+        of(Node, lhs, x, rhs) return sum(*lhs) + *x + sum(*rhs);
+    }
+
+    return -1;
+}
+```
 
 ## `sizeof` twice as case labels to get an error telling the size at compile time
 
