@@ -755,3 +755,9 @@ introduced to the code by the `asm` keyword.
 * [Object-Oriented Programming With ANSI C](https://www.cs.rit.edu/%7Eats/books/ooc.pdf)
 * [C Traps and Pitfalls](https://www.cs.tufts.edu/comp/40/docs/CTrapsAndPitfalls.pdf) by Andrew Koenig
 * ["you can have something like interfaces and virtual methods by using function pointers"](https://www.reddit.com/r/C_Programming/comments/mqk338/interesting_ways_to_use_c/guhenr5/)
+
+## Metaprogramming
+
+C11 added `_Generic` to language, but turns out metaprogramming
+by inhumanely abusing the preporcessor is possible even in pure C99:
+meet [Metalang99](https://metalang99.readthedocs.io) library.
