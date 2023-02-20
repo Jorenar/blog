@@ -241,8 +241,8 @@ An example taken from the [SO answer](https://stackoverflow.com/a/26725041/10247
 ## `volatile` type qualifier
 
 This qualifier tells the compiler that a variable may be accessed by other means
-than the current code (e.g. by code run in another thread or it's MMIO device),
-thus to not optimize away reads and writes to this resource.
+than the current code (e.g. we are dealing with MMIO device), thus to not optimize
+away reads and writes to this resource.
 
 <span></span>
 
