@@ -132,6 +132,11 @@ pre {
   text-align: left;
 }
 
+.hanchor {
+  font-size: 0.8em;
+  opacity: 0.5;
+}
+
 
 .yt-container {
   padding-bottom: 56.25%;

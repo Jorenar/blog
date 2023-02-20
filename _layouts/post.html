@@ -4,6 +4,6 @@ layout: default
 
 <header>{{ page.title | escape }}</header>
 
-{{ content }}
+{% include anchor_headings.html html=content anchorClass="hanchor" anchorBody="#" %}
 
 <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%F" }}</time>

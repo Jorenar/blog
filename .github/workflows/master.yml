@@ -12,6 +12,11 @@ jobs:
         uses: actions/checkout@v2
         with:
           ref: 'master'
+      - name: Copy deps
+        run: >
+          mkdir _includes;
+          cd _includes;
+          curl -OL https://github.com/allejo/jekyll-anchor-headings/raw/master/_includes/anchor_headings.html
       - name: Deploy code
         uses: peaceiris/actions-gh-pages@v3
         with:
