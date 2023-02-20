@@ -114,6 +114,19 @@ pre {
   padding: 10px;
 }
 
+#markdown-toc {
+  border: 1px dashed;
+  width: max-content;
+  list-style-position: inside;
+  padding: 10px;
+}
+
+#markdown-toc::before {
+  content: "Table of Contents";
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
 .post-list {
   font-size: 1.3em;
   text-align: left;
