@@ -827,7 +827,7 @@ C11 added `_Generic` to language, but turns out metaprogramming
 by inhumanely abusing the preporcessor is possible even in pure C99:
 meet [Metalang99](https://metalang99.readthedocs.io) library.
 
-## Using `sizeof` twice as case labels to get an error telling the size at compile time
+## `sizeof` twice as case labels to get an error telling the size at compile time
 
 ```
 int foo(int c)
