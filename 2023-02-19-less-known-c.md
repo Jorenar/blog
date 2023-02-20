@@ -408,13 +408,23 @@ about whitespace.
 
 `n --> 0` is equivalent of `(n--) > 0`
 
-## `5[arr]`
+## `idx[arr]`
 
 Square brace notation of accessing array elements is a syntactic sugar for pointer arithmetics:
 
 <div markdown="1" style="width:100%; text-align:center">
 `arr[5]` &equiv; `*(arr + 5)` &equiv; `*(5 + arr)` &equiv; `5[arr]`
 </div>
+
+You absolutely must never use this in actual code... but it's hella fun otherwise!
+
+```c
+// array[index]
+boxes[products[myorder.product].box].weight;
+
+// index[array]
+myorder.product[products].box[boxes].weight;
+```
 
 ## Negative array indexes
 
