@@ -40,9 +40,9 @@ int (*ap1)[10] = &arr; // proper pointer to array
 // (*ap1)[2] = ...
 ```
 
-But ability to allocate a big array on heap is nice:
+But ability to allocate a big multi-dimensional array on heap is nice:
 ```c
-int (*ap3)[900000] = malloc(sizeof *ap3);
+int (*ap3)[90000][90000] = malloc(sizeof *ap3);
 ```
 
 With pointers even VLA can find its use ([more here](https://blog.joren.ga/vla-usecases)):
@@ -328,6 +328,30 @@ for (int i = 0; i < vector->len; ++i) {
 > ```
 >
 > Granted a little bit contrived but can have some uses when making pretty reports.
+
+## `%.*` (minimum field width) format specifier
+
+Instead of this:
+```c
+char fmt_buf[MAX_BUF];
+snprintf(fmt_buf, MAX_BUF, "%%.%df", prec);
+printf(fmt_buf, num);
+```
+do this:
+```
+printf("%.*f", prec, num);
+```
+when you want to pad with variable number of characters.
+
+## Other less known format specifiers
+
+Have a look at [7.21.6.1](https://www.open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf#%5B%7B%22num%22%3A703%2C%22gen%22%3A0%7D%2C%7B%22name%22%3A%22XYZ%22%7D%2C0%2C792%2C0%5D)
+and [7.21.6.2](https://www.open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf#%5B%7B%22num%22%3A719%2C%22gen%22%3A0%7D%2C%7B%22name%22%3A%22XYZ%22%7D%2C0%2C792%2C0%5D)
+of the draft of C11 standard. You'll find `%#`, `%e`, `%-`, `%+`, `%j`, `%g`, `%a` and few other interesting specifiers.
+
+<aside markdown="1">
+I'll update the links to C23 when it's finally done. For now: `%b` is gonna be standardised!
+</aside>
 
 ## Interlacing syntactic constructs
 
@@ -732,11 +756,42 @@ int main(void)
 > };
 > ```
 
+## Matching character classes with `scanf()`
+
+<aside markdown="1">
+> Rule 0: Don't use `scanf()`. <sub markdown="1">(Unless, you know **exactly** what you do.)</sub>
+>
+>  &nbsp; ~ [A beginners' guide away from `scanf()`](https://www.sekrit.de/webdocs/c/beginners-guide-away-from-scanf.html)
+</aside>
+
+From [this comment](https://www.reddit.com/r/programming/comments/116iij3/few_lesser_known_tricks_quirks_and_features_of_c/j98zxu5/) on Reddit:
+
+> `scanf()` can be used as an ersatz "RegEx" (not really, only character classes) matcher.
+> For example, one can write something like this to check if the input consists of letters of underscores:
+>
+> ```c
+> int len = 0;
+> char buf[256];
+> int read_token = sscanf(input, "%255[a-zA-Z_]", buf, &len);
+> if (read_token) { /* do something */ }
+> ```
+>
+> or skip whitespace characters:
+>
+> ```c
+> int len = 0;
+> char buf[256];
+> sscanf(input, "%255[\r\n]%n", buf, &len);
+> input += len;
+> ```
+
 ## Garbage collector
 
 [Boehm GC](https://www.hboehm.info/gc/) is a library providing garbage collector for C and C++
 
 ## [Cosmopolitan Libc](https://justine.lol/cosmopolitan/index.html)
+
+Description from project's website:
 
 > Cosmopolitan Libc makes C a build-once run-anywhere language, like Java,
 > except it doesn't need an interpreter or virtual machine. Instead, it
