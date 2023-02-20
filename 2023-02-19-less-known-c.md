@@ -3,11 +3,10 @@ layout: post
 title:  "Few lesser known tricks, quirks and features of C"
 ---
 
-While almost everybody learns at some point you can abuse C to achieve OOP
-in it, there are some tricks, quirks and features (some quite fundamental to
-the language!) which seems to throw even experienced developers off the track.
-Thus I did a sloppy job of gathering some of them in this post with even
-sloppier short explanation and/or examples (or quote of thereof).
+There are some tricks, quirks and features (some quite fundamental to the language!)
+which seems to throw even experienced developers off the track. Thus I did a sloppy
+job of gathering some of them in this post (in no particular order) with even sloppier
+short explanations and/or examples (or quote of thereof).
 
 <aside markdown="1">
 * [Hidden features of C - Stack Overflow](https://stackoverflow.com/q/132241/10247460)
@@ -17,6 +16,8 @@ sloppier short explanation and/or examples (or quote of thereof).
 * [Interesting ways to use C? : r/C_Programming](https://www.reddit.com/r/C_Programming/comments/mqk338/interesting_ways_to_use_c/)
 * [C99 with Technical corrigenda TC1, TC2, and TC3 included](http://www.open-std.org/JTC1/SC22/WG14/www/docs/n1256.pdf)
 * [Rob's Programming Blog: How Well Do You Know C?](http://www.robertgamble.net/2011/05/how-well-do-you-know-c.html)
+* [Let's Destroy C](https://gist.github.com/shakna-israel/4fd31ee469274aa49f8f9793c3e71163#lets-destroy-c)
+* [The Preprocessor Iceberg Meme](https://jadlevesque.github.io/PPMP-Iceberg/)
 </aside>
 
 <aside markdown="1">
@@ -746,3 +747,11 @@ introduced to the code by the `asm` keyword.
 * [Inline Assembler (C) \| Microsoft Learn](https://learn.microsoft.com/en-us/cpp/c-language/inline-assembler-c)
 * [Writing inline assembly code - Arm Compiler for Embedded User Guide](https://developer.arm.com/documentation/100748/0619/Using-Assembly-and-Intrinsics-in-C-or-C---Code/Writing-inline-assembly-code)
 * [Inline Assembly in C/C++ - University of Alaska Fairbanks](https://www.cs.uaf.edu/courses/cs301/2014-fall/notes/inline-assembly/)
+
+## Object Oriented Programming
+
+* [Object-Oriented Programming in C - Quantum Leaps](https://www.state-machine.com/oop)
+* [Object-orientation in C - Stack Overflow](https://stackoverflow.com/q/415452/10247460)
+* [Object-Oriented Programming With ANSI C](https://www.cs.rit.edu/%7Eats/books/ooc.pdf)
+* [C Traps and Pitfalls](https://www.cs.tufts.edu/comp/40/docs/CTrapsAndPitfalls.pdf) by Andrew Koenig
+* ["you can have something like interfaces and virtual methods by using function pointers"](https://www.reddit.com/r/C_Programming/comments/mqk338/interesting_ways_to_use_c/guhenr5/)
