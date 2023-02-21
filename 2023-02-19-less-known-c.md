@@ -779,14 +779,6 @@ From [this comment](https://www.reddit.com/r/programming/comments/116iij3/few_le
 > input += len;
 > ```
 
-<aside markdown="1">
-By the way, since we are already on topic:
-
-> **Rule 0:** Don't use `scanf()`. <sub markdown="1">(Unless, you know **exactly** what you do.)</sub>
->
->  &nbsp; ~ [A beginners' guide _away_ from `scanf()`](https://www.sekrit.de/webdocs/c/beginners-guide-away-from-scanf.html)
-</aside>
-
 ## Garbage collector
 
 [Boehm GC](https://www.hboehm.info/gc/) is a library providing garbage collector for C and C++
