@@ -11,6 +11,13 @@ body {
   text-align: justify;
 }
 
+nav {
+  font-size: 0.9em;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
 main {
   flex: 1 0 auto;
   padding: 10px;
@@ -20,20 +27,13 @@ header {
   font-size: 2em;
   font-weight: bold;
   margin-bottom: 0.5em;
+  text-align: center;
 }
 
 time {
   float: right;
   font-size: 0.8em;
   margin-top: 1em;
-}
-
-footer {
-  text-align: center;
-  border-top: 1px solid #404040;
-  padding: 10px;
-  display: flex;
-  justify-content: space-between;
 }
 
 
