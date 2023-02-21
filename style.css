@@ -28,9 +28,9 @@ time {
   margin-top: 1em;
 }
 
-footer {
+nav {
   text-align: center;
-  border-top: 1px solid #404040;
+  font-size: 0.9em;
   padding: 10px;
   display: flex;
   justify-content: space-between;

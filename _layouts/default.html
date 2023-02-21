@@ -13,12 +13,12 @@
 <body>
   <main>
 {{ content }}
-  </main>
-  <footer>
+  <nav>
     <a href="{{ "/" | relative_url }}">Index</a>
     <span>Copyright &copy; <a rel="author" href="https://joren.ga">{{ site.author | escape }}</a></span>
     <a href="{{ 'feed.xml' | relative_url }}">RSS</a>
-  </footer>
+  </nav>
+  </main>
   <a href="{{ site.baseurl }}/sitemap.xml"></a>
 </body>
 </html>
