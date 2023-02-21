@@ -69,7 +69,7 @@ than any other; there are system using e.g. EBCDIC encoding instead of ASCII,
 to support them C has digraphs and trigraphs -- multi-character sequences
 treated by the compiler as other characters.
 
-| Digraph  |             | | Trigraph |             | |  Macro   |      |
+| Digraph  |             | | Trigraph |             | | iso646.h |      |
 |:--------:|:-----------:|-|:--------:|:-----------:|-|:--------:|:----:|
 |   `<:`   |     `[`     | |  `??=`   |     `#`     | | `and`    | `&&` |
 |   `:>`   |     `]`     | |  `??(`   |     `[`     | | `and_eq` | `&=` |
