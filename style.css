@@ -133,6 +133,11 @@ pre {
   text-align: left;
 }
 
+.highlight {
+  margin: 0;
+}
+
+
 .hanchor {
   font-size: 0.8em;
   opacity: 0.5;
