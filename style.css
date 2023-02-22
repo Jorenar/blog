@@ -12,7 +12,6 @@ body {
 }
 
 nav {
-  text-align: center;
   font-size: 0.9em;
   padding: 10px;
   display: flex;
@@ -28,6 +27,7 @@ header {
   font-size: 2em;
   font-weight: bold;
   margin-bottom: 0.5em;
+  text-align: center;
 }
 
 time {
