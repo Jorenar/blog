@@ -72,6 +72,7 @@ maybe want to *consider* using it.
 * [Examples of good gotos in C or C++ - Stack Overflow](https://stackoverflow.com/q/245742/10247460)
 * [Should you ever use a goto? - Jacob Sorber - YouTube](https://www.youtube.com/watch?v=8bmEhtMVrhk)
 * [GOTO Reconsidered](https://chidiwilliams.com/post/goto/)
+* ["GOTO Considered Harmful" Considered Harmful](http://web.archive.org/web/20090320002214/http://www.ecn.purdue.edu/ParaMount/papers/rubin87goto.pdf)
 * [When is it appropriate to use GOTO? : r/C_Programming](https://www.reddit.com/r/C_Programming/comments/wimvdf/when_is_it_appropriate_to_use_goto/)
 * [Programming With(out) the GOTO](https://dl.acm.org/doi/pdf/10.1145/800194.805859)
 * [Ian Mallett - Tutorials: The goto Statement is Good](https://geometrian.com/programming/tutorials/gotogood/index.php)
