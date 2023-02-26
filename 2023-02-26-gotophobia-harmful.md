@@ -1261,10 +1261,8 @@ err:
 
 # Jumping into event loop
 
-Yeah, yeah, I know and will be the first to throw the stone: this one is questionable
-and it's undoubtedly better if the situation doesn't occur at all; jumping _into_
-warrants at least a raised eyebrow. That being said, there are cases when you
-may want to do just that.
+Yeah, yeah, I know jumping _into_ warrants at least a raised eyebrow.
+That being said, there are cases when you may want to do just that.
 
 Here in first iteration program skips increasing variable and goes straight
 to allocation. Each following iteration executes code as written, ignoring
