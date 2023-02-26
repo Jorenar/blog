@@ -34,8 +34,8 @@ In short, the context looked like the following:
      <span class="dim">...</span>
 </code></pre>
 
-Yeah! This is far from pretty -- back then you couldn't just put a few additional
-lines in the middle of code without rewriting everything, for, as you may notice,
+Yeah, this is far from pretty -- back then you couldn't just put a few additional
+lines in the middle of code without renumbering everything, for, as you may notice,
 line numbers were part of the code! You had to append it at the end and squeeze
 the check and jump in the few spare lines left between instructions.
 
