@@ -1302,11 +1302,11 @@ ALLOC:      temp = arrayAllocSmart(buf, sz, pos);
 ### `goto`-less alternative 1: guard flag
 
 I probably says more about the state of my sleep deprived brain than anything
-else, but I actually managed to make an honest mistake in this simple snippet.
-I didn't notice it until after examining the assembly output and seeing way
-less instructions than expected. Since it's simple and accidental, yet quite
+else, but I actually managed to make an honest, very dumb mistake in this
+simple snippet. I didn't notice until after examining the assembly output
+and seeing way less instructions than expected. Since it's simple, yet quite
 severe in consequences, I decided to leave it as an exercise for the reader
-to spot it (should be easy since you already know about its existence).
+to spot the bug (should be easy since you already know about its existence).
 
 The drawbacks as per usual: nesting and keeping track of flags.
 
