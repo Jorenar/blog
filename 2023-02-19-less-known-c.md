@@ -345,8 +345,8 @@ when you want to pad with variable number of characters.
 
 ## Other less known format specifiers
 
-Have a look at [7.21.6.1](https://www.open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf#%5B%7B%22num%22%3A703%2C%22gen%22%3A0%7D%2C%7B%22name%22%3A%22XYZ%22%7D%2C0%2C792%2C0%5D)
-and [7.21.6.2](https://www.open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf#%5B%7B%22num%22%3A719%2C%22gen%22%3A0%7D%2C%7B%22name%22%3A%22XYZ%22%7D%2C0%2C792%2C0%5D)
+Have a look at [§7.21.6.1](https://www.open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf#%5B%7B%22num%22%3A703%2C%22gen%22%3A0%7D%2C%7B%22name%22%3A%22XYZ%22%7D%2C0%2C792%2C0%5D)
+and [§7.21.6.2](https://www.open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf#%5B%7B%22num%22%3A719%2C%22gen%22%3A0%7D%2C%7B%22name%22%3A%22XYZ%22%7D%2C0%2C792%2C0%5D)
 of the draft of C11 standard. You'll find `%#`, `%e`, `%-`, `%+`, `%j`, `%g`, `%a` and few other interesting specifiers.
 
 <aside markdown="1">
