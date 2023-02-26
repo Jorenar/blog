@@ -78,6 +78,7 @@ maybe want to *consider* using it.
 **Resources**
 
 * _The C Programming Language, 2nd ed._ by Kernighan & Ritchie
+* [Goto # Common usage patterns - Wikipedia](https://en.wikipedia.org/wiki/Goto#Common_usage_patterns)
 * [Are there any legitimate use-cases for "goto" in a language that supports loops and functions? - Stack Overflow](https://stackoverflow.com/q/24451/10247460)
 * [Beej's Guide to C Programming: `goto`](https://beej.us/guide/bgc/html/split/goto.html)
 * [Modern C](https://hal.inria.fr/hal-02383654/file/ModernC.pdf) by Jens Gustedt
@@ -88,7 +89,7 @@ maybe want to *consider* using it.
 * [When to use Goto in C - Cprogramming.com](https://www.cprogramming.com/tutorial/goto.html)
 * [Harmful GOTOs, Premature Optimizations, and Programming Myths are the Root of all Evil](https://alvaro-videla.com/2015/02/programming-myths.html)
 * [Examples of good gotos in C or C++ - Stack Overflow](https://stackoverflow.com/q/245742/10247460)
-* [Goto # Common usage patterns - Wikipedia](https://en.wikipedia.org/wiki/Goto#Common_usage_patterns)
+* [Should you ever use a goto? - Jacob Sorber - YouTube](https://www.youtube.com/watch?v=8bmEhtMVrhk)
 * [GOTO Reconsidered](https://chidiwilliams.com/post/goto/)
 * [When is it appropriate to use GOTO? : r/C_Programming](https://www.reddit.com/r/C_Programming/comments/wimvdf/when_is_it_appropriate_to_use_goto/)
 * [Programming With(out) the GOTO](https://dl.acm.org/doi/pdf/10.1145/800194.805859)
