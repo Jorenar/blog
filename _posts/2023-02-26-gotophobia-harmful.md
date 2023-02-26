@@ -34,19 +34,9 @@ In short, the context looked like the following:
      <span class="dim">...</span>
 </code></pre>
 
-Yeah, this is far from pretty -- back then you couldn't just put a few additional
-lines in the middle of code without renumbering everything, for, as you may notice,
-line numbers were part of the code! You had to append it at the end and squeeze
-the check and jump in the few spare lines you've left between instructions.
-
-<aside markdown="1">
-Have a look at [this article](https://alvaro-videla.com/2015/02/programming-myths.html)
-which provides even more context.
-</aside>
-
-A lot programmers learnt the craft in a world where `goto` was the main method
-of flow control; even in structured languages it was easy for them to fall back
-on the learned bad habits and techniques.
+Yeah, this is far from pretty. A lot programmers learnt the craft in a world
+where `goto` was the main method of flow control; even in structured languages
+it was easy for them to fall back on the learned bad habits and techniques.
 On the other hand, today we have the very opposite situation: programmers not
 using `goto` when it's appropriate and abusing other constructs, what ironically
 makes code only less readable. They overfocus on the _WHAT_ ("remove `goto`")
