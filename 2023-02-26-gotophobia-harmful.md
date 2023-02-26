@@ -12,31 +12,12 @@ gotophobia tend to make their code less readable just to avoid using `goto`.
 Everybody and their grandpa knows (the meme title of) Dijkstra's
 [_Letters to the editor: go to statement considered harmful_](https://dl.acm.org/doi/epdf/10.1145/362929.362947)
 (submitted under the title: _A case against the goto statement_),
-but most forget the context in which it was written. \
-In short, the context looked like the following:
+but most forget the context of the 60s in which it was written,
+things we take for granted were a novelty back then.
 
-<style> .dim { opacity: 0.5 } </style>
-<pre><code>     <span class="dim">...</span>
-1010 <span class="dim">... code for first part of loop
-     ...</span>
-1110 IF <span class="dim">rare_condition</span> THEN GOTO 7950
-     <span class="dim">... code for normal case
-     ...</span>
-1230 <span class="dim">... code to finish out loop in any case
-     ...</span>
-3490 IF <span class="dim">still_looping</span> THEN GOTO 1010
-     <span class="dim">...
-     ... lots of other code
-     ...</span>
-7950 <span class="dim">... code to handle rare condition
-     ...</span>
-8010 GOTO 1230
-     <span class="dim">...</span>
-</code></pre>
-
-Yeah, this is far from pretty. A lot programmers learnt the craft in a world
-where `goto` was the main method of flow control; even in structured languages
-it was easy for them to fall back on the learned bad habits and techniques.
+A lot programmers learnt the craft in a world where `goto` was the main method
+of flow control; even in structured languages it was easy for them to fall back
+on the learned bad habits and techniques.
 On the other hand, today we have the very opposite situation: programmers not
 using `goto` when it's appropriate and abusing other constructs, what ironically
 makes code only less readable. They overfocus on the _WHAT_ ("remove `goto`")
