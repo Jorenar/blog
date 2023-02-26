@@ -88,7 +88,7 @@ maybe want to *consider* using it.
 * [When to use Goto in C - Cprogramming.com](https://www.cprogramming.com/tutorial/goto.html)
 * [Harmful GOTOs, Premature Optimizations, and Programming Myths are the Root of all Evil](https://alvaro-videla.com/2015/02/programming-myths.html)
 * [Examples of good gotos in C or C++ - Stack Overflow](https://stackoverflow.com/q/245742/10247460)
-* [Goto # Common_usage_patterns - Wikipedia](https://en.wikipedia.org/wiki/Goto#Common_usage_patterns)
+* [Goto # Common usage patterns - Wikipedia](https://en.wikipedia.org/wiki/Goto#Common_usage_patterns)
 * [GOTO Reconsidered](https://chidiwilliams.com/post/goto/)
 * [When is it appropriate to use GOTO? : r/C_Programming](https://www.reddit.com/r/C_Programming/comments/wimvdf/when_is_it_appropriate_to_use_goto/)
 * [Programming With(out) the GOTO](https://dl.acm.org/doi/pdf/10.1145/800194.805859)
@@ -1423,8 +1423,8 @@ Read at:
 
 If I started from Dijkstra, it's only natural I need to conclude with Knuth. \
 Almost anybody who says anything positive about `goto` refers to this paper.
-And rightfully so! As to this day it's one of most comprehensive resources
-on this topic (it's a go to resource about `goto`). Perhaps some examples
+And rightfully so! To this day it's one of most comprehensive resources
+on the topic (it's a go to resource about `goto`). Perhaps some examples
 are quite dated, some concerns less crucial today than back in the days,
 but nevertheless it's an excellent read.
 
