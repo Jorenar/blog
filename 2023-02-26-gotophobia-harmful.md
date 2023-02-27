@@ -33,9 +33,7 @@ to just ignore the topic entirely and let the students later wonder why they get
 > one that directly translates to the jump instructions implemented in machine
 > code. Like pointers, operator overloading, and a host of other "perceived"
 > evils in programming, "goto" is widely hated by those who've been bitten by
-> poor programming. Bad code is the product of bad programmers; in my
-> experience, a poor programmer will write a poor program, regardless of the
-> availability of "goto."
+> poor programming. _[redacted poorly expressed take]_
 >
 > If you think people can't write spaghetti code in a "goto-less" language, I
 > can send you some *lovely* examples to disabuse you of that notion. ;)
@@ -186,7 +184,7 @@ disable_pm_runtime:
 ## `goto`-less alternative 1: nested `if`s
 
 Drawbacks:
- * nesting (_arrow anti-pattern_)
+ * nesting ([_arrow anti-pattern_](https://wiki.c2.com/?ArrowAntiPattern))
  * potentially duplicated code (see example function from Linux)
 
 ```c
