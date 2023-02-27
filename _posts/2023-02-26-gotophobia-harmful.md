@@ -49,9 +49,13 @@ to just ignore the topic entirely and let the students later wonder why they get
 Linux kernel is one thing, but if even such restrictive coding standard
 as MISRA C (2012 edition) can downgrade the prohibition on `goto` from
 _required_ to _advisory_, I think in regular code we can safely use `goto`
-in judicious manner. Thus I want to present some situations and patterns
-where `goto` could be acceptable (perhaps the best?) choice and you could
-maybe want to *consider* using it.
+in judicious manner.
+
+Thus I want to present some situations and patterns where `goto` could be acceptable
+(perhaps the best?) choice and you could maybe want to *consider* using it.
+I'll also try to mention `goto`-less alternatives and their potential drawbacks
+(you presumably already are familiar with their advantages as well as with
+ the possible hitches of `goto` versions).
 
 <aside markdown="1">
 **Resources**
@@ -500,8 +504,12 @@ static int mmp2_audio_clk_probe(struct platform_device *pdev)
 
 Drawbacks:
  * <span title="Things should not be multiplied beyond what is required">"Entia non sunt multiplicanda praeter necessitatem"</span>
- * reading bottom-up instead of top-bottom
- * may require passing context around
+   (not only new functions, but often also `struct`s)
+ * often require passing context around
+   * increase in pointing to pointers
+   * aforementioned additional `struct`s
+ * fragmented code
+   * temptation to needlessly abstract it away
 
 ```c
 static inline int foo_2(int bar)
