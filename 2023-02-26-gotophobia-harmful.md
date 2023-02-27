@@ -108,22 +108,22 @@ int* foo(int bar)
     int* return_value = NULL;
 
     if (!do_something(bar)) {
-        goto error_1;
+        goto error_didnt_sth;
     }
     if (!init_stuff(bar)) {
-        goto error_2;
+        goto error_bad_init;
     }
     if (!prepare_stuff(bar)) {
-        goto error_3;
+        goto error_bad_prep;
     }
     return_value = do_the_thing(bar);
 
-error_3:
-    cleanup_3();
-error_2:
-    cleanup_2();
-error_1:
-    cleanup_1();
+error_bad_prep:
+    clean_stuff();
+error_bad_init:
+    destroy_stuff();
+error_didnt_sth:
+    undo_something();
 
     return return_value;
 }
@@ -197,11 +197,11 @@ int* foo(int bar)
             if (prepare_stuff(bar)) {
                 return_value = do_the_thing(bar);
             }
-            cleanup_3();
+            clean_stuff();
         }
-        cleanup_2();
+        destroy_stuff();
     }
-    cleanup_1();
+    undo_something();
 
     return return_value;
 }
@@ -256,24 +256,24 @@ int* foo(int bar)
     int* return_value = NULL;
 
     if (!do_something(bar)) {
-        cleanup_1();
+        undo_something();
         return return_value;
     }
     if (!init_stuff(bar)) {
-        cleanup_2();
-        cleanup_1();
+        destroy_stuff();
+        undo_something();
         return return_value;
     }
     if (!prepare_stuff(bar)) {
-        cleanup_3();
-        cleanup_2();
-        cleanup_1();
+        clean_stuff();
+        destroy_stuff();
+        undo_something();
         return return_value;
     }
 
-    cleanup_3();
-    cleanup_2();
-    cleanup_1();
+    clean_stuff();
+    destroy_stuff();
+    undo_something();
 
     return do_the_thing(bar);
 }
@@ -343,13 +343,13 @@ int* foo(int bar)
     }
 
     if (flag_3) {
-        cleanup_3();
+        clean_stuff();
     }
     if (flag_2) {
-        cleanup_2();
+        destroy_stuff();
     }
     if (flag_1) {
-        cleanup_1();
+        undo_something();
     }
 
     return return_value;
@@ -403,13 +403,13 @@ int foo(int bar)
 
     // Clean up
     if (stuff_prepared) {
-        cleanup_3();
+        clean_stuff();
     }
     if (stuff_inited) {
-        cleanup_2();
+        destroy_stuff();
     }
     if (something_done) {
-        cleanup_1();
+        undo_something();
     }
 
     return return_value;
@@ -510,7 +510,7 @@ static inline int foo_2(int bar)
     if (prepare_stuff(bar)) {
         return_value = do_the_thing(bar);
     }
-    cleanup_3();
+    clean_stuff();
     return return_value;
 }
 
@@ -520,7 +520,7 @@ static inline int foo_1(int bar)
     if (init_stuff(bar)) {
         return_value = foo_2(bar);
     }
-    cleanup_2();
+    destroy_stuff();
     return return_value;
 }
 
@@ -530,7 +530,7 @@ int foo(int bar)
     if (do_something(bar)) {
         return_value = foo_1(bar);
     }
-    cleanup_1();
+    undo_something();
     return return_value;
 }
 ```
@@ -614,11 +614,11 @@ int* foo(int bar)
                 if (!prepare_stuff(bar)) break;
                 return_value = do_the_thing(bar);
             } while (0);
-            cleanup_3();
+            clean_stuff();
         } while (0);
-        cleanup_2();
+        destroy_stuff();
     } while (0);
-    cleanup_1();
+    undo_something();
 
     return return_value;
 }
