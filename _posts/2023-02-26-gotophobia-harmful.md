@@ -1227,7 +1227,7 @@ _Beej's Guide to C Programming_ has nice example of using this technique alongsi
 </svg>
 
 The following is a 1:1, not far from **verbatim mathematical notation**,
-implementation of the above state machine:
+implementation of the above automata:
 
 ```c
 _Bool machine(const char* c)
