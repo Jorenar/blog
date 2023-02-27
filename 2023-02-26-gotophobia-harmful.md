@@ -1242,16 +1242,16 @@ qA:
 
 qB:
     switch (*(c++)) {
-        case 'x': goto qC;
-        case 'z': goto qB;
+        case 'x': goto qB;
+        case 'y': goto qA;
         case '\0': goto F;
         default: goto err;
     }
 
 qC:
     switch (*(c++)) {
-        case 'x': goto qB;
-        case 'y': goto qA;
+        case 'x': goto qC;
+        case 'z': goto qB;
         default: goto err;
     }
 
