@@ -241,7 +241,8 @@ static int mmp2_audio_clk_probe(struct platform_device *pdev)
 </div>
 </details>
 
-And here Microsoft provides us with [lovely example of such ridiculous nesting](https://learn.microsoft.com/en-us/windows/win32/shell/common-file-dialog#basic-usage).
+And here Microsoft provides us with [lovely example of such ridiculous nesting](https://learn.microsoft.com/en-us/windows/win32/shell/common-file-dialog#basic-usage)
+([archive in case somebody fixes it](https://web.archive.org/web/20221203064532/https://learn.microsoft.com/en-us/windows/win32/shell/common-file-dialog#basic-usage)).
 
 ## `goto`-less alternative 2: if not then clean
 
