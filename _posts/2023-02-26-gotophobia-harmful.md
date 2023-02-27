@@ -503,8 +503,11 @@ static int mmp2_audio_clk_probe(struct platform_device *pdev)
 ## `goto`-less alternative 4: functions
 
 Drawbacks:
- * <span title="Things should not be multiplied beyond what is required">"Entia non sunt multiplicanda praeter necessitatem"</span>
-   (not only new functions, but often also `struct`s)
+ * More objects (not only new functions, but often also `struct`s)
+   <span style="font-size: 0.6em" title="Things should not be multiplied beyond what is required">
+     "Entia non sunt multiplicanda praeter necessitatem"
+   </span>
+   * deeper callstack
  * often require passing context around
    * increase in pointing to pointers
    * aforementioned additional `struct`s
