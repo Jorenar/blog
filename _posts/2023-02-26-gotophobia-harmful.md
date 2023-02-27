@@ -1075,7 +1075,8 @@ int foo(int v)
 
 ## `goto`-less alternative 3: interlacing `if (0)`
 
-Please, don't, just don't...
+Do... do I really need to comment? \
+You cannot say "interlacing good" while at the same time claiming "`goto` bad"!
 
 ```c
 int foo(int v)
