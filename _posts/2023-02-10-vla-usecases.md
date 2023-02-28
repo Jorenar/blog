@@ -47,18 +47,18 @@ if (arr) {
 
 The VLA-free alternatives aren't as sexy:
 
-  * **piecemeal allocation with `malloc()`**
+  * **piecemeal allocation**
 ```c
 int** arr = malloc(n * (sizeof *arr));
 if (arr) {
-    for (int i = 0; i < n; ++i) {
-        arr[i] = malloc(m * (sizeof *arr[i]));
-    }
-    // arr[i][j] = ...
-    for (int i = 0; i < n; ++i) {
-        free(arr[i]);
-    }
-    free(arr);
+        for (int i = 0; i < n; ++i) {
+            arr[i] = malloc(m * (sizeof *arr[i]));
+        }
+        // arr[i][j] = ...
+        for (int i = 0; i < n; ++i) {
+            free(arr[i]);
+        }
+        free(arr);
 }
 ```
 
@@ -66,8 +66,8 @@ if (arr) {
 ```c
 int* arr = malloc(n * m * (sizeof *arr));
 if (arr) {
-    // arr[i*n + j] = ...
-    free(arr);
+        // arr[i*n + j] = ...
+        free(arr);
 }
 ```
 
@@ -76,3 +76,5 @@ if (arr) {
 int arr[SAFE_SIZE][SAFE_SIZE]; // SAFE_SIZE must be safe for SAFE_SIZE*SAFE_SIZE
 // arr[i][j] = ...;
 ```
+
+<!-- Some bug(?) eats 4 first spaces of indent, thus 8 spaces used -->
