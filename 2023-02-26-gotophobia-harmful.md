@@ -1174,7 +1174,7 @@ _Beej's Guide to C Programming_ has nice example of using this technique alongsi
 ## Breaking loop from inside a `switch` statement
 
 Since `switch` also utilizes the `break` keyword, to jump
-out of a loop from inside of one is done the same way:
+out of a loop from inside of one is done analogically:
 
 ```c
 void func(int v)
