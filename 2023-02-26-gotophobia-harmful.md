@@ -1171,6 +1171,31 @@ _Beej's Guide to C Programming_ has nice example of using this technique alongsi
 > Without `goto`, you’d have to check an error condition
 > flag in all of the loops to get all the way out.
 
+## Breaking loop from inside a `switch` statement
+
+Since `switch` also utilizes the `break` keyword, to jump
+out of a loop from inside of one is done the same way:
+
+```c
+void func(int v)
+{
+    // ...
+
+    while (1) {
+        switch (v) {
+            case SOME_V:
+                // ...
+                break;  // doesn't exit loop
+            case STOP_LOOP:
+                goto break_while;
+        }
+    }
+break_while:
+
+    // ...
+}
+```
+
 # Simple state machines
 
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 130" style="font-family: Times">
