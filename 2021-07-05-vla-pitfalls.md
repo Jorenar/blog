@@ -227,6 +227,37 @@ Even with optimizations, initialisation isn't allowed for aVLA. So despite
 wanting fixed size array and compiler being technically able to provide one,
 it's won't work (and if it does... it's breaking the specification...).
 
+# `sizeof` not resolved at compile time
+
+```c
+int n;
+scanf("%d", &n);
+int A[5];
+int B[n];
+
+sizeof A;  // compile-time
+sizeof B;  // run-time
+```
+
+The above is quite obvious, `B` isn't fully known until `n` gets its value,
+thus it needs to be resolved at run-time. Nothing to write home about.
+
+On the other hand, the following is no longer so obvious
+([source of example](https://www.reddit.com/r/C_Programming/comments/11e9ewe/constant_variable_length_arrays/jadfka5/)):
+
+> The operand [of `sizeof` operator] must be _evaluated_ if its type is a VLA; for example:
+>
+> ```c
+> int i = 0;
+> static const int n = 5;
+>
+> int A[5];
+> int B[n];
+> sizeof A[i++];   // operand is not evaluated, `i` is still 0
+> sizeof B[i++];   // operand is evaluated, `i` is 1
+> sizeof &B[i++];  // operand is not evaluated, `i` stays 1
+> ```
+
 # Mess for compiler writers
 
 Few months ago I saved a [comment](https://www.reddit.com/r/C_Programming/comments/jz2213/are_vlas_bad_even_if_theyre_not_allocated_on_the/gdc3hz6)
