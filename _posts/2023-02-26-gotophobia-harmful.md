@@ -677,10 +677,10 @@ Of course, it's not limited to system calls.
 
 int main()
 {
-retry_syscall:
+RETRY_SYSCALL:
     if (some_syscall() == -1) {
         if (errno == EINTR) {
-            goto retry_syscall;
+            goto RETRY_SYSCALL;
         }
 
         // handle real errors
@@ -705,10 +705,10 @@ the `goto`-less alternative.
 int main()
 {
     int res;
-retry_syscall:
+RETRY_SYSCALL:
     res = some_syscall();
     if (res == -1 && errno == EINTR) {
-        goto retry_syscall;
+        goto RETRY_SYSCALL;
     }
 
     if (res) {
