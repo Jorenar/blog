@@ -796,47 +796,47 @@ int parse_packet()
 
 REPARSE_PACKET:
     switch (packet[0]) {
-        case PKT_THIS_OPERATION:
-            if (/* problem condition */) {
-                goto PACKET_ERROR;
-            }
-            // ... handle THIS_OPERATION
-            break;
+    case PKT_THIS_OPERATION:
+        if (/* problem condition */) {
+            goto PACKET_ERROR;
+        }
+        // ... handle THIS_OPERATION
+        break;
 
-        case PKT_THAT_OPERATION:
-            if (/* problem condition */) {
-                goto PACKET_ERROR;
-            }
-            // ... handle THAT_OPERATION
-            break;
+    case PKT_THAT_OPERATION:
+        if (/* problem condition */) {
+            goto PACKET_ERROR;
+        }
+        // ... handle THAT_OPERATION
+        break;
 
-        // ...
+    // ...
 
-        case PKT_PROCESS_CONDITIONALLY:
-            if (packet_length < 9) {
-                goto PACKET_ERROR;
-            }
-            if (packet_condition && packet[4]) {
-                packet_length -= 5;
-                memmove(packet, packet+5, packet_length);
-                goto REPARSE_PACKET;
-            } else {
-                packet[0] = PKT_CONDITION_SKIPPED;
-                packet[4] = packet_length;
-                packet_length = 5;
-                packet_status = READY_TO_SEND;
-            }
-            break;
-
-        // ...
-
-        default:
-PACKET_ERROR:
-            packet_error_count++;
-            packet_length = 4;
-            packet[0] = PKT_ERROR;
+    case PKT_PROCESS_CONDITIONALLY:
+        if (packet_length < 9) {
+            goto PACKET_ERROR;
+        }
+        if (packet_condition && packet[4]) {
+            packet_length -= 5;
+            memmove(packet, packet+5, packet_length);
+            goto REPARSE_PACKET;
+        } else {
+            packet[0] = PKT_CONDITION_SKIPPED;
+            packet[4] = packet_length;
+            packet_length = 5;
             packet_status = READY_TO_SEND;
-            break;
+        }
+        break;
+
+    // ...
+
+    default:
+PACKET_ERROR:
+        packet_error_count++;
+        packet_length = 4;
+        packet[0] = PKT_ERROR;
+        packet_status = READY_TO_SEND;
+        break;
     }
 
     // ...
@@ -880,47 +880,47 @@ int parse_packet()
         PACKET_ERROR = false;
 
         switch (packet[0]) {
-            case PKT_THIS_OPERATION:
-                if (/* problem condition */) {
-                    PACKET_ERROR = true;
-                    break;
-                }
-                // ... handle THIS_OPERATION
-                break;
-
-            case PKT_THAT_OPERATION:
-                if (/* problem condition */) {
-                    PACKET_ERROR = true;
-                    break;
-                }
-                // ... handle THAT_OPERATION
-                break;
-
-                // ...
-
-            case PKT_PROCESS_CONDITIONALLY:
-                if (packet_length < 9) {
-                    PACKET_ERROR = true;
-                    break;
-                }
-                if (packet_condition && packet[4]) {
-                    packet_length -= 5;
-                    memmove(packet, packet+5, packet_length);
-                    REPARSE_PACKET = true;
-                    break;
-                } else {
-                    packet[0] = PKT_CONDITION_SKIPPED;
-                    packet[4] = packet_length;
-                    packet_length = 5;
-                    packet_status = READY_TO_SEND;
-                }
-                break;
-
-                // ...
-
-            default:
+        case PKT_THIS_OPERATION:
+            if (/* problem condition */) {
                 PACKET_ERROR = true;
                 break;
+            }
+            // ... handle THIS_OPERATION
+            break;
+
+        case PKT_THAT_OPERATION:
+            if (/* problem condition */) {
+                PACKET_ERROR = true;
+                break;
+            }
+            // ... handle THAT_OPERATION
+            break;
+
+            // ...
+
+        case PKT_PROCESS_CONDITIONALLY:
+            if (packet_length < 9) {
+                PACKET_ERROR = true;
+                break;
+            }
+            if (packet_condition && packet[4]) {
+                packet_length -= 5;
+                memmove(packet, packet+5, packet_length);
+                REPARSE_PACKET = true;
+                break;
+            } else {
+                packet[0] = PKT_CONDITION_SKIPPED;
+                packet[4] = packet_length;
+                packet_length = 5;
+                packet_status = READY_TO_SEND;
+            }
+            break;
+
+            // ...
+
+        default:
+            PACKET_ERROR = true;
+            break;
         }
 
         if (PACKET_ERROR) {
@@ -959,28 +959,28 @@ int foo(int v)
     // ...
     int something = 0;
     switch (v) {
-        case FIRST_CASE:
-            something = 2;
-            goto common1;
-        case SECOND_CASE:
-            something = 7;
-            goto common1;
-        case THIRD_CASE:
-            something = 9;
-            goto common1;
+    case FIRST_CASE:
+        something = 2;
+        goto common1;
+    case SECOND_CASE:
+        something = 7;
+        goto common1;
+    case THIRD_CASE:
+        something = 9;
+        goto common1;
 common1:
-            /* code common to FIRST, SECOND and THIRD cases */
-            break;
+        /* code common to FIRST, SECOND and THIRD cases */
+        break;
 
-        case FOURTH_CASE:
-            something = 10;
-            goto common2;
-        case FIFTH_CASE:
-            something = 42;
-            goto common2;
+    case FOURTH_CASE:
+        something = 10;
+        goto common2;
+    case FIFTH_CASE:
+        something = 42;
+        goto common2;
 common2:
-            /* code common to FOURTH and FIFTH cases */
-            break;
+        /* code common to FOURTH and FIFTH cases */
+        break;
     }
     // ...
 }
@@ -1017,27 +1017,27 @@ int foo(int v)
     ctx.something = &something;
 
     switch (v) {
-        case FIRST_CASE:
-            something = 2;
-            common1(ctx);
-            break;
-        case SECOND_CASE:
-            something = 7;
-            common1(ctx);
-            break;
-        case THIRD_CASE:
-            something = 9;
-            common1(ctx);
-            break;
+    case FIRST_CASE:
+        something = 2;
+        common1(ctx);
+        break;
+    case SECOND_CASE:
+        something = 7;
+        common1(ctx);
+        break;
+    case THIRD_CASE:
+        something = 9;
+        common1(ctx);
+        break;
 
-        case FOURTH_CASE:
-            something = 10;
-            common2(ctx);
-            break;
-        case FIFTH_CASE:
-            something = 42;
-            common2(ctx);
-            break;
+    case FOURTH_CASE:
+        something = 10;
+        common2(ctx);
+        break;
+    case FIFTH_CASE:
+        something = 42;
+        common2(ctx);
+        break;
     }
     // ...
 }
@@ -1084,27 +1084,27 @@ int foo(int v)
     // ...
     int something = 0;
     switch (v) {
-        case FIRST_CASE:
-            something = 2;
+    case FIRST_CASE:
+        something = 2;
       if (0) {
-        case SECOND_CASE:
-            something = 7;
+    case SECOND_CASE:
+        something = 7;
       }
       if (0) {
-        case THIRD_CASE:
-            something = 9;
+    case THIRD_CASE:
+        something = 9;
       }
-            /* code common to FIRST, SECOND and THIRD cases */
-            break;
+        /* code common to FIRST, SECOND and THIRD cases */
+        break;
 
-        case FOURTH_CASE:
-            something = 10;
+    case FOURTH_CASE:
+        something = 10;
       if (0) {
-        case FIFTH_CASE:
-            something = 42;
+    case FIFTH_CASE:
+        something = 42;
       }
-            /* code common to FOURTH and FIFTH cases */
-            break;
+        /* code common to FOURTH and FIFTH cases */
+        break;
     }
     // ...
 }
@@ -1168,7 +1168,7 @@ _Beej's Guide to C Programming_ has nice example of using this technique alongsi
 >     // Cleanup here
 > ```
 >
-> Without `goto`, you’d have to check an error condition
+> Without `goto`, youΓÇÖd have to check an error condition
 > flag in all of the loops to get all the way out.
 
 ## Breaking loop from inside a `switch` statement
@@ -1183,11 +1183,11 @@ void func(int v)
 
     while (1) {
         switch (v) {
-            case SOME_V:
-                // ...
-                break;  // doesn't exit loop
-            case STOP_LOOP:
-                goto break_while;
+        case SOME_V:
+            // ...
+            break;  // doesn't exit loop
+        case STOP_LOOP:
+            goto break_while;
         }
     }
 break_while:
@@ -1269,25 +1269,25 @@ _Bool machine(const char* c)
 {
 qA:
     switch (*(c++)) {
-        case 'x': goto qB;
-        case 'y': goto qC;
-        case 'z': goto qA;
-        default: goto err;
+    case 'x': goto qB;
+    case 'y': goto qC;
+    case 'z': goto qA;
+    default: goto err;
     }
 
 qB:
     switch (*(c++)) {
-        case 'x': goto qB;
-        case 'y': goto qA;
-        case '\0': goto F;
-        default: goto err;
+    case 'x': goto qB;
+    case 'y': goto qA;
+    case '\0': goto F;
+    default: goto err;
     }
 
 qC:
     switch (*(c++)) {
-        case 'x': goto qC;
-        case 'z': goto qB;
-        default: goto err;
+    case 'x': goto qC;
+    case 'z': goto qB;
+    default: goto err;
     }
 
 F:
