@@ -1170,7 +1170,7 @@ _Beej's Guide to C Programming_ has nice example of using this technique alongsi
 >     // Cleanup here
 > ```
 >
-> Without `goto`, youΓÇÖd have to check an error condition
+> Without `goto`, you'd have to check an error condition
 > flag in all of the loops to get all the way out.
 
 ## Breaking loop from inside a `switch` statement
