@@ -611,6 +611,8 @@ Drawbacks:
   * adds unnecessary nesting
   * takes more lines
   * don't even think about using a legitimate loop somewhere among this mess
+  * useless when when we wrap it around actual loop or `switch` statement
+    ("breaking on error" will stop only that one loop/`switch` instead of whole thing)
 
 ```c
 int* foo(int bar)
