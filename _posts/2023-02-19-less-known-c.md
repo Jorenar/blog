@@ -474,6 +474,36 @@ const char* s = "Hello " WORLD "\n"
                 "innit?";
 ```
 
+## Backslash line splicing
+
+Each instance of a backslash character '\' immediately followed by a new-line
+character is deleted, splicing physical source lines to form logical source lines.
+
+```c
+#define I_AM_O\
+NE_MACRO 123
+
+// I am a comment. \
+   I'm stil the same comment. \
+   I'm a so-called ONE-LINE comment!
+
+int main()
+{
+    int x = I_AM_ONE_MACRO;  // correctly expands to 123
+
+    int same_\
+variable = 1;
+    same_variable = 1;
+
+    const char* p = "String with\
+                     so many spaces in the MIDDLE!";
+
+    puts(p); // "String with                     so many spaces in the MIDDLE!"
+
+    return 0;
+}
+```
+
 ## Using `&&` and `||` as conditionals
 
 If you write Shell scripts, you know what I mean.
