@@ -476,7 +476,7 @@ const char* s = "Hello " WORLD "\n"
 
 ## Backslash line splicing
 
-Each instance of a backslash character '\' immediately followed by a new-line
+Each instance of a backslash character `\` immediately followed by a new-line
 character is deleted, splicing physical source lines to form logical source lines.
 
 ```c
