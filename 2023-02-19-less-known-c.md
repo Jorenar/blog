@@ -60,7 +60,7 @@ For example: `b = (a=3, a+2);` -- this code would firstly assign value 3
 to `a`, and then `a+2` would be assigned to variable `b`. So, at the end,
 `b` would contain value 5 while variable `a` would be 3.
 
-On Wikipedia we can find [few more examples](https://en.wikipedia.org/wiki/Comma_operator#Examples):
+On Wikipedia we can find [few more examples](https://en.wikipedia.org/wiki/Comma_operator#Examples).
 
 ## Digraphs, trigraphs and alternative tokens
 
@@ -509,6 +509,7 @@ variable = 1;
 If you write Shell scripts, you know what I mean.
 
 ```c
+#include <ctype.h>
 #include <stdio.h>
 #include <stdbool.h>
 
@@ -791,7 +792,7 @@ int main(void)
 From [this comment](https://www.reddit.com/r/programming/comments/116iij3/few_lesser_known_tricks_quirks_and_features_of_c/j98zxu5/) on Reddit:
 
 > `sscanf()` can be used as an ersatz "regex" (not really, only character classes) matcher.
-> For example, one can write something like this to check if the input consists of letters of underscores:
+> For example, one can write something like this to check if the input consists of letters or underscores:
 >
 > ```c
 > int len = 0;
