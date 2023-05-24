@@ -91,8 +91,8 @@ I'll also try to mention `goto`-less alternatives and their potential drawbacks
 # Error/exception handling & cleanup
 
 Poster child of using `goto` -- most of the times accepted, often recommended,
-sometimes even straight up mandated. This pattern results in a good quality
-code, because the operations of the algorithm are _structured_ in a clear order,
+sometimes even straight up mandated. This idiom results in a good quality code,
+because the operations of the algorithm are _structured_ in a clear order,
 while errors and other overhead is handled somewhere else, outside the mainline.
 The alternatives make the code less readable as it's hard to spot where the
 main code is buried among the error checks.
