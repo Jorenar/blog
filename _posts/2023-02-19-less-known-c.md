@@ -611,6 +611,37 @@ struct Foo records[] = {
 };
 ```
 
+## Pointers to `void`
+
+C11 §6.3.2.3 ¶1:
+
+>  A pointer to `void` may be converted to or from a pointer to any object type.
+>  A pointer to any object type may be converted to a pointer to void and back again; 
+>  the result shall compare equal to the original pointer.
+
+C11 §6.5.16.1 ¶1:
+
+<blockquote style="display:flex">
+  <div style="margin-right: 10px;">&mdash;</div>
+  <div>
+    the left operand has atomic, qualified, or unqualified pointer type, and
+    (considering the type the left operand would have after lvalue conversion)
+    one operand is a pointer to an object type, and the other is a pointer to
+    a qualified or unqualified version of <code>void</code>, and the type pointed
+    to by the left has all the qualifiers of the type pointed to by the right;
+  </div>
+</blockquote>
+
+`void*` was added to C89 because of a need for generic pointer
+type which can be implicitly casted back and forth.
+
+In fact, explicitly casting `void` pointers has the following problems:
+
+  * it is unnecessary, as `void*` is automatically and safely promoted to any other pointer type;
+  * it adds clutter to the code, casts are not very easy to read (especially if the pointer type is long);
+  * it makes you repeat yourself;
+  * it can hide an error would return type change from `void*` to something more concrete.
+
 ## [Static array indices in function parameter declarations](https://www.ibm.com/docs/en/i/7.5?topic=pd-static-array-indices-in-function-parameter-declarations-c-only)
 
 > Except in certain contexts, an unsubscripted array name (for example, `region`
