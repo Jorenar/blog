@@ -487,6 +487,16 @@ NE_MACRO 123
    I'm stil the same comment. \
    I'm a so-called ONE-LINE comment!
 
+
+int fun()
+{
+    if (drive == 2) // drive 2 is C:\
+        return 1;  <-- my firend here is still part of a COMMENT!!
+
+    writestuff();
+    return 0;
+}
+
 int main()
 {
     int x = I_AM_ONE_MACRO;  // correctly expands to 123
