@@ -828,6 +828,19 @@ int main(void)
 > };
 > ```
 
+## Unity builds
+
+Because `#include` mechanism is essentially a primitive copy-pasting
+contents of included file into the current code, C allows us to make
+so called [unity builds](https://en.wikipedia.org/wiki/Unity_build),
+where we dump everything into one translation unit.
+
+Applying this technique sometimes may lead to faster compile times,
+simplified build process or provide opportunity for optimizations.
+Unfortunately, is doesn't scale well at all as it doesn't mix with
+parallel and incremental builds.
+It also hinders modularization/encapsulation of code.
+
 ## Matching character classes with `sscanf()`
 
 From [this comment](https://www.reddit.com/r/programming/comments/116iij3/few_lesser_known_tricks_quirks_and_features_of_c/j98zxu5/) on Reddit:
