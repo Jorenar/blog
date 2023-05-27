@@ -841,6 +841,10 @@ Unfortunately, is doesn't scale well at all as it doesn't mix with
 parallel and incremental builds.
 It also hinders modularization/encapsulation of code.
 
+<aside markdown="1">
+Generating `compile_commands.json` for LLVM based tools will also be hampered.
+</aside>
+
 ## Matching character classes with `sscanf()`
 
 From [this comment](https://www.reddit.com/r/programming/comments/116iij3/few_lesser_known_tricks_quirks_and_features_of_c/j98zxu5/) on Reddit:
