@@ -115,6 +115,13 @@ void f(void)
          [8] = {      1,  8,   bar3 },
         [12] = { .x = 9,     .z = 8 },
     };
+
+    struct {
+        int sec, min, hour, day, mon, year;
+    } z = { 
+        .day = 31, 12, 2014, 
+        .sec = 30, 15, 17
+    }; // initializes z to { 30, 15, 17,  31, 12, 2014 }
 }
 ```
 
