@@ -45,7 +45,7 @@ But ability to allocate a big multi-dimensional array on heap is nice:
 int (*ap3)[90000][90000] = malloc(sizeof *ap3);
 ```
 
-With pointers even VLA can find its use ([more here](https://blog.joren.ga/vla-usecases)):
+With pointers even VLA can find its use ([more here](/vla-usecases)):
 ```c
 int (*ap4)[n] = malloc(sizeof *ap4);
 ```
