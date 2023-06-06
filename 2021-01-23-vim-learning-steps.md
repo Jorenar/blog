@@ -24,7 +24,7 @@ redirect_from:
 
 <aside markdown="1">
 Further down the road:
-  * Read humorous [Vim Kōans](https://blog.sanctum.geek.nz/vim-koans)
+  * Read humorous [Vim Kōans](https://blog.sanctum.geek.nz/vim-koans) and [The Dharma of Vi](https://blog.samwhited.com/2015/04/the-dharma-of-vi/)
   * [Your problem with Vim is that you don't grok vi](https://stackoverflow.com/a/1220118/10247460)
   * [Proverbs](https://www.vi-improved.org/vim-proverbs) and [recommendations](https://www.vi-improved.org/recommendations) from [#vim](https://www.vi-improved.org/)
   * [Seven habits of effective text editing](https://www.moolenaar.net/habits.html) by Bram Moolenaar
