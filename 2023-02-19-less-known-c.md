@@ -160,7 +160,12 @@ int main(void)
 (struct Foo){};
 ((struct Foo){}).x = 4;
 &(struct Foo){};
+func(&(struct Foo){.x = 2});
 ```
+
+Even if you already knew about compound literals, there's a high chance you've
+never consciously noticed them being lvalues. And it's important, because when
+a value is an lvalue, we can get its address (and e.g. pass it to function).
 
 ## Multi-character constants
 
