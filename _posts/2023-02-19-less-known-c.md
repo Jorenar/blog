@@ -628,7 +628,7 @@ struct Foo records[] = {
 };
 ```
 
-## Pointers to `void`
+## Implicit casting of `void` pointers
 
 C11 §6.3.2.3 ¶1:
 
