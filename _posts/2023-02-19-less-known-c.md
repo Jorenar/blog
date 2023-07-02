@@ -33,7 +33,7 @@ Decay-to-pointer makes regular pointers to array usually not needed:
 ```c
 int arr[10];
 
-int* ap0 = arr;        // array decay-to-pointer
+int *ap0 = arr;        // array decay-to-pointer
 // ap0[2] = ...
 
 int (*ap1)[10] = &arr; // proper pointer to array
@@ -101,7 +101,7 @@ are to be initialized by the values following. The order does not matter!
 ```c
 struct Foo {
     int x, y;
-    const char* bar;
+    const char *bar;
 };
 
 void f(void)
@@ -320,7 +320,7 @@ for (int i = 0; i < vector->len; ++i) {
 >
 > ```c
 > int pos1, pos2;
-> const char* str_of_unknown_len = "we don't care about the length of this";
+> const char *str_of_unknown_len = "we don't care about the length of this";
 >
 > printf("Write text of unknown %n(%s)%n length\n", &pos1, str_of_unknown_len, &pos2);
 > printf("%*s\\%*s/\n", pos1, " ", pos2-pos1-2, " ");
@@ -469,7 +469,7 @@ of an array is filled with correct value, but I didn't know where the padding
 starts. Thus I did the following:
 
 ```c
-int* end = arr + (len - 1);
+int *end = arr + (len - 1);
 if (end[0] == VAL && end[-1] == VAL && end[-5] == VAL) {
     puts("Correct padding");
 }
@@ -481,7 +481,7 @@ You don't need `sprintf()` (nor `strcat()`!) to concatenate strings literals:
 
 ```
 #define WORLD "World!"
-const char* s = "Hello " WORLD "\n"
+const char *s = "Hello " WORLD "\n"
                 "It's a lovely day, "
                 "innit?";
 ```
@@ -517,7 +517,7 @@ int main()
 variable = 1;
     same_variable = 1;
 
-    const char* p = "String with\
+    const char *p = "String with\
                      so many spaces in the MIDDLE!";
 
     puts(p); // "String with                     so many spaces in the MIDDLE!"
@@ -734,7 +734,7 @@ int main()
 {
     typedef double fun_t(double);
     fun_t sin, cos, sqrt;
-    fun_t* ftpt = &sqrt;
+    fun_t *ftpt = &sqrt;
 
     printf("%lf\n", ftpt(4)); // 2.000000
 
@@ -757,7 +757,7 @@ int main()
 ```c
 struct _foo_args {
     int num;
-    const char* text;
+    const char *text;
 };
 
 #define foo(...) _foo((struct _foo_args){ __VA_ARGS__ })
