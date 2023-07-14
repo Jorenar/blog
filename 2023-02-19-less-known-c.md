@@ -908,6 +908,28 @@ introduced to the code by the `asm` keyword.
 * [Writing inline assembly code - Arm Compiler for Embedded User Guide](https://developer.arm.com/documentation/100748/0619/Using-Assembly-and-Intrinsics-in-C-or-C---Code/Writing-inline-assembly-code)
 * [Inline Assembly in C/C++ - University of Alaska Fairbanks](https://www.cs.uaf.edu/courses/cs301/2014-fall/notes/inline-assembly/)
 
+## Evaluate `sizeof` at compile time by causing duplicate case error
+
+Assume you are working on embedded system or generally on something
+where getting a `printf()` output may not be trivial task.
+
+```
+int foo(int c)
+{
+    switch (c) {
+        case sizeof (struct Foo): return c + 1;
+        case sizeof (struct Foo): return c + 2;
+    }
+}
+```
+
+Adding such simple function anywhere in your code may (depending on compiler)
+produce an error message telling us the result of `sizeof` operator.
+```
+error: duplicate case value '16'
+        case sizeof(struct Foo): return c + 2;
+             ^
+```
 ## Object Oriented Programming
 
 * [Object-Oriented Programming in C - Quantum Leaps](https://www.state-machine.com/oop)
@@ -941,25 +963,15 @@ int sum(const BinaryTree *tree) {
 }
 ```
 
-## Evaluate `sizeof` at compile time by causing duplicate case error
+## Preprocessor is a language of its own
 
-Assume you are working on embedded system or generally on something
-where getting a `printf()` output may not be trivial task.
+I've already mentioned some preprocessor tricks, but there's way more!
+In fact, I could easily make such a list out of preprocessor oddities alone.
+After all, it it a full fledged, Turing-complete language with its own rules,
+grammar and caveats; heck, it's not even strictly exclusive to C - there are
+madlads [using it in conjunction with e.g. JavaScript](https://www.nongnu.org/espresso/js-cpp.html)
 
-```
-int foo(int c)
-{
-    switch (c) {
-        case sizeof (struct Foo): return c + 1;
-        case sizeof (struct Foo): return c + 2;
-    }
-}
-```
-
-Adding such simple function anywhere in your code may (depending on compiler)
-produce an error message telling us the result of `sizeof` operator.
-```
-error: duplicate case value '16'
-        case sizeof(struct Foo): return c + 2;
-             ^
-```
+Thankfully, [Tima "Hirrolot" Kinsart](https://hirrolot.github.io/) - developer
+of aforementioned Metalang99, already prepared
+[awesome-c-preprocessor](https://github.com/Hirrolot/awesome-c-preprocessor)
+list with sane and insane deeds possible to do in C preprocessor.
