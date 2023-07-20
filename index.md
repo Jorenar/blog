@@ -2,6 +2,10 @@
 layout: default
 ---
 
+<nav>
+  <a href="{{ 'feed.xml' | relative_url }}">RSS</a>
+</nav>
+
 <ul class="post-list">
 {%- for post in site.posts -%}
   <li>
