@@ -2,9 +2,11 @@
 layout: default
 ---
 
-<nav>
-  <a href="{{ 'feed.xml' | relative_url }}">RSS</a>
-</nav>
+<script>
+  if (window === window.parent) {
+      window.location.href.replace(window.location.origin + "#blog");
+  }
+</script>
 
 <ul class="post-list">
 {%- for post in site.posts -%}
