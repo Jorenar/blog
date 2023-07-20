@@ -4,7 +4,7 @@ layout: default
 
 <script>
   if (window === window.parent) {
-      window.location.href.replace(window.location.origin + "#blog");
+      window.location.replace(window.location.origin + "#blog");
   }
 </script>
 
