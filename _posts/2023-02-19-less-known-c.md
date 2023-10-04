@@ -16,6 +16,7 @@ short explanations and/or examples (or quote of thereof).
 * [Interesting ways to use C? : r/C_Programming](https://www.reddit.com/r/C_Programming/comments/mqk338/interesting_ways_to_use_c/)
 * [C99 with Technical corrigenda TC1, TC2, and TC3 included](http://www.open-std.org/JTC1/SC22/WG14/www/docs/n1256.pdf)
 * [Rob's Programming Blog: How Well Do You Know C?](http://www.robertgamble.net/2011/05/how-well-do-you-know-c.html)
+* [Deep C (and C++) _by Olve Maudal and Jon Jagger_](http://www.pvv.org/~oma/DeepC_slides_oct2011.pdf)
 * [Let's Destroy C](https://gist.github.com/shakna-israel/4fd31ee469274aa49f8f9793c3e71163#lets-destroy-c)
 * [The Preprocessor Iceberg Meme](https://jadlevesque.github.io/PPMP-Iceberg/)
 </aside>
