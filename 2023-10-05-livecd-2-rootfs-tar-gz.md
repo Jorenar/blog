@@ -10,9 +10,6 @@ to give anyone enought overview to reproduce for any other distribution.
 
 ## TL;DR
 
-While I highly encourage you to read the whole text, you probably can easily
-infer all the necessary information just from commands alone:
-
 **Debian**
 ```
 sudo mkdir /mnt/iso
@@ -57,18 +54,26 @@ sudo rm -r /tmp/squashfs
 * `sudo` + permissions
 
 # Step-by-step
+## Get the LiveCDs
+
+This step is self-explanatory.
+
+As of writing those words the latest ISOs are:
+  * `debian-live-12.1.0-amd64-standard.iso`
+  * `Fedora-Workstation-Live-x86_64-38-1.6.iso`
+
 ## Mounting ISOs
 
-First we need to create a mountpoints:
+First we need to create mountpoints:
 ```
 $ sudo mkdir /mnt/debian
 $ sudo mkdir /mnt/fedora
 ```
-It doesn't need to be `/mnt/iso`, you can as well use `~/foo` or anything.
+(it doesn't need to be `/mnt/iso`, you can as well use `~/foo` or something else)
 
-The syntax for mounting an ISO file is as follow: `mount -o loop disk1.iso /mnt/disk`
+The syntax for mounting an ISO file is: `mount -o loop disk1.iso /mnt/disk`
 
-Therefore let's mount our LiveCDs:
+Therefore let's mount our images:
 ```
 $ sudo mount -o loop debian-live-12.1.0-amd64-standard.iso /mnt/debian
 $ sudo mount -o loop Fedora-Workstation-Live-x86_64-38-1.6.iso /mnt/fedora
@@ -91,11 +96,12 @@ $ find /mnt/fedora -name '*squashfs*'
 As we can see, we have:
   * `/mnt/debian/live/filesystem.squashfs`
   * `/mnt/fedora/LiveOS/squashfs.img`
+
 Those are out files of interest.
 
 ## Unsquashing
 
-Now let's extract the files. I'll put the output in `/tmp`
+Now let's uncompress the files; I'll extract them in `$TMPDIR`
 (be sure it has sufficent size or choose different location).
 
 ```
@@ -104,7 +110,7 @@ $ sudo unsquashfs -d "$TMPDIR"/debian /mnt/debian/live/filesystem.squashfs
 $ sudo unsquashfs -d "$TMPDIR"/fedora /mnt/fedora/LiveOS/squashfs.img
 ```
 
-Let's have the look at the directories:
+Let's have a look at what we got:
 ```
 $ ls "$TMPDIR"/debian
 bin@   etc/         lib@    libx32@  opt/   run/   sys/  var/
@@ -118,9 +124,9 @@ rootfs.img
 
 ## Mounting (Fedora) filesystem image
 
-As we seen in previous step, for Debian we already have filesystem,
-but there's only `rootfs.img` file for Fedora, which we need to mount to
-get out filesystem.
+As we seen in previous step, for Debian we already have reached
+its filesystem, but there's only `rootfs.img` file for Fedora.
+We need to mount it to get desired files.
 
 ```
 $ sudo mkdir /mnt/fedora_fs
@@ -132,7 +138,7 @@ bin@  dev/   home/  lib64@  media/       opt/  root/  sbin@  sys/  usr/
 
 ## Creating tarballs
 
-Now all that's left is just archiving the filesystems into `rootfs.tar.gz` files
+Now all that's left is just archiving the filesystems into `rootfs.tar.gz` files:
 
 ```
 $ cd "$TMPDIR"/debian
@@ -160,5 +166,6 @@ $ sudo rm -r "$TMPDIR"/debian "$TMPDIR"/fedora
 
 # Done
 
-Great! You know how to extract `rootfs.tar.gz` from Linux LiveCD ISO.
-Now you can, for example, [import it into WSL](https://learn.microsoft.com/en-us/windows/wsl/use-custom-distro#import-the-tar-file-into-wsl).
+Great! Now that we know how to turn Linux LiveCD ISO into `rootfs.tar.gz` archive,
+we can use it to [create an instance of Windows Subsystem for Linux
+(WSL)](https://learn.microsoft.com/en-us/windows/wsl/use-custom-distro#import-the-tar-file-into-wsl).
