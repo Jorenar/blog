@@ -1,12 +1,12 @@
 ---
 layout: post
-title:  "Creating rootfs.tar.gz from LiveCD ISO"
+title:  "Creating rootfs.tar.gz from Linux LiveCD"
 ---
 
 While the user facing part of LiveCD works mostly the same across Linux distros,
 the internals can be more or less different. That's why in this text I'll present
 how to extract filesystem from two distributions: Debian and Fedora. That ought
-to give anyone enought overview to reproduce for any other distribution.
+to give anyone enough overview to reproduce for any other distribution.
 
 ## TL;DR
 
@@ -79,7 +79,7 @@ $ sudo mount -o loop debian-live-12.1.0-amd64-standard.iso /mnt/debian
 $ sudo mount -o loop Fedora-Workstation-Live-x86_64-38-1.6.iso /mnt/fedora
 ```
 
-## Localizing SquashFS
+## Finding SquashFS
 
 ```
 $ find /mnt/debian -name '*squashfs*'
@@ -102,7 +102,7 @@ Those are out files of interest.
 ## Unsquashing
 
 Now let's uncompress the files; I'll extract them in `$TMPDIR`
-(be sure it has sufficent size or choose different location).
+(be sure it has sufficient size or choose different location).
 
 ```
 $ TMPDIR="${TMPDIR:-/tmp}"
@@ -110,7 +110,7 @@ $ sudo unsquashfs -d "$TMPDIR"/debian /mnt/debian/live/filesystem.squashfs
 $ sudo unsquashfs -d "$TMPDIR"/fedora /mnt/fedora/LiveOS/squashfs.img
 ```
 
-Let's have a look at what we got:
+Let's have a look at what we got so far:
 ```
 $ ls "$TMPDIR"/debian
 bin@   etc/         lib@    libx32@  opt/   run/   sys/  var/
@@ -124,9 +124,9 @@ rootfs.img
 
 ## Mounting (Fedora) filesystem image
 
-As we seen in previous step, for Debian we already have reached
+As we seen in previous step, for Debian we already dug out
 its filesystem, but there's only `rootfs.img` file for Fedora.
-We need to mount it to get desired files.
+We can mount it as we did with ISOs to reach its content.
 
 ```
 $ sudo mkdir /mnt/fedora_fs
@@ -166,6 +166,5 @@ $ sudo rm -r "$TMPDIR"/debian "$TMPDIR"/fedora
 
 # Done
 
-Great! Now that we know how to turn Linux LiveCD ISO into `rootfs.tar.gz` archive,
-we can use it to [create an instance of Windows Subsystem for Linux
-(WSL)](https://learn.microsoft.com/en-us/windows/wsl/use-custom-distro#import-the-tar-file-into-wsl).
+Great! Now that we know how get filesystem from Linux LiveCD ISO into `rootfs.tar.gz` archive, we can use it to e.g.
+[create an instance of Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/en-us/windows/wsl/use-custom-distro#import-the-tar-file-into-wsl).
