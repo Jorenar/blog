@@ -130,6 +130,9 @@ pre {
 
 .post-list {
   font-size: 1.3em;
+  line-height: 1.3em;
+  list-style: none;
+  margin: auto;
   text-align: left;
 }
 
