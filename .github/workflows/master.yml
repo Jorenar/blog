@@ -23,7 +23,6 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./
           enable_jekyll: true
-          cname: blog.joren.ga
       - name: Checkout posts
         uses: actions/checkout@v2
         with:
