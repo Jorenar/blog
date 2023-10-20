@@ -131,6 +131,12 @@ pre {
 .post-list {
   font-size: 1.3em;
   text-align: left;
+  list-style: none;
+  margin: auto;
+}
+
+.post-list li {
+  margin-bottom: 0.1em;
 }
 
 .highlight {
