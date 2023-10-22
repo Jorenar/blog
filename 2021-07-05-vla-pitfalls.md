@@ -25,10 +25,10 @@ refferng to those cases.
 
 # Allocation on stack
 
-Let's address the elephant in the room: aVLA usually are allocated on stack.
-This is the source of the most of the problems, the source of discontent among
-programmers, the reason why even allowing any VLA into the codebase is usually
-a code smell.
+Let's address the elephant in the room: the standard doesn't say anything about
+it, but in practice aVLA usually are allocated on stack. This is the source of
+the most of the problems, the source of discontent among programmers, the reason
+why even allowing any VLA into the codebase is usually a code smell.
 
 Let's consider a painfully simple, very favourable to aVLA, example:
 ```c
