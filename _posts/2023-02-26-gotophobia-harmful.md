@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "GOTOphobia considered harmful (in C)"
+title:  "GOTOphobia considered harmful"
 ---
 
 <aside markdown="1">
