@@ -941,8 +941,8 @@ error: duplicate case value '16'
 
 ## Safe(ish) variadic functions
 
-[An example](https://codeberg.org/NRK/slashtmp/src/branch/master/misc/safe_va_func.c)
-by [NRK](https://nrk.neocities.org/)
+[A trick](https://codeberg.org/NRK/slashtmp/src/branch/master/misc/safe_va_func.c)
+by [NRK](https://nrk.neocities.org/):
 
 > Variadic functions are often sources of subtle bugs because theirs arguments
 > are not type-checked and can have unintuitive promotion/conversion rules.
