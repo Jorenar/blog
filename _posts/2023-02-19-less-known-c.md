@@ -939,6 +939,48 @@ error: duplicate case value '16'
 * [C Traps and Pitfalls](https://www.cs.tufts.edu/comp/40/docs/CTrapsAndPitfalls.pdf) by Andrew Koenig
 * ["you can have something like interfaces and virtual methods by using function pointers"](https://www.reddit.com/r/C_Programming/comments/mqk338/interesting_ways_to_use_c/guhenr5/)
 
+## Safe(ish) variadic functions
+
+[An example](https://codeberg.org/NRK/slashtmp/src/branch/master/misc/safe_va_func.c)
+by [NRK](https://nrk.neocities.org/)
+
+> Variadic functions are often sources of subtle bugs because theirs arguments
+> are not type-checked and can have unintuitive promotion/conversion rules.
+>
+> There's also a problem that variadic function doesn't know how many arguments
+> have been passed to it, thus the caller needs to do it manually, either via
+> some sentinel value that marks the end of arguments (e.g `execl()` using
+> `NULL` to mark the end) or by passing the size via another parameter.
+>
+> With some clever usage of C99's variadic macros, combined with compound
+> literals, these shortcomings can be worked around.  
+> While the below example only works when all parameters are of the same type,
+> in cases where different types might be needed, it *should* be possible to
+> extend this trick with "tagged union" and some usage of C11's `_Generic`.
+
+```c
+#include <stdio.h>
+
+void print_vec(FILE *f, const int *v, size_t n)
+{
+    for (size_t i = 0; i < n; ++i) {
+        fprintf(f, "%d\n", p[i]);
+    }
+}
+#define print_vec(fstream, ...)                                     \
+    print_vec((fstream),                                            \
+              (const int[]){ __VA_ARGS__ },                         \
+              (sizeof (int[]){ __VA_ARGS__ } / sizeof (int)) )
+
+int main(void)
+{
+    print_vec(stdout, 1);
+    print_vec(stdout, 1, 2, 3);
+    print_vec(stdout, 1, 2, 3, 4, 5);
+    return 0;
+}
+```
+
 ## Metaprogramming
 
 C11 added `_Generic` to language, but turns out metaprogramming
