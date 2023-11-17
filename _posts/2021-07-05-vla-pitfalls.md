@@ -225,7 +225,7 @@ int A[n] = { 0 };
 ```
 Even with optimizations, initialisation isn't allowed for aVLA. So despite
 wanting fixed size array and compiler being technically able to provide one,
-it's won't work (and if it does... it's breaking the specification...).
+it won't work (and if it does... it's breaking the specification...).
 
 # `sizeof` not resolved at compile time
 
@@ -299,7 +299,7 @@ standard committee [sic!]) you will see even more different complaints.
 Due to all previously presented problems, some compiler providers decided to
 not fully support C99. The primary example is Microsoft with its MSVC.
 The C Standard Committee also noticed the problem and with C11 revision
-all instances of VLAs were made optional; C2x is partially reverts that decision
+all instances of VLAs were made optional; C23 partially reverts that decision
 mandating VM types (aVLA are still optional; there is even a slight sentiment
 towards deprecating them entirely, but removing something from the, nomen omen,
 standard is way harder than putting it in).
@@ -338,7 +338,7 @@ void foo(int n, int m, int arr[n][m]) { /* arr[i][j] = ... */ }
 ```
 
 Alternatively, you could use the obsolete syntax (obsolescent even in
-ANSI&nbsp;C; finally removed in C2x), but that would be pointless, as
+ANSI&nbsp;C; finally removed in C23), but that would be pointless, as
 compilers don't make parameters checks in such case, so any benefits
 from using VLA would be lost.
 ```c
@@ -354,8 +354,7 @@ void foo(arr, n, n)
 
 <aside markdown="1">
 There is a chance a GCC extension - _forward declaration of parameters_ - will
-be standardized in C2x (assuming we reach consensus on the revision
-of [N2780](https://www.open-std.org/jtc1/sc22/wg14/www/docs/n2780.pdf)).
+be standardized in C2y.
 </aside>
 
 # Conclusion
