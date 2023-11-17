@@ -32,7 +32,7 @@ Further down the road:
   * [vimrctips](https://www.reddit.com/r/vim/wiki/vimrctips) of [r/vim](https://www.reddit.com/r/vim)
   * [How to Do 90% of What Plugins Do (With Just Vim)](https://www.youtube.com/watch?v=XA2WjJbmmoM)
   * [Learn Vimscript the Hard Way](https://learnvimscriptthehardway.stevelosh.com)
-  * [Make Vim follow XDG Base Directory specification](/vim-xdg)
+  * [Make Vim follow XDG Base Directory specification](/blog/vim-xdg)
   * Watch some [Vimcasts](http://vimcasts.org/episodes)
   * Check out [Vimways](https://vimways.org/2018)
   * Check out [Vim - Curated learning resources](https://learnbyexample.github.io/curated_resources/vim.html)
