@@ -1417,23 +1417,19 @@ int main()
 
 # Optimizations
 
-<aside markdown="1">
 This section is purely informative, just to appear on list as to mark the
-existence of such use-case. Giving an example for this is not so easy as
-most of them apply only in very narrow situations, not rarely bordering
-on micro-optimizing.
-</aside>
+existence of such use-case. Giving an example for this is not so easy,
+either from legal or conceptual standpoint as most of them apply only in very
+narrow situations, not rarely bordering on micro-optimizing.
 
 <aside markdown="1">
-Often extensions like [computed `goto`](https://gcc.gnu.org/onlinedocs/gcc/Labels-as-Values.html) are used
+Often extensions like [computed `goto`](https://gcc.gnu.org/onlinedocs/gcc/Labels-as-Values.html) are used.
 </aside>
 
-<aside markdown="1">
 Beej shows [tail call optimization](https://beej.us/guide/bgc/html/split/goto.html#tail-call-optimization)
-as an example in his book, unfortunately (from educational standpoint! otherwise very good) modern compilers
-easily optimize something as simple as factorial to the very same assembly which we get using the `goto`
-optimization. On the other hand, not everybody is blessed with modern, optimizing compiler...
-</aside>
+as an example in his book. Unfortunately (from educational standpoint! otherwise it's very good thing)
+modern compilers easily optimize something as simple as factorial to the very same assembly which we get
+using the `goto` optimization. On the other hand, not everybody is blessed with modern, optimizing compiler...
 
 # [_Structured Programming with **go to** Statements_](https://dl.acm.org/doi/epdf/10.1145/356635.356640)
 
