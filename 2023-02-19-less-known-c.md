@@ -937,7 +937,7 @@ error: duplicate case value '16'
 #define ICE_P(x) _Generic((1 ? ((void*)((x)*(uintptr_t)0)) : &(int){1}), int*: 1, void*: 0)
 ```
 
-Source: https://www.reddit.com/r/C_Programming/comments/o3ekqe/i_think_i_found_a_c11_compliant_way_to_detect/
+Source: [I think I found a C11 compliant way to detect constant expressions : r/C_Programming](https://www.reddit.com/r/C_Programming/comments/o3ekqe/i_think_i_found_a_c11_compliant_way_to_detect/)
 
 > TL;DR: Calling `ICE_P` will evaluate to true if the argument is a constant
 > expression and otherwise evaluate to false, so the following:
