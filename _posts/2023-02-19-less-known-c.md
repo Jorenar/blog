@@ -931,6 +931,22 @@ error: duplicate case value '16'
         case sizeof(struct Foo): return c + 2;
              ^
 ```
+## Detecting constant expressions
+
+```
+#define ICE_P(x) _Generic((1 ? ((void*)((x)*(uintptr_t)0)) : &(int){1}), int*: 1, void*: 0)
+```
+
+Source: https://www.reddit.com/r/C_Programming/comments/o3ekqe/i_think_i_found_a_c11_compliant_way_to_detect/
+
+> TL;DR: Calling `ICE_P` will evaluate to true if the argument is a constant
+> expression and otherwise evaluate to false, so the following:
+> ```
+> int x = 3;
+> printf("%d %d\n", ICE_P(x), ICE_P(3));
+> ```
+> should print `0 1`.
+
 ## Object Oriented Programming
 
 * [Object-Oriented Programming in C - Quantum Leaps](https://www.state-machine.com/oop)
