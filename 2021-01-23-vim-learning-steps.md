@@ -1,4 +1,4 @@
----
+--
 layout: post
 title:  "Steps to learn Vim"
 redirect_from:
@@ -39,5 +39,5 @@ Further down the road:
   * Watch some [Vimcasts](http://vimcasts.org/episodes)
   * Check out [Vimways](https://vimways.org/2018)
   * Check out [Vim - Curated learning resources](https://learnbyexample.github.io/curated_resources/vim.html)
-  * Read configs of more experienced users ([here's mine](https://github.com/Jorengarenar/dotfiles/tree/master/vim), for example)
+  * Read configs of more experienced users ([here's mine](https://github.com/Jorengarenar/dotfiles/tree/master/config/vim), for example)
 </aside>
