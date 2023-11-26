@@ -18,7 +18,7 @@ redirect_from:
  6. [idiomatic vimrc](https://github.com/romainl/idiomatic-vimrc) by [romainl](http://romainl.github.io/)
 
 <aside markdown="1">
-**_Ad 1:_** Additionaly you can also:
+**_@1:_** Additionaly you can also:
   * [Learn Vim the Smart Way](https://learnvim.irian.to)
   * Play free levels of [VIM Adventures](https://vim-adventures.com)
   * Follow [OpenVim](https://openvim.com/) - an interactive Vim tutorial online
