@@ -1,4 +1,4 @@
---
+---
 layout: post
 title:  "Steps to learn Vim"
 redirect_from:
@@ -31,6 +31,7 @@ Further down the road:
   * [Your problem with Vim is that you don't grok vi](https://stackoverflow.com/a/1220118/10247460)
   * [Proverbs](https://www.vi-improved.org/vim-proverbs) and [recommendations](https://www.vi-improved.org/recommendations) from [#vim](https://www.vi-improved.org/)
   * [Seven habits of effective text editing](https://www.moolenaar.net/habits.html) by Bram Moolenaar
+  * Try yourself in [VimGolf](https://www.vimgolf.com/) and [The Viminator](https://www.theviminator.com/)
   * [Why do Vim experts prefer buffers over tabs?](https://stackoverflow.com/a/26710166/10247460)
   * [vimrctips](https://www.reddit.com/r/vim/wiki/vimrctips) of [r/vim](https://www.reddit.com/r/vim)
   * [How to Do 90% of What Plugins Do (With Just Vim)](https://www.youtube.com/watch?v=XA2WjJbmmoM)
