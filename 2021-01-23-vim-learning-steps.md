@@ -8,19 +8,21 @@ redirect_from:
 0. Learn [how to ask a good question](https://stackoverflow.com/help/how-to-ask) and [to type it into search engine before asking](https://ddg.gg/?q=vim+start+learning) on forums
 1. Do [`vimtutor`](https://vimhelp.org/usr_01.txt.html#vimtutor) - it's a 30-minute tutorial that teaches the most basic Vim functionality hands-on
 2. [RTFM](https://en.wikipedia.org/wiki/RTFM)! User manual ([`:h user-manual`](https://vimhelp.org/usr_toc.txt.html)) will guide you through every feature from basic to advanced
-3. [`:help`](https://vimhelp.org/) and `:helpgrep` to find more detailed documentation of specific feature
-4. [`:h faq`](https://vimhelp.org/vim_faq.txt.html) - Frequently Asked Questions
-5. [`:h quickref`](https://vimhelp.org/quickref.txt.html) - quick reference guide
-6. [idiomatic vimrc](https://github.com/romainl/idiomatic-vimrc) by [romainl](http://romainl.github.io/)
+3. [`:h faq`](https://vimhelp.org/vim_faq.txt.html) - Frequently Asked Questions
+4. [`:h quickref`](https://vimhelp.org/quickref.txt.html) - quick reference guide
+5. [`:help`](https://vimhelp.org/) and `:helpgrep` to find more detailed documentation of specific feature
+6. USE IT
 7. More resources:
   * [Big Pile of Vim-like](https://vim.reversed.top/)
   * [How to Do 90% of What Plugins Do (With Just Vim)](https://www.youtube.com/watch?v=XA2WjJbmmoM)
+  * [idiomatic vimrc](https://github.com/romainl/idiomatic-vimrc) by [romainl](http://romainl.github.io/)
   * [Learn Vim the Smart Way](https://learnvim.irian.to)
   * [Learn Vimscript the Hard Way](https://learnvimscriptthehardway.stevelosh.com)
   * [Make Vim follow XDG Base Directory specification](/blog/vim-xdg)
   * [OpenVim](https://openvim.com/) - an interactive Vim tutorial online
   * [Proverbs](https://www.vi-improved.org/vim-proverbs) and [recommendations](https://www.vi-improved.org/recommendations) from [#vim](https://www.vi-improved.org/)
   * [r/vim](https://old.reddit.com/r/vim/)
+  * [romainl/vim-gists.md](https://gist.github.com/romainl/4b9f139d2a8694612b924322de1025ce)
   * [Seven habits of effective text editing](https://www.moolenaar.net/habits.html) by Bram Moolenaar
   * [The Viminator](https://www.theviminator.com/)
   * [Vi and Vim Stack Exchange](https://vi.stackexchange.com/)
