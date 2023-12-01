@@ -5,13 +5,14 @@ redirect_from:
   - /tools/vim-learning-steps
 ---
 
+{:start="0"}
 0. Learn [how to ask a good question](https://stackoverflow.com/help/how-to-ask) and [to type it into search engine before asking](https://ddg.gg/?q=vim+start+learning) on forums
 1. Do [`vimtutor`](https://vimhelp.org/usr_01.txt.html#vimtutor) - it's a 30-minute tutorial that teaches the most basic Vim functionality hands-on
 2. [RTFM](https://en.wikipedia.org/wiki/RTFM)! User manual ([`:h user-manual`](https://vimhelp.org/usr_toc.txt.html)) will guide you through every feature from basic to advanced
 3. [`:h faq`](https://vimhelp.org/vim_faq.txt.html) - Frequently Asked Questions
 4. [`:h quickref`](https://vimhelp.org/quickref.txt.html) - quick reference guide
 5. [`:help`](https://vimhelp.org/) and `:helpgrep` to find more detailed documentation of specific feature
-6. USE IT
+6. USE IT!
 7. More resources:
   * [Big Pile of Vim-like](https://vim.reversed.top/)
   * [How to Do 90% of What Plugins Do (With Just Vim)](https://www.youtube.com/watch?v=XA2WjJbmmoM)
