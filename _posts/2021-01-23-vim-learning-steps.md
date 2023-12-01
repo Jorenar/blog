@@ -17,28 +17,22 @@ redirect_from:
  5. [`:h quickref`](https://vimhelp.org/quickref.txt.html) - quick reference guide
  6. [idiomatic vimrc](https://github.com/romainl/idiomatic-vimrc) by [romainl](http://romainl.github.io/)
 
-<aside markdown="1">
-**_@1:_** Additionaly you can also:
+More resources:
   * [Learn Vim the Smart Way](https://learnvim.irian.to)
-  * Play free levels of [VIM Adventures](https://vim-adventures.com)
-  * Follow [OpenVim](https://openvim.com/) - an interactive Vim tutorial online
-  * Try yourself in online [Vim Quiz](https://vim.morzel.net)
-</aside>
-
-<aside markdown="1">
-Further down the road:
-  * Read humorous [Vim Kōans](https://blog.sanctum.geek.nz/vim-koans) and [The Dharma of Vi](https://blog.samwhited.com/2015/04/the-dharma-of-vi/)
+  * [VIM Adventures](https://vim-adventures.com)
+  * [OpenVim](https://openvim.com/) - an interactive Vim tutorial online
+  * [Vim Quiz](https://vim.morzel.net)
+  * [Vim Kōans](https://blog.sanctum.geek.nz/vim-koans) and [The Dharma of Vi](https://blog.samwhited.com/2015/04/the-dharma-of-vi/)
   * [Your problem with Vim is that you don't grok vi](https://stackoverflow.com/a/1220118/10247460)
   * [Proverbs](https://www.vi-improved.org/vim-proverbs) and [recommendations](https://www.vi-improved.org/recommendations) from [#vim](https://www.vi-improved.org/)
   * [Seven habits of effective text editing](https://www.moolenaar.net/habits.html) by Bram Moolenaar
-  * Try yourself in [VimGolf](https://www.vimgolf.com/) and [The Viminator](https://www.theviminator.com/)
+  * [VimGolf](https://www.vimgolf.com/)
+  * [The Viminator](https://www.theviminator.com/)
   * [Why do Vim experts prefer buffers over tabs?](https://stackoverflow.com/a/26710166/10247460)
   * [vimrctips](https://www.reddit.com/r/vim/wiki/vimrctips) of [r/vim](https://www.reddit.com/r/vim)
   * [How to Do 90% of What Plugins Do (With Just Vim)](https://www.youtube.com/watch?v=XA2WjJbmmoM)
   * [Learn Vimscript the Hard Way](https://learnvimscriptthehardway.stevelosh.com)
   * [Make Vim follow XDG Base Directory specification](/blog/vim-xdg)
-  * Watch some [Vimcasts](http://vimcasts.org/episodes)
-  * Check out [Vimways](https://vimways.org/2018)
-  * Check out [Vim - Curated learning resources](https://learnbyexample.github.io/curated_resources/vim.html)
-  * Read configs of more experienced users ([here's mine](https://github.com/Jorengarenar/dotfiles/tree/master/config/vim), for example)
-</aside>
+  * [Vimcasts](http://vimcasts.org/episodes)
+  * [Vimways](https://vimways.org/2018)
+  * [Vim - Curated learning resources](https://learnbyexample.github.io/curated_resources/vim.html)
