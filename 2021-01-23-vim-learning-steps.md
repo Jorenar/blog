@@ -17,22 +17,30 @@ redirect_from:
  5. [`:h quickref`](https://vimhelp.org/quickref.txt.html) - quick reference guide
  6. [idiomatic vimrc](https://github.com/romainl/idiomatic-vimrc) by [romainl](http://romainl.github.io/)
 
+---
+
 More resources:
-  * [Learn Vim the Smart Way](https://learnvim.irian.to)
-  * [VIM Adventures](https://vim-adventures.com)
-  * [OpenVim](https://openvim.com/) - an interactive Vim tutorial online
-  * [Vim Quiz](https://vim.morzel.net)
-  * [Vim Kōans](https://blog.sanctum.geek.nz/vim-koans) and [The Dharma of Vi](https://blog.samwhited.com/2015/04/the-dharma-of-vi/)
-  * [Your problem with Vim is that you don't grok vi](https://stackoverflow.com/a/1220118/10247460)
-  * [Proverbs](https://www.vi-improved.org/vim-proverbs) and [recommendations](https://www.vi-improved.org/recommendations) from [#vim](https://www.vi-improved.org/)
-  * [Seven habits of effective text editing](https://www.moolenaar.net/habits.html) by Bram Moolenaar
-  * [VimGolf](https://www.vimgolf.com/)
-  * [The Viminator](https://www.theviminator.com/)
-  * [Why do Vim experts prefer buffers over tabs?](https://stackoverflow.com/a/26710166/10247460)
-  * [vimrctips](https://www.reddit.com/r/vim/wiki/vimrctips) of [r/vim](https://www.reddit.com/r/vim)
+  * [Big Pile of Vim-like](https://vim.reversed.top/)
   * [How to Do 90% of What Plugins Do (With Just Vim)](https://www.youtube.com/watch?v=XA2WjJbmmoM)
+  * [Learn Vim the Smart Way](https://learnvim.irian.to)
   * [Learn Vimscript the Hard Way](https://learnvimscriptthehardway.stevelosh.com)
   * [Make Vim follow XDG Base Directory specification](/blog/vim-xdg)
-  * [Vimcasts](http://vimcasts.org/episodes)
-  * [Vimways](https://vimways.org/2018)
+  * [OpenVim](https://openvim.com/) - an interactive Vim tutorial online
+  * [Proverbs](https://www.vi-improved.org/vim-proverbs) and [recommendations](https://www.vi-improved.org/recommendations) from [#vim](https://www.vi-improved.org/)
+  * [r/vim](https://old.reddit.com/r/vim/)
+  * [Seven habits of effective text editing](https://www.moolenaar.net/habits.html) by Bram Moolenaar
+  * [The Viminator](https://www.theviminator.com/)
+  * [Vi and Vim Stack Exchange](https://vi.stackexchange.com/)
   * [Vim - Curated learning resources](https://learnbyexample.github.io/curated_resources/vim.html)
+  * [VIM Adventures](https://vim-adventures.com)
+  * [Vim Awesome](https://vimawesome.com)
+  * [Vim Kōans](https://blog.sanctum.geek.nz/vim-koans) and [The Dharma of Vi](https://blog.samwhited.com/2015/04/the-dharma-of-vi/)
+  * [Vim Quiz](https://vim.morzel.net)
+  * [Vim Tips Wiki](https://vim.fandom.com/wiki/Vim_Tips_Wiki)
+  * [Vim.org](https://www.vim.org/) - official Vim website
+  * [Vimcasts](http://vimcasts.org/episodes)
+  * [VimGolf](https://www.vimgolf.com/)
+  * [vimrctips](https://www.reddit.com/r/vim/wiki/vimrctips) of [r/vim](https://www.reddit.com/r/vim)
+  * [Vimways](https://vimways.org/2018)
+  * [Why do Vim experts prefer buffers over tabs?](https://stackoverflow.com/a/26710166/10247460)
+  * [Your problem with Vim is that you don't grok vi](https://stackoverflow.com/a/1220118/10247460)
