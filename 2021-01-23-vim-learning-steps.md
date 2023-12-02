@@ -14,6 +14,7 @@ redirect_from:
 5. [`:help`](https://vimhelp.org/) and `:helpgrep` to find more detailed documentation of specific feature
 6. USE IT!
 7. More resources:
+  * [Automating the Vim workplace — The Sharat's](https://sharats.me/posts/automating-the-vim-workplace/)
   * [Big Pile of Vim-like](https://vim.reversed.top/)
   * [How to Do 90% of What Plugins Do (With Just Vim)](https://www.youtube.com/watch?v=XA2WjJbmmoM)
   * [idiomatic vimrc](https://github.com/romainl/idiomatic-vimrc) by [romainl](http://romainl.github.io/)
