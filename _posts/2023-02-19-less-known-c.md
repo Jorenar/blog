@@ -848,10 +848,10 @@ contents of included file into the current code, C allows us to make
 so called [unity builds](https://en.wikipedia.org/wiki/Unity_build),
 where we dump everything into one translation unit.
 
-Applying this technique sometimes may lead to faster compile times,
-simplified build process or provide opportunity for optimizations.
-Unfortunately, is doesn't scale well at all as it doesn't mix with
-parallel and incremental builds.
+Applying [this technique](https://onqtam.com/programming/2018-07-07-unity-builds/)
+sometimes may lead to faster compile times, simplified build process or provide
+opportunity for optimizations. Unfortunately, is doesn't scale well at all as
+it doesn't mix with parallel and incremental builds.
 It also hinders modularization/encapsulation of code.
 
 <aside markdown="1">
