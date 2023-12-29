@@ -2,12 +2,6 @@
 layout: default
 ---
 
-<script>
-  if (window === window.parent) {
-      window.location.replace(window.location.origin + "#blog");
-  }
-</script>
-
 <ul class="post-list">
 {%- for post in site.posts -%}
   <li>
