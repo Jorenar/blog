@@ -9,16 +9,17 @@ job of gathering some of them in this post (in no particular order) with even sl
 short explanations and/or examples (or quote of thereof).
 
 <aside markdown="1">
-* [Hidden features of C - Stack Overflow](https://stackoverflow.com/q/132241/10247460)
-* [Lesser known C features](https://d3s.mff.cuni.cz/legacy/~holub/c_features.html)
-* [Mildly interesting quirks of C \| Hacker News](https://news.ycombinator.com/item?id=33680239)
 * [Advanced C: The UB and optimizations that trick good programmers.](https://www.youtube.com/watch?v=w3_e9vZj7D8)
-* [Interesting ways to use C? : r/C_Programming](https://www.reddit.com/r/C_Programming/comments/mqk338/interesting_ways_to_use_c/)
 * [C99 with Technical corrigenda TC1, TC2, and TC3 included](http://www.open-std.org/JTC1/SC22/WG14/www/docs/n1256.pdf)
-* [Rob's Programming Blog: How Well Do You Know C?](http://www.robertgamble.net/2011/05/how-well-do-you-know-c.html)
 * [Deep C (and C++) _by Olve Maudal and Jon Jagger_](http://www.pvv.org/~oma/DeepC_slides_oct2011.pdf)
+* [Hidden features of C - Stack Overflow](https://stackoverflow.com/q/132241/10247460)
+* [Interesting ways to use C? : r/C_Programming](https://www.reddit.com/r/C_Programming/comments/mqk338/interesting_ways_to_use_c/)
+* [Lesser known C features](https://d3s.mff.cuni.cz/legacy/~holub/c_features.html)
 * [Let's Destroy C](https://gist.github.com/shakna-israel/4fd31ee469274aa49f8f9793c3e71163#lets-destroy-c)
+* [Mildly interesting quirks of C \| Hacker News](https://news.ycombinator.com/item?id=33680239)
+* [Rob's Programming Blog: How Well Do You Know C?](http://www.robertgamble.net/2011/05/how-well-do-you-know-c.html)
 * [The Preprocessor Iceberg Meme](https://jadlevesque.github.io/PPMP-Iceberg/)
+* [What your weirdest C feature? : r/C_Programming](https://www.reddit.com/r/C_Programming/comments/pxgyee/what_your_weirdest_c_feature/)
 </aside>
 
 <aside markdown="1">
@@ -722,13 +723,46 @@ int main()
 }
 ```
 
+## `typedef` syntax is like other specifiers
+
+Usually we declare new types using the following syntax:
+```c
+typedef unsigned char byte;
+
+typedef struct {
+    int x;
+    int y;
+    const char *p;
+} Record;
+```
+
+But other placements of `typedef` keyword are possible:
+```c
+unsigned typedef char byte;
+
+struct {
+    int x;
+    int y;
+    const char *p;
+} typedef Record;
+```
+
+And we can still declare multiple types in one go:
+```c
+struct {
+    int x;
+    int y;
+    const char *p;
+} typedef Record, record, *record_ptr;
+```
+
 ## Function types
 
 Function pointers ought to be well known, but as we know the syntax is bit awkward.
 On the other hand, less people know you can (as with most objects in C) create
 a `typedef` for function type.
 
-```
+```c
 #include <stdio.h>
 
 int main()
@@ -742,6 +776,40 @@ int main()
     return 0;
 }
 ```
+
+## The oddities of relationship between function designators and pointers
+
+Example by u/AnonymouX47 from Reddit post [What your weirdest C feature?](https://www.reddit.com/r/C_Programming/comments/pxgyee/what_your_weirdest_c_feature/):
+
+> Let's have a simple function prototype: `void f(void);`
+>
+> Those lines are equivalent to each other:
+> ```c
+> void (*fp)(void) = f;
+> void (*fp)(void) = *f;
+> void (*fp)(void) = &f;
+> void (*fp)(void) = ******f;
+> void (*fp)(void) = &***********f;
+> void (*fp)(void) = ***&***f;
+> void (*fp)(void) = &**&***&***&f;
+> ```
+>
+> Those too are equivalent to each other:
+> ```c
+> f();
+> (*f)();
+> (&f)();
+> (*&f)();
+> fp();
+> (*fp)();
+> (*&fp)();
+> (****fp)();
+> (&******fp)();
+> (**&**fp)();
+> (*&*&*&*fp)();
+> ```
+>
+> But `(&fp)()` or `(&*&*&fp)()` won't work.
 
 ## X-Macros
 
