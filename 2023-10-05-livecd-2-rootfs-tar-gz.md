@@ -152,10 +152,6 @@ $ sudo tar -vzcp -f ~/fedora.tar.gz .
 $ sudo chown $USER:$USER ~/fedora.tar.gz
 ```
 
-<aside markdown="1">
-You may also be interested in my [rootfs2tar](https://github.com/Jorengarenar/rootfs2tar) utility.
-</aside>
-
 ## Cleanup
 
 ```
