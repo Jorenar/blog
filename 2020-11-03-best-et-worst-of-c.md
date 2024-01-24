@@ -1,8 +1,12 @@
 ---
 layout: post
-title:  "Best aspects of C language"
+title:  "Best and worst aspects of C language"
 redirect_from:
   - /programming/best-of-c
+  - /programming/worst-of-c
+  - /best-of-c
+  - /worst-of-c
+published: false
 ---
 
 How comes that, after over half a century, C is still a relatively popular and
