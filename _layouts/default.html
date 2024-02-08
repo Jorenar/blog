@@ -14,7 +14,7 @@
 <body>
   <nav>
     <a href="{{ site.baseurl }}">Index</a>
-    <span>Copyright &copy; {{ site.author | escape }}</span>
+    <span>Copyright &copy; <a href="{{ '../' | relative_url }}">{{ site.author | escape }}</a></span>
     <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
   </nav>
   {{ content }}
