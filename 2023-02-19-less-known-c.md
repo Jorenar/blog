@@ -18,6 +18,7 @@ short explanations and/or examples (or quote of thereof).
 * [Let's Destroy C](https://gist.github.com/shakna-israel/4fd31ee469274aa49f8f9793c3e71163#lets-destroy-c)
 * [Mildly interesting quirks of C \| Hacker News](https://news.ycombinator.com/item?id=33680239)
 * [Rob's Programming Blog: How Well Do You Know C?](http://www.robertgamble.net/2011/05/how-well-do-you-know-c.html)
+* [Some dark corners of C](https://docs.google.com/presentation/d/1h49gY3TSiayLMXYmRMaAEMl05FaJ-Z6jDOWOz3EsqqQ)
 * [The Preprocessor Iceberg Meme](https://jadlevesque.github.io/PPMP-Iceberg/)
 * [What your weirdest C feature? : r/C_Programming](https://www.reddit.com/r/C_Programming/comments/pxgyee/what_your_weirdest_c_feature/)
 </aside>
@@ -168,6 +169,22 @@ func(&(struct Foo){.x = 2});
 Even if you already knew about compound literals, there's a high chance you've
 never consciously noticed them being lvalues. And it's important, because when
 a value is an lvalue, we can get its address (and e.g. pass it to function).
+
+## Escaping shadowing
+
+The following code will return 42, not 3840!
+
+```c
+int x = 42;
+
+int func() {
+    int x = 3840;
+    {
+        extern int x;
+        return x;
+    }
+}
+```
 
 ## Multi-character constants
 
