@@ -79,3 +79,148 @@ https://old.reddit.com/r/C_Programming/comments/187a7qq/what_exactly_is_the_c_ru
 > But it doesn't change the fact it's still one damn skyscraper! It's still ridiculously tall. The appearance of taller buildings didn't shrink it. We didn't suddenly strip it of previous descriptions, we invented **new** words for **new** heights (like "_megatall_").
 >
 > ^(PS. C is also not a "high-level assembler", the phrase also was put in scare quotes, it was used to share an idea, not factual description)
+
+
+----
+
+>honestly not really understanding the difference between high level and low level languages
+
+Well, let me demonstrate!  
+20 first elements of Fibonacci sequence in C, Python, JavaScript, Nasm and Mips
+
+#### High-level
+
+**C**
+
+    #include <stdio.h>
+
+    int main()
+    {
+        int a = 1;
+        int b = 1;
+
+        for (int i = 0; i < 20; ++i) {
+            { int c = b; b = a; a = c; }
+
+            printf("%d\n", b);
+            a += b;
+        }
+        return 0;
+    }
+
+
+**Python**
+
+    #!/usr/bin/env python
+    # -*- coding: UTF-8 -*-
+
+    a = 1
+    b = 1
+
+    for i in range(0, 20):
+        a,b = b,a
+
+        print(str(b))
+        a += b
+
+**JavaScript**
+
+    "use strict";
+  
+    let a = 1;
+    let b = 1;
+
+    for (let i = 0; i < 20; ++i) {
+        [ a, b ] = [ b, a ]
+
+        console.log(b);
+        a += b;
+    }
+
+#### Low-level
+
+**Nasm** (code from [here](https://github.com/luc99a/Assembly-Codes/blob/master/fibonacci.asm); without utilizing "external" routines)
+
+    section .bss
+    toprint:	resb	1
+
+    section .data
+    lf:	db 0Ah
+
+    section .text
+        global _start
+    _start:
+        mov eax, 1
+        mov ebx, 1
+        mov ecx, 20
+    loop:
+        add ebx, eax
+        push eax
+        push ebx
+        push ecx
+        call printnum
+        pop ecx
+        pop eax
+        pop ebx
+        dec ecx
+        test ecx, ecx
+        jnz loop
+        mov eax, 1
+        mov ebx, 0
+        int 80h
+
+
+    printnum:
+        xor edi, edi
+    divide:
+        xor edx, edx
+        mov ecx, 10
+        div ecx
+        push edx
+        inc edi
+        test eax, eax
+        jnz divide
+    print:
+        pop eax
+        add eax, '0'
+        mov [toprint], eax
+        mov ebx, 1
+        mov ecx, toprint
+        mov edx, 1
+        mov eax, 4
+        int 80h
+        dec edi
+        test edi, edi
+        jnz print
+        mov eax, 4
+        mov ebx, 1
+        mov ecx, lf
+        mov edx, 1
+        int 80h
+        ret
+
+**Mips** (code from [here](https://www.reddit.com/r/computerscience/comments/ptc09c/comment/heu7k12/?utm_source=share&utm_medium=web2x&context=3); utilizing "external" routines)
+
+    main:   .text
+            li  $t0, 1
+            li  $t1, 1
+            li  $a0, 1
+            jal print
+
+    loop:   jal print
+            move    $t0, $t1
+            move    $t1, $a0
+            add     $a0, $t1, $t0
+            blt $a0, 20, loop
+
+    exit:   li  $v0, 10
+            syscall
+
+    print:  sw  $a0, 0($sp)
+            li  $v0, 1
+            syscall
+            li  $a0, 10
+            li  $v0, 11
+            syscall
+            lw  $a0, 0($sp)
+            jr  $ra
