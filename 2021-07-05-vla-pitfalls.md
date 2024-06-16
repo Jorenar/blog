@@ -21,7 +21,7 @@ be useful you can check [my other blogpost](/blog/vla-usecases).
 
 A fair share of the text here will focus on problems caused by automatic VLA,
 thus to further reflect on that an abbreviation _aVLA_ will be used when
-refferng to those cases.
+referring to those cases.
 
 # Allocation on stack
 

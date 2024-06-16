@@ -1085,7 +1085,7 @@ int main(void)
 ## Metaprogramming
 
 C11 added `_Generic` to language, but turns out metaprogramming
-by inhumanely abusing the preporcessor is possible even in pure C99:
+by inhumanely abusing the preprocessor is possible even in pure C99:
 meet [**Metalang99**](https://metalang99.readthedocs.io) library.
 
 ```
@@ -1111,7 +1111,7 @@ int sum(const BinaryTree *tree) {
 
 I've already mentioned some preprocessor tricks, but there's way more!
 In fact, I could easily make such a list out of preprocessor oddities alone.
-After all, it it a full fledged, Turing-complete language with its own rules,
+After all, it is a full fledged, Turing-complete language with its own rules,
 grammar and caveats; heck, it's not even strictly exclusive to C - there are
 madlads [using it in conjunction with e.g. JavaScript](https://www.nongnu.org/espresso/js-cpp.html)
 
