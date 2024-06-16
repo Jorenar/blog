@@ -71,7 +71,7 @@ It's a feature not really implemented with many other languages.
 # Fairly simple
 
 Low-level languages are harder to program in. Not because they are more
-complicated, but because they are more error prone and thus require way
+complicated, but because they are more error-prone and thus require way
 more commitment, memorizing and fiddling.
 
 C is mid-level, so "by definition" it's easier. But there comes the surprise,
@@ -90,7 +90,7 @@ To master anything you will need a lot more practice! \
 Standard C library is small compared to other languages (e.g. Java). It's small
 enough for you to try to memorize all functions successfully (not that it would
 be a huge benefit). Yeah, many things should be deprecated long ago, there
-obviously is some bloat (try to maintains something without bloat for few years,
+obviously is some bloat (try to maintain something without bloat for few years,
 let alone few decades), but there is not much enough of it to hinder the performance.
 
 And what if libc is still too much? Nothing stands in the way of not using it
@@ -106,12 +106,12 @@ on embedded systems, where you cannot afford to waste resources.
 
 # Standard, no blessed implementation
 
-This one relates to previous and next point. The C programming language is definied
-basically only by a document published by International Organization for Standardization
-every few years. Contrary to languages like Python, Rust or Java, there is no partucullar
-implementation that is **the** C language.
+This one relates to previous and next point. The C programming language is
+defined basically only by a document published by International Organization
+for Standardization every few years. Contrary to languages like Python, Rust
+or Java, there is no particular implementation that is **the** C language.
 
-Combine it with flexibility and you have a language which can easily target any platform.
+Combine it with flexibility, and you have a language which can easily target any platform.
 
 # Ubiquity = portability
 
@@ -145,13 +145,13 @@ case with C++.
 # Rich collection of libraries
 
 I suspect all this talk about fastness, lightness, mid-level, Assembly etc. might
-have give you an idea, you will need to implement everything yourself. There may
+have given you an idea, you will need to implement everything yourself. There may
 indeed not be any [`LinkedHashMap`](https://docs.oracle.com/javase/8/docs/api/java/util/LinkedHashMap.html)
 or other functionalities like garbage collection available for C... except... not entirely.
 
 C is mature and popular language, so while those features aren't build-in,
 believe me, name a thing and somebody somewhere already created library for
-it (although if think about something too obscure to find, but it does exists).
+it (although some things are too obscure to find, despite existing).
 
 You want garbage collector? [Boehm GC](https://www.hboehm.info/gc/) has you covered.
 TUI? Nothing like timeless [ncurses](https://invisible-island.net/ncurses/).
@@ -250,7 +250,7 @@ generator.
 >
 >So, if we eliminate all the usefulness of `std::vector`, why use it at all?
 >
->Repeat that process for most features in most languages and voila! You're back at C
+>Repeat that process for most features in most languages and voilà! You're back at C
 
 **Important note**: if you want such safety, you throw portability out of the window!
 
@@ -268,8 +268,8 @@ And in the need there are always fallbacks:
 
 I will repeat the link with proper title:
 [The C Preprocessor in Javascript?](https://www.nongnu.org/espresso/js-cpp.html) -
-I really recommend reading this short text, as I think it's enought to understand
-why having a standarized, portable preprocessor is a good thing in C.
+I really recommend reading this short text, as I think it's enough to understand
+why having a standardized, portable preprocessor is a good thing in C.
 
 # _Program in C_ song
 
