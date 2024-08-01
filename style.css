@@ -10,7 +10,7 @@ body {
   font-family: monospace;
   font-size: 14px;
   margin: auto;
-  max-width: 910px;
+  max-width: 768px;
   min-height: 98vh;
   text-align: left;
 }
@@ -94,12 +94,16 @@ ul > li::marker {
   content: '* ';
 }
 
+p + ul,  p + ol {
+  padding: 3ch;
+}
+
 aside {
-  border: 1px solid #8883;
+  border: 2px dashed #8883;
   color: #bbbb;
-  font-size: 0.9em;
-  margin: 1em auto;
+  margin-left: auto;
   padding: 0.5em;
+  max-width: 75%;
 }
 
 table {
@@ -110,6 +114,10 @@ table {
 tr, td, th {
   border: 1px solid #ddd;
   padding: 0.5em;
+}
+
+:not(pre) > code {
+  background: #222c;
 }
 
 :not(pre) > code::before,
