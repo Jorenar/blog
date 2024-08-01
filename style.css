@@ -112,10 +112,6 @@ tr, td, th {
   padding: 0.5em;
 }
 
-code {
-  font-size: 0.9em;
-}
-
 :not(pre) > code {
   padding: 0 2px;
   background: #0a0a0a;
