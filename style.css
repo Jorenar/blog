@@ -8,7 +8,7 @@ body {
   display: flex;
   flex-direction: column;
   font-family: monospace;
-  font-size: 16px;
+  font-size: 14px;
   margin: auto;
   max-width: 910px;
   min-height: 98vh;
@@ -28,10 +28,12 @@ article {
 }
 
 header {
-  font-size: 2em;
   font-weight: bold;
-  margin-bottom: 0.5em;
-  text-align: center;
+  margin-bottom: 1em;
+}
+
+header::before {
+  content: '# ';
 }
 
 time {
@@ -43,7 +45,7 @@ time {
 
 h1, h2, h3, h4, h5 {
   font-size: inherit;
-  margin-bottom: 0.1em;
+  margin-bottom: 0.5em;
   margin-top: 1.5em;
 }
 
@@ -84,7 +86,13 @@ p + p {
 
 ul, ol {
   margin: 0;
+  padding: 0;
   line-height: 1.3em;
+  list-style-position: inside;
+}
+
+ul > li::marker {
+  content: '* ';
 }
 
 aside {
@@ -122,17 +130,14 @@ pre {
 }
 
 #markdown-toc {
-  border: 1px dashed;
   width: max-content;
-  list-style-position: inside;
   padding: 10px;
-  margin: 1em 0;
 }
 
 #markdown-toc::before {
   content: "Table of Contents";
-  font-size: 1.2em;
   font-weight: bold;
+  display: block;
 }
 
 .post-list {
