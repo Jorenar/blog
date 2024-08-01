@@ -104,15 +104,18 @@ p + p {
 
 ul, ol {
   margin: 0;
-  padding-left: 2ch;
   line-height: 1.3em;
+}
+
+ul {
+  padding-left: 2ch;
 }
 
 ul > li::marker {
   content: '* ';
 }
 
-p + ul,  p + ol {
+p + ul {
   padding-left: 3ch;
 }
 
