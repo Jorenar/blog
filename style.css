@@ -95,7 +95,7 @@ ul > li::marker {
 }
 
 p + ul,  p + ol {
-  padding: 3ch;
+  padding-left: 3ch;
 }
 
 aside {
