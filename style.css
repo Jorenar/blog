@@ -115,6 +115,7 @@ p + ul,  p + ol {
 aside {
   border: 2px dashed #8883;
   color: #bbbb;
+  margin: 1m 0;
   margin-left: auto;
   padding: 0.5em;
   max-width: 75%;
