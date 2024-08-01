@@ -67,9 +67,23 @@ a:visited {
 
 blockquote {
   opacity: 0.9;
-  border-left: 4px solid #404040;
-  padding-left: 0.5em;
-  margin-left: 0.5em;
+  padding-left: 1ch;
+  margin-left: 1ch;
+}
+
+blockquote::before {
+  content: open-quote;
+  font-size: 1.2em;
+  margin-left: -2ch;
+}
+
+blockquote::after {
+  content: close-quote;
+  font-size: 1.2em;
+}
+
+blockquote > :first-child {
+  display: inline;
 }
 
 img {
