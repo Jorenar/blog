@@ -66,19 +66,28 @@ a:visited {
 }
 
 blockquote {
+  margin-bottom: 2em;
+  margin-left: 1ch;
+  margin-top: 2.5ch;
   opacity: 0.9;
   padding-left: 1ch;
-  margin-left: 1ch;
+  padding-right: 1ch;
+  position: relative;
 }
 
 blockquote::before {
   content: open-quote;
-  margin-left: -2ch;
+  font-size: 1.5em;
+  margin-left: -1.5ch;
+  position: absolute;
+  top: -1ch;
 }
 
 blockquote::after {
   content: close-quote;
-  margin-left: -2ch;
+  font-size: 1.5em;
+  position: absolute;
+  right: 0;
 }
 
 img {
