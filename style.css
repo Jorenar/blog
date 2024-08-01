@@ -68,7 +68,7 @@ a:visited {
 blockquote {
   opacity: 0.9;
   padding-left: 1ch;
-  margin-left: 2ch;
+  margin-left: 1ch;
 }
 
 blockquote::before {
