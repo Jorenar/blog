@@ -86,9 +86,8 @@ p + p {
 
 ul, ol {
   margin: 0;
-  padding: 0;
+  padding-left: 2ch;
   line-height: 1.3em;
-  list-style-position: inside;
 }
 
 ul > li::marker {
