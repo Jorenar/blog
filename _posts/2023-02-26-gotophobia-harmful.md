@@ -3,11 +3,9 @@ layout: post
 title:  "GOTOphobia considered harmful"
 ---
 
-<aside markdown="1">
-**gotophobia** -- fear of `goto` statement, usually caused by misunderstanding
-and lack of context of stories from dark ages of programming. Programmers with
-gotophobia tend to make their code less readable just to avoid using `goto`.
-</aside>
+> **gotophobia** -- fear of `goto` statement, usually caused by misunderstanding
+> and lack of context of stories from dark ages of programming. Programmers with
+> gotophobia tend to make their code less readable just to avoid using `goto`.
 
 Everybody and their grandpa knows (the meme title of) Dijkstra's
 [_Letters to the editor: go to statement considered harmful_](https://dl.acm.org/doi/epdf/10.1145/362929.362947)
@@ -133,7 +131,8 @@ error_didnt_sth:
 }
 ```
 
-**Randomly taken real-life [example from Linux kernel](http://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/clk/mmp/clk-audio.c#n345):**
+**Randomly taken real-life
+[example from Linux kernel](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/clk/mmp/clk-audio.c?id=65ef13feb7ae5c0fe38c00db8ebffeb4f64a8297#n345):**
 ```c
 // SPDX-License-Identifier: GPL-2.0-or-later
 /*
@@ -503,10 +502,10 @@ static int mmp2_audio_clk_probe(struct platform_device *pdev)
 ## `goto`-less alternative 4: functions
 
 Drawbacks:
- * More objects (not only new functions, but often also `struct`s)
-   <span style="font-size: 0.6em" title="Things should not be multiplied beyond what is required">
+ * More objects (not only new functions, but often also `struct`s) \
+   <sup title="Things should not be multiplied beyond what is required">
      "Entia non sunt multiplicanda praeter necessitatem"
-   </span>
+   </sup>
    * deeper callstack
  * often require passing context around
    * increase in pointing to pointers
@@ -1208,9 +1207,9 @@ break_while:
   </g>
 
   <g fill="black">
-    <text x="73" y="106">A</text>
-    <text x="154" y="107">B</text>
-    <text x="113" y="47">C</text>
+    <text x="75" y="105">A</text>
+    <text x="155" y="105">B</text>
+    <text x="115" y="45">C</text>
   </g>
 
   <g fill="white">
@@ -1418,9 +1417,9 @@ int main()
 # Optimizations
 
 This section is purely informative, just to appear on list as to mark the
-existence of such use-case. Giving an example for this is not so easy,
-either from legal or conceptual standpoint as most of them apply only in very
-narrow situations, not rarely bordering on micro-optimizing.
+existence of such use-case. Giving an example for this is not so easy, either
+from legal or conceptual standpoint as most of them apply only in very narrow
+situations, not rarely bordering on micro-optimizing.
 
 <aside markdown="1">
 Often extensions like [computed `goto`](https://gcc.gnu.org/onlinedocs/gcc/Labels-as-Values.html) are used.

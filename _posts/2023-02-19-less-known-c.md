@@ -8,7 +8,11 @@ which seems to throw even experienced developers off the track. Thus I did a slo
 job of gathering some of them in this post (in no particular order) with even sloppier
 short explanations and/or examples (or quote of thereof).
 
-<aside markdown="1">
+**WARNING:**
+Something being listed here does <span style="color:yellow">**_not_**</span>
+automatically mean encouragement **nor** discouragement to use it!
+
+Resources:
 * [Advanced C: The UB and optimizations that trick good programmers.](https://www.youtube.com/watch?v=w3_e9vZj7D8)
 * [C99 with Technical corrigenda TC1, TC2, and TC3 included](http://www.open-std.org/JTC1/SC22/WG14/www/docs/n1256.pdf)
 * [Deep C (and C++) _by Olve Maudal and Jon Jagger_](http://www.pvv.org/~oma/DeepC_slides_oct2011.pdf)
@@ -21,11 +25,6 @@ short explanations and/or examples (or quote of thereof).
 * [Some dark corners of C](https://docs.google.com/presentation/d/1h49gY3TSiayLMXYmRMaAEMl05FaJ-Z6jDOWOz3EsqqQ)
 * [The Preprocessor Iceberg Meme](https://jadlevesque.github.io/PPMP-Iceberg/)
 * [What your weirdest C feature? : r/C_Programming](https://www.reddit.com/r/C_Programming/comments/pxgyee/what_your_weirdest_c_feature/)
-</aside>
-
-<aside markdown="1">
-**WARNING:** Something being listed here does <span style="color:yellow">**_not_**</span> automatically mean encouragement **nor** discouragement to use it!
-</aside>
 
 * Table of Contents
 {:toc}
@@ -87,8 +86,8 @@ treated by the compiler as other characters.
 | -------- | ----------- | | -------- | ----------- | | `xor_eq` | `^=` |
 
 <aside markdown="1">
-Despite there being small opposition, the C Standard Committee
-decided to remove support for trigraphs from C23.
+Despite there being small opposition, the Committee
+decided to remove support for trigraphs since C23.
 </aside>
 
 * [Mini-post: Digraphs and Trigraphs \| ENOSUCHBLOG](https://blog.yossarian.net/2015/04/02/Digraphs-And-Trigraphs)
