@@ -6,7 +6,7 @@ redirect_from:
 ---
 
 {:start="0"}
-0. Learn [how to ask a good question](https://stackoverflow.com/help/how-to-ask) and [to type it into search engine before asking](https://ddg.gg/?q=vim+start+learning) on forums
+0. Learn [how to ask a good question](https://stackoverflow.com/help/how-to-ask) and [to type it into search engine first](https://ddg.gg/?q=vim+start+learning)
 1. Do [`vimtutor`](https://vimhelp.org/usr_01.txt.html#vimtutor) - it's a 30-minute tutorial that teaches the most basic Vim functionality hands-on
 2. [RTFM](https://en.wikipedia.org/wiki/RTFM)! User manual ([`:h user-manual`](https://vimhelp.org/usr_toc.txt.html)) will guide you through every feature from basic to advanced
 3. [`:h faq`](https://vimhelp.org/vim_faq.txt.html) - Frequently Asked Questions

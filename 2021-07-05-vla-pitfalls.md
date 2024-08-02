@@ -164,7 +164,8 @@ void foo(int n) {
 #if VLA
     int A[n];
 #else
-    int A[1000];  // Let's make it bigger than 10! (or there won't be what to examine)
+    int A[1000];  // Let's make it bigger than 10!
+                  // (or there won't be what to examine)
 #endif
 
     for (int i = n; i--;) {
