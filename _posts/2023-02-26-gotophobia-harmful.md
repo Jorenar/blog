@@ -56,6 +56,7 @@ I'll also try to mention `goto`-less alternatives and their potential drawbacks
  the possible hitches of `goto` versions).
 
 **Resources:**
+
 * _The C Programming Language, 2nd ed._ by Kernighan & Ritchie
 * [Goto # Common usage patterns - Wikipedia](https://en.wikipedia.org/wiki/Goto#Common_usage_patterns)
 * [Are there any legitimate use-cases for "goto" in a language that supports loops and functions? - Stack Overflow](https://stackoverflow.com/q/24451/10247460)
