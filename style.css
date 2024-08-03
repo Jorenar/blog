@@ -67,18 +67,17 @@ a:visited {
 }
 
 blockquote {
-  margin-bottom: 2em;
-  margin-left: 1ch;
-  margin-top: 2.5ch;
+  margin-left: 2ch;
   padding-left: 1ch;
   padding-right: 1ch;
   position: relative;
+  border-left: 1px dotted;
 }
 
 blockquote::before {
   content: '>';
   font-weight: bold;
-  margin-left: -2ch;
+  margin-left: -3ch;
   position: absolute;
 }
 
@@ -135,7 +134,7 @@ code {
 }
 
 :not(pre) > code {
-  background: #222c;
+  color: wheat;
 }
 
 :not(pre) > code::before,
