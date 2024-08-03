@@ -55,9 +55,7 @@ I'll also try to mention `goto`-less alternatives and their potential drawbacks
 (you presumably already are familiar with their advantages as well as with
  the possible hitches of `goto` versions).
 
-<aside markdown="1">
-**Resources**
-
+**Resources:**
 * _The C Programming Language, 2nd ed._ by Kernighan & Ritchie
 * [Goto # Common usage patterns - Wikipedia](https://en.wikipedia.org/wiki/Goto#Common_usage_patterns)
 * [Are there any legitimate use-cases for "goto" in a language that supports loops and functions? - Stack Overflow](https://stackoverflow.com/q/24451/10247460)
@@ -81,7 +79,6 @@ I'll also try to mention `goto`-less alternatives and their potential drawbacks
 * [LKML: Rob Wilkens: Re: any chance of 2.6.0-test\*?](https://lkml.org/lkml/2003/1/12/126)
   * [Linux: Using goto In Kernel Code \| KernelTrap](https://web.archive.org/web/20130521051957/https://kerneltrap.org/node/553/2131)
   * [Using Goto in Linux Kernel Code \| Koblents.com](https://koblents.com/Ches/Links/Month-Mar-2013/20-Using-Goto-in-Linux-Kernel-Code/)
-</aside>
 
 * Table of Contents
 {:toc}
