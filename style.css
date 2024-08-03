@@ -25,7 +25,7 @@ nav {
 
 article {
   flex: 1 0 auto;
-  padding: 1ch;
+  padding: 2ch;
   max-width: 80ch;
 }
 
@@ -70,25 +70,16 @@ blockquote {
   margin-bottom: 2em;
   margin-left: 1ch;
   margin-top: 2.5ch;
-  opacity: 0.9;
   padding-left: 1ch;
   padding-right: 1ch;
   position: relative;
 }
 
 blockquote::before {
-  content: open-quote;
-  font-size: 1.5em;
-  margin-left: -1.5ch;
+  content: '>';
+  font-weight: bold;
+  margin-left: -2ch;
   position: absolute;
-  top: -1ch;
-}
-
-blockquote::after {
-  content: close-quote;
-  font-size: 1.5em;
-  position: absolute;
-  right: 0;
 }
 
 img {
@@ -167,12 +158,10 @@ pre {
 }
 
 .post-list {
-  font-size: 1.3em;
   line-height: 1.5em;
   list-style: none;
   margin: 20px auto;
   padding: 5ch;
-  text-align: left;
 }
 
 .highlight {
