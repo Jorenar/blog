@@ -15,7 +15,7 @@ body {
   max-width: max-content;
   min-height: 98vh;
   text-align: left;
-  text-wrap: balance;
+  text-wrap: pretty;
 }
 
 nav {
