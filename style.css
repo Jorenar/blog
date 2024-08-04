@@ -135,10 +135,7 @@ tr, td, th {
 
 code {
   font-family: "Courier Prime", monospace;
-}
-
-:not(pre) > code {
-  color: wheat;
+  color: #feda;
 }
 
 :not(pre) > code::before,
