@@ -8,7 +8,7 @@ body {
   color: #aaa;
   display: flex;
   flex-direction: column;
-  font-family: courier, monospace;
+  font-family: monospace;
   font-size: 18px;
   font-variant-ligatures: no-common-ligatures;
   margin: auto;
@@ -129,10 +129,6 @@ table {
 tr, td, th {
   border: 1px solid #ddd;
   padding: 0.5em;
-}
-
-code {
-  font-family: courier, monospace;
 }
 
 :not(pre) > code {
