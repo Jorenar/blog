@@ -137,7 +137,7 @@ tr, td, th {
 }
 
 code {
-  font-family: courier, monospace;
+  font-family: "Courier New";
 }
 
 :not(pre) > code {
