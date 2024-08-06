@@ -25,6 +25,10 @@ nav {
   justify-content: space-between;
 }
 
+nav > span {
+  margin: auto 3ch;
+}
+
 article {
   flex: 1 0 auto;
   padding: 2ch;
