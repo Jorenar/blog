@@ -29,6 +29,8 @@ Resources:
 * [The Preprocessor Iceberg Meme](https://jadlevesque.github.io/PPMP-Iceberg/)
 * [What your weirdest C feature? : r/C_Programming](https://www.reddit.com/r/C_Programming/comments/pxgyee/what_your_weirdest_c_feature/)
 
+---
+
 * Table of Contents
 {:toc}
 
