@@ -1,12 +1,12 @@
 ---
 layout: post
-title:  "Few lesser known tricks, quirks and features of C"
+title:  "Lesser known tricks, quirks and features of C"
 ---
 
-There are some tricks, quirks and features (some quite fundamental to the language!)
-which seems to throw even experienced developers off the track. Thus I did a sloppy
-job of gathering some of them in this post (in no particular order) with even sloppier
-short explanations and/or examples (or quote of thereof).
+There are some tricks, quirks and features which seems to throw even
+experienced developers off the track. Thus I periodically revisit this
+blogpost, to do a sloppy job of gathering them in an unordered list with
+some short explanations, examples, quotes, or references.
 
 **WARNING:**
 Something being listed here does <span style="color:yellow">**_not_**</span>
@@ -15,7 +15,6 @@ those should <span style="color:red">**_never_**</span> be brought outside
 lists like this, while some of them are <span style="color:green">**incredibly
 useful**</span>! I'm putting faith into readers' _common sense_.
 
-<aside markdown="1">
 Resources:
 * [Advanced C: The UB and optimizations that trick good programmers.](https://www.youtube.com/watch?v=w3_e9vZj7D8)
 * [C99 with Technical corrigenda TC1, TC2, and TC3 included](http://www.open-std.org/JTC1/SC22/WG14/www/docs/n1256.pdf)
@@ -29,7 +28,6 @@ Resources:
 * [Some dark corners of C](https://docs.google.com/presentation/d/1h49gY3TSiayLMXYmRMaAEMl05FaJ-Z6jDOWOz3EsqqQ)
 * [The Preprocessor Iceberg Meme](https://jadlevesque.github.io/PPMP-Iceberg/)
 * [What your weirdest C feature? : r/C_Programming](https://www.reddit.com/r/C_Programming/comments/pxgyee/what_your_weirdest_c_feature/)
-</aside>
 
 * Table of Contents
 {:toc}
