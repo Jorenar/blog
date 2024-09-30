@@ -10,7 +10,10 @@ short explanations and/or examples (or quote of thereof).
 
 **WARNING:**
 Something being listed here does <span style="color:yellow">**_not_**</span>
-automatically mean encouragement **nor** discouragement to use it!
+automatically mean encouragement **nor** discouragement to use it! Some of
+those should <span style="color:red">**_never_**</span> be brought outside
+lists like this, while some of them are <span style="color:green">**incredibly
+useful**</span>! I'm putting faith into readers' _common sense_.
 
 <aside markdown="1">
 Resources:
