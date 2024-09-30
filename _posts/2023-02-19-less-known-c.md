@@ -8,26 +8,26 @@ experienced developers off the track. Thus I periodically revisit this
 blogpost, to do a sloppy job of gathering them in an unordered list with
 some short explanations, examples, quotes, or references.
 
-**WARNING:**
+**WARNING:** \
 Something being listed here does <span style="color:yellow">**_not_**</span>
 automatically mean encouragement **nor** discouragement to use it! Some of
 those should <span style="color:red">**_never_**</span> be brought outside
 lists like this, while some of them are <span style="color:green">**incredibly
 useful**</span>! I'm putting faith into readers' _common sense_.
 
-Resources:
-* [Advanced C: The UB and optimizations that trick good programmers.](https://www.youtube.com/watch?v=w3_e9vZj7D8)
-* [C99 with Technical corrigenda TC1, TC2, and TC3 included](http://www.open-std.org/JTC1/SC22/WG14/www/docs/n1256.pdf)
-* [Deep C (and C++) _by Olve Maudal and Jon Jagger_](http://www.pvv.org/~oma/DeepC_slides_oct2011.pdf)
-* [Hidden features of C - Stack Overflow](https://stackoverflow.com/q/132241/10247460)
-* [Interesting ways to use C? : r/C_Programming](https://www.reddit.com/r/C_Programming/comments/mqk338/interesting_ways_to_use_c/)
-* [Lesser known C features](https://d3s.mff.cuni.cz/legacy/~holub/c_features.html)
-* [Let's Destroy C](https://gist.github.com/shakna-israel/4fd31ee469274aa49f8f9793c3e71163#lets-destroy-c)
-* [Mildly interesting quirks of C \| Hacker News](https://news.ycombinator.com/item?id=33680239)
-* [Rob's Programming Blog: How Well Do You Know C?](http://www.robertgamble.net/2011/05/how-well-do-you-know-c.html)
-* [Some dark corners of C](https://docs.google.com/presentation/d/1h49gY3TSiayLMXYmRMaAEMl05FaJ-Z6jDOWOz3EsqqQ)
-* [The Preprocessor Iceberg Meme](https://jadlevesque.github.io/PPMP-Iceberg/)
-* [What your weirdest C feature? : r/C_Programming](https://www.reddit.com/r/C_Programming/comments/pxgyee/what_your_weirdest_c_feature/)
+**Resources:**
+  * [Advanced C: The UB and optimizations that trick good programmers.](https://www.youtube.com/watch?v=w3_e9vZj7D8)
+  * [C99 with Technical corrigenda TC1, TC2, and TC3 included](http://www.open-std.org/JTC1/SC22/WG14/www/docs/n1256.pdf)
+  * [Deep C (and C++) _by Olve Maudal and Jon Jagger_](http://www.pvv.org/~oma/DeepC_slides_oct2011.pdf)
+  * [Hidden features of C - Stack Overflow](https://stackoverflow.com/q/132241/10247460)
+  * [Interesting ways to use C? : r/C_Programming](https://www.reddit.com/r/C_Programming/comments/mqk338/interesting_ways_to_use_c/)
+  * [Lesser known C features](https://d3s.mff.cuni.cz/legacy/~holub/c_features.html)
+  * [Let's Destroy C](https://gist.github.com/shakna-israel/4fd31ee469274aa49f8f9793c3e71163#lets-destroy-c)
+  * [Mildly interesting quirks of C \| Hacker News](https://news.ycombinator.com/item?id=33680239)
+  * [Rob's Programming Blog: How Well Do You Know C?](http://www.robertgamble.net/2011/05/how-well-do-you-know-c.html)
+  * [Some dark corners of C](https://docs.google.com/presentation/d/1h49gY3TSiayLMXYmRMaAEMl05FaJ-Z6jDOWOz3EsqqQ)
+  * [The Preprocessor Iceberg Meme](https://jadlevesque.github.io/PPMP-Iceberg/)
+  * [What your weirdest C feature? : r/C_Programming](https://www.reddit.com/r/C_Programming/comments/pxgyee/what_your_weirdest_c_feature/)
 
 &nbsp;
 
