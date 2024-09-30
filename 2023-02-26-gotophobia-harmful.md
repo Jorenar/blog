@@ -55,33 +55,32 @@ I'll also try to mention `goto`-less alternatives and their potential drawbacks
 (you presumably already are familiar with their advantages as well as with
  the possible hitches of `goto` versions).
 
-<aside markdown="1">
 **Resources**
+  * _The C Programming Language, 2nd ed._ by Kernighan & Ritchie
+  * [Goto # Common usage patterns - Wikipedia](https://en.wikipedia.org/wiki/Goto#Common_usage_patterns)
+  * [Are there any legitimate use-cases for "goto" in a language that supports loops and functions? - Stack Overflow](https://stackoverflow.com/q/24451/10247460)
+  * [Beej's Guide to C Programming: `goto`](https://beej.us/guide/bgc/html/split/goto.html)
+  * [Modern C](https://hal.inria.fr/hal-02383654/file/ModernC.pdf) by Jens Gustedt
+  * [Using goto for error handling in C](https://eli.thegreenplace.net/2009/04/27/using-goto-for-error-handling-in-c)
+  * [Structured Programming with _go to_ Statements](https://dl.acm.org/doi/epdf/10.1145/356635.356640) by Donald E. Knuth
+  * [Error handling using goto : r/C_Programming](https://www.reddit.com/r/C_Programming/comments/g3juie/error_handling_using_goto/)
+  * [Linux kernel coding style](https://www.kernel.org/doc/html/v6.2/process/coding-style.html#centralized-exiting-of-functions)
+  * [When to use Goto in C - Cprogramming.com](https://www.cprogramming.com/tutorial/goto.html)
+  * [Harmful GOTOs, Premature Optimizations, and Programming Myths are the Root of all Evil](https://alvaro-videla.com/2015/02/programming-myths.html)
+  * [Examples of good gotos in C or C++ - Stack Overflow](https://stackoverflow.com/q/245742/10247460)
+  * [Should you ever use a goto? - Jacob Sorber - YouTube](https://www.youtube.com/watch?v=8bmEhtMVrhk)
+  * [GOTO Reconsidered](https://chidiwilliams.com/post/goto/)
+  * ["GOTO Considered Harmful" Considered Harmful](http://web.archive.org/web/20090320002214/http://www.ecn.purdue.edu/ParaMount/papers/rubin87goto.pdf)
+  * [When is it appropriate to use GOTO? : r/C_Programming](https://www.reddit.com/r/C_Programming/comments/wimvdf/when_is_it_appropriate_to_use_goto/)
+  * [Programming With(out) the GOTO](https://dl.acm.org/doi/pdf/10.1145/800194.805859)
+  * [Ian Mallett - Tutorials: The goto Statement is Good](https://geometrian.com/programming/tutorials/gotogood/index.php)
+  * [MEM12-C. Consider using a goto chain when leaving a function on error when using and releasing resources -&nbsp;SEI&nbsp;CERT C Coding Standard](https://wiki.sei.cmu.edu/confluence/display/c/MEM12-C.+Consider+using+a+goto+chain+when+leaving+a+function+on+error+when+using+and+releasing+resources)
+  * [Valid use of goto for error management in C? - Stack Overflow](https://stackoverflow.com/q/788903/10247460)
+  * [LKML: Rob Wilkens: Re: any chance of 2.6.0-test\*?](https://lkml.org/lkml/2003/1/12/126)
+    * [Linux: Using goto In Kernel Code \| KernelTrap](https://web.archive.org/web/20130521051957/https://kerneltrap.org/node/553/2131)
+    * [Using Goto in Linux Kernel Code \| Koblents.com](https://koblents.com/Ches/Links/Month-Mar-2013/20-Using-Goto-in-Linux-Kernel-Code/)
 
-* _The C Programming Language, 2nd ed._ by Kernighan & Ritchie
-* [Goto # Common usage patterns - Wikipedia](https://en.wikipedia.org/wiki/Goto#Common_usage_patterns)
-* [Are there any legitimate use-cases for "goto" in a language that supports loops and functions? - Stack Overflow](https://stackoverflow.com/q/24451/10247460)
-* [Beej's Guide to C Programming: `goto`](https://beej.us/guide/bgc/html/split/goto.html)
-* [Modern C](https://hal.inria.fr/hal-02383654/file/ModernC.pdf) by Jens Gustedt
-* [Using goto for error handling in C](https://eli.thegreenplace.net/2009/04/27/using-goto-for-error-handling-in-c)
-* [Structured Programming with _go to_ Statements](https://dl.acm.org/doi/epdf/10.1145/356635.356640) by Donald E. Knuth
-* [Error handling using goto : r/C_Programming](https://www.reddit.com/r/C_Programming/comments/g3juie/error_handling_using_goto/)
-* [Linux kernel coding style](https://www.kernel.org/doc/html/v6.2/process/coding-style.html#centralized-exiting-of-functions)
-* [When to use Goto in C - Cprogramming.com](https://www.cprogramming.com/tutorial/goto.html)
-* [Harmful GOTOs, Premature Optimizations, and Programming Myths are the Root of all Evil](https://alvaro-videla.com/2015/02/programming-myths.html)
-* [Examples of good gotos in C or C++ - Stack Overflow](https://stackoverflow.com/q/245742/10247460)
-* [Should you ever use a goto? - Jacob Sorber - YouTube](https://www.youtube.com/watch?v=8bmEhtMVrhk)
-* [GOTO Reconsidered](https://chidiwilliams.com/post/goto/)
-* ["GOTO Considered Harmful" Considered Harmful](http://web.archive.org/web/20090320002214/http://www.ecn.purdue.edu/ParaMount/papers/rubin87goto.pdf)
-* [When is it appropriate to use GOTO? : r/C_Programming](https://www.reddit.com/r/C_Programming/comments/wimvdf/when_is_it_appropriate_to_use_goto/)
-* [Programming With(out) the GOTO](https://dl.acm.org/doi/pdf/10.1145/800194.805859)
-* [Ian Mallett - Tutorials: The goto Statement is Good](https://geometrian.com/programming/tutorials/gotogood/index.php)
-* [MEM12-C. Consider using a goto chain when leaving a function on error when using and releasing resources -&nbsp;SEI&nbsp;CERT C Coding Standard](https://wiki.sei.cmu.edu/confluence/display/c/MEM12-C.+Consider+using+a+goto+chain+when+leaving+a+function+on+error+when+using+and+releasing+resources)
-* [Valid use of goto for error management in C? - Stack Overflow](https://stackoverflow.com/q/788903/10247460)
-* [LKML: Rob Wilkens: Re: any chance of 2.6.0-test\*?](https://lkml.org/lkml/2003/1/12/126)
-  * [Linux: Using goto In Kernel Code \| KernelTrap](https://web.archive.org/web/20130521051957/https://kerneltrap.org/node/553/2131)
-  * [Using Goto in Linux Kernel Code \| Koblents.com](https://koblents.com/Ches/Links/Month-Mar-2013/20-Using-Goto-in-Linux-Kernel-Code/)
-</aside>
+&nbsp;
 
 * Table of Contents
 {:toc}
