@@ -8,12 +8,14 @@ experienced developers off the track. Thus I periodically revisit this
 blogpost, to do a sloppy job of gathering them in an unordered list with
 some short explanations, examples, quotes, or references.
 
+<aside markdown="1">
 **WARNING:** \
 Something being listed here does <span style="color:yellow">**_not_**</span>
 automatically mean encouragement **nor** discouragement to use it! Some of
 those should <span style="color:red">**_never_**</span> be brought outside
 lists like this, while some of them are <span style="color:green">**incredibly
 useful**</span>! I'm putting faith into readers' _common sense_.
+</aside>
 
 **Resources:**
   * [Advanced C: The UB and optimizations that trick good programmers.](https://www.youtube.com/watch?v=w3_e9vZj7D8)
