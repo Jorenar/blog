@@ -9,7 +9,8 @@ blogpost, to do a sloppy job of gathering them in an unordered list with
 some short explanations, examples, quotes, or references.
 
 <aside markdown="1">
-**WARNING:** \
+**WARNING:**
+
 Something being listed here does <span style="color:yellow">**_not_**</span>
 automatically mean encouragement **nor** discouragement to use it! Some of
 those should <span style="color:red">**_never_**</span> be brought outside
