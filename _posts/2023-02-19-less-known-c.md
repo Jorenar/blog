@@ -856,11 +856,10 @@ Example by u/AnonymouX47 from Reddit post [What your weirdest C feature?](https:
 
 ## X-Files
 
-This is essentially a variation on X-Macros. Quite simple to come up with:
-just think how to make templates in C.
-
-Despite seeing it from time to time in the wild (maybe even more frequently
-than X-Macros), until very recently it didn't even have a name.
+This technique is quite simple to come up with: just think how to make templates
+in C using `#include`. Despite seeing it from time to time in the wild (maybe
+even more frequently than X-Macros), seems that until very recently it didn't
+even have a name.
 
 [Here's an article](https://itnext.io/tutorial-generics-in-c-b3362b3376a3#e687)
 ([archive](https://archive.is/aTObh#e687)) by Chris Bazley, showcasing
