@@ -851,6 +851,20 @@ Example by u/AnonymouX47 from Reddit post [What your weirdest C feature?](https:
 * [What are X-macros? -- Arthur O'Dwyer](https://quuxplusone.github.io/blog/2021/02/01/x-macros/)
 * [X macro: most epic C trick or worst abuse of preprocessor? / Arch Linux Forums](https://bbs.archlinux.org/viewtopic.php?id=272242)
 * [The Most Elegant Macro -- Phillip Trudeau](https://philliptrudeau.com/blog/x-macro)
+* [The X Macro - Digital Mars](https://digitalmars.com/articles/b51.html)
+* [The New C: X Macros | Dr Dobb's](https://www.drdobbs.com/the-new-c-x-macros/184401387)
+
+## X-Files
+
+This is essentially a variation on X-Macros. Quite simple to come up with:
+just think how to make templates in C.
+
+Despite seeing it from time to time in the wild (maybe even more frequently
+than X-Macros), until very recently it didn't even have a name.
+
+[Here's an article](https://itnext.io/tutorial-generics-in-c-b3362b3376a3#e687)
+([archive](https://archive.is/aTObh#e687)) by Chris Bazley, showcasing
+a bit of this technique.
 
 ## Named function parameters
 
