@@ -852,7 +852,7 @@ Example by u/AnonymouX47 from Reddit post [What your weirdest C feature?](https:
 * [X macro: most epic C trick or worst abuse of preprocessor? / Arch Linux Forums](https://bbs.archlinux.org/viewtopic.php?id=272242)
 * [The Most Elegant Macro -- Phillip Trudeau](https://philliptrudeau.com/blog/x-macro)
 * [The X Macro - Digital Mars](https://digitalmars.com/articles/b51.html)
-* [The New C: X Macros &vert; Dr Dobb's](https://www.drdobbs.com/the-new-c-x-macros/184401387)
+* [The New C: X Macros - Dr Dobb's](https://www.drdobbs.com/the-new-c-x-macros/184401387)
 
 ## X-Files
 
