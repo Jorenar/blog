@@ -121,9 +121,8 @@ aside {
   color: #bbbb;
   margin: 1em 0;
   margin-left: auto;
-  max-width: 75%;
+  max-width: 90%;
   padding-left: 1em;
-  text-wrap: balance;
 }
 
 table {
@@ -139,6 +138,7 @@ tr, td, th {
 code {
   font-family: "Courier Prime", monospace;
   color: #feda;
+  text-wrap: nowrap;
 }
 
 :not(pre) > code::before,
