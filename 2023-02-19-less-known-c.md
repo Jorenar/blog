@@ -8,9 +8,9 @@ experienced developers off the track. Thus I periodically revisit this
 blogpost, to do a sloppy job of gathering them in an unordered list with
 some short explanations, examples, quotes, or references.
 
-Obviously though, I'm not gonna list absolutely everything, for facts
-like _"function `nan()` cannot not set `errno` as it shall behave like
-`strtod()` in certain cases"_ ain't so much fun.
+Obviously though, I'm not gonna list absolutely everything, for facts like
+_"function `nan()` cannot set `errno` as it shall behave like `strtod()` in
+certain cases"_ ain't so much fun.
 
 <aside markdown="1">
 **ATTENTION**<br>
@@ -852,15 +852,14 @@ Example by u/AnonymouX47 from Reddit post [What your weirdest C feature?](https:
 * [X macro: most epic C trick or worst abuse of preprocessor? / Arch Linux Forums](https://bbs.archlinux.org/viewtopic.php?id=272242)
 * [The Most Elegant Macro -- Phillip Trudeau](https://philliptrudeau.com/blog/x-macro)
 * [The X Macro - Digital Mars](https://digitalmars.com/articles/b51.html)
-* [The New C: X Macros | Dr Dobb's](https://www.drdobbs.com/the-new-c-x-macros/184401387)
+* [The New C: X Macros - Dr Dobb's](https://www.drdobbs.com/the-new-c-x-macros/184401387)
 
 ## X-Files
 
-This is essentially a variation on X-Macros. Quite simple to come up with:
-just think how to make templates in C.
-
-Despite seeing it from time to time in the wild (maybe even more frequently
-than X-Macros), until very recently it didn't even have a name.
+This technique is quite simple to come up with: just think how to make templates
+in C using `#include`. Despite seeing it from time to time in the wild (maybe
+even more frequently than X-Macros), seems that until very recently it didn't
+even have a name.
 
 [Here's an article](https://itnext.io/tutorial-generics-in-c-b3362b3376a3#e687)
 ([archive](https://archive.is/aTObh#e687)) by Chris Bazley, showcasing
