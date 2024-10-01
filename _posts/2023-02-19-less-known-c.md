@@ -8,9 +8,9 @@ experienced developers off the track. Thus I periodically revisit this
 blogpost, to do a sloppy job of gathering them in an unordered list with
 some short explanations, examples, quotes, or references.
 
-Obviously though, I'm not gonna list absolutely everything, for facts
-like _"function `nan()` cannot not set `errno` as it shall behave like
-`strtod()` in certain cases"_ ain't so much fun.
+Obviously though, I'm not gonna list absolutely everything, for facts like
+_"function `nan()` cannot set `errno` as it shall behave like `strtod()` in
+certain cases"_ ain't so much fun.
 
 <aside markdown="1">
 **ATTENTION**<br>
