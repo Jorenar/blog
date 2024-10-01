@@ -580,6 +580,8 @@ int main(void)
     isdigit('9') && puts("9 is a digit");
     isdigit('n') && puts("n is a digit") || puts("n is NOT a digit!");
 
+    isalpha('a') && !puts("I'll be printed") || puts("But me AS WELL!");
+
     return 0;
 }
 ```
