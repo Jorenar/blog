@@ -8,8 +8,12 @@ experienced developers off the track. Thus I periodically revisit this
 blogpost, to do a sloppy job of gathering them in an unordered list with
 some short explanations, examples, quotes, or references.
 
+Obviously though, I'm not gonna list absolutely everything, for facts
+like _"function `nan()` cannot not set `errno` as it shall behave like
+`strtod()` in certain cases"_ ain't so much fun.
+
 <aside markdown="1">
-**WARNING:**<br>
+**ATTENTION**<br>
 Something being listed here does <span style="color:yellow">**_not_**</span>
 automatically mean encouragement **nor** discouragement to use it! Some of
 those should <span style="color:red">**_never_**</span> be brought outside
@@ -101,6 +105,7 @@ decided to remove support for trigraphs since C23.
 * [C alternative tokens - Wikipedia](https://en.wikipedia.org/wiki/C_alternative_tokens)
 * [Why are there digraphs in C and C++? - Stack Overflow](https://stackoverflow.com/q/432443/10247460)
 * [Purpose of Trigraph sequences in C++?](https://stackoverflow.com/q/1234582/10247460)
+* [A brief description of Normative Addendum 1](https://www.lysator.liu.se/c/na1.html)
 
 ## Designated initializer
 
@@ -277,16 +282,17 @@ An example taken from the [SO answer](https://stackoverflow.com/a/26725041/10247
 
 ## `volatile` type qualifier
 
-This qualifier tells the compiler that a variable may be accessed by other means
-than the current code (e.g. we are dealing with MMIO device), thus to not optimize
-away reads and writes to this resource.
+This qualifier tells the compiler that a variable may be accessed by other
+means than the current code (e.g. we are dealing with MMIO device), thus to
+not optimize away reads and writes to this resource.
 
-<span></span>
+&nbsp;
 
 * [Why is volatile needed in C? - Stack Overflow](https://stackoverflow.com/q/246127/10247460)
 * [Advanced C: The UB and optimizations that trick good programmers.](https://www.youtube.com/watch?v=w3_e9vZj7D8)
 * [volatile type qualifier - cppreference.com](https://en.cppreference.com/w/c/language/volatile)
 * [volatile (computer programming) - Wikipedia](https://en.wikipedia.org/wiki/Volatile_(computer_programming))
+* [Volatile: Almost Useless for Multi-Threaded Programming](https://web.archive.org/web/20110307082444/http://software.intel.com:80/en-us/blogs/2007/11/30/volatile-almost-useless-for-multi-threaded-programming/)
 
 ## `restrict` type qualifier
 
@@ -573,6 +579,8 @@ int main(void)
 
     isdigit('9') && puts("9 is a digit");
     isdigit('n') && puts("n is a digit") || puts("n is NOT a digit!");
+
+    isalpha('a') && !puts("I'll be printed") || puts("But me AS WELL!");
 
     return 0;
 }
@@ -1000,6 +1008,17 @@ introduced to the code by the `asm` keyword.
 * [Writing inline assembly code - Arm Compiler for Embedded User Guide](https://developer.arm.com/documentation/100748/0619/Using-Assembly-and-Intrinsics-in-C-or-C---Code/Writing-inline-assembly-code)
 * [Inline Assembly in C/C++ - University of Alaska Fairbanks](https://www.cs.uaf.edu/courses/cs301/2014-fall/notes/inline-assembly/)
 
+## Coroutines
+
+Apparently there are methods for implementing coroutines in C:
+
+* [Coroutines in C](https://www.chiark.greenend.org.uk/~sgtatham/coroutines.html)
+* [Coroutine#C - Wikipedia](https://en.wikipedia.org/wiki/Coroutine#C)
+* [Does C support coroutines? - Quora](https://www.quora.com/Does-C-support-coroutines)
+* [c-coroutine](https://zelang-dev.github.io/c-coroutine/)
+* [Libaco](https://libaco.org)
+* [Libtask](https://swtch.com/libtask/)
+
 ## Evaluate `sizeof` at compile time by causing duplicate case error
 
 Assume you are working on embedded system or generally on something
@@ -1125,3 +1144,11 @@ Thankfully, [Tima "Hirrolot" Kinsart](https://hirrolot.github.io/) - developer
 of aforementioned Metalang99, already prepared
 [awesome-c-preprocessor](https://github.com/Hirrolot/awesome-c-preprocessor)
 list with sane and insane deeds possible to do in C preprocessor.
+## CCAN
+
+[Comprehensive C Archive Network](https://ccodearchive.net/), modeled
+after Perl's [CPAN](https://www.cpan.org/) (which in turn was modeled
+after [CTAN](https://en.wikipedia.org/wiki/CTAN)) is a repository of
+C code snippets. While it's not such a necessity like for Perl, nor
+is it officially endorsed or widely used, I think it's existence
+is interesting enough to warrant a mention.
