@@ -1165,3 +1165,43 @@ after [CTAN](https://en.wikipedia.org/wiki/CTAN)) is a repository of
 C code snippets. While it's not such a necessity like for Perl, nor
 is it officially endorsed or widely used, I think it's existence
 is interesting enough to warrant a mention.
+## Function pointers to match arrays in `_Generic`
+
+Right now `_Generic` doesn't allow for matching arrays, but document
+[N3348](https://www.open-std.org/jtc1/sc22/wg14/www/docs/n3348.pdf)
+by Martin Uecker mentions [a trick](https://godbolt.org/z/bqhrEcGn4)
+to make them match by wrapping the type into function pointer:
+
+```c
+#include <stdio.h>
+
+#define LENGTHOF(arr) (sizeof (arr) / sizeof (arr)[0])
+
+#define FOO(n,m) \
+        _Generic(void (*)(int(*)[n][m]), \
+                 void (*)(int(*)[3][6]) : 1, \
+                 void (*)(int(*)[3][3]) : 2, \
+                 void (*)(int(*)[2][8]) : 3, \
+                 void (*)(int(*)[4][*]) : 4, \
+                 void (*)(int(*)[8][*]) : 5 \
+        )
+
+#define BAR(arr) FOO(LENGTHOF(arr), LENGTHOF(arr[0]))
+
+int main()
+{
+    printf("%d\n", FOO(3,6)); // 1
+    printf("%d\n", FOO(3,3)); // 2
+    printf("%d\n", FOO(2,8)); // 3
+    printf("%d\n", FOO(4,0)); // 4
+    printf("%d\n", FOO(4,1)); // 4
+    printf("%d\n", FOO(4,2)); // 4
+
+    int arr[8][2];
+    printf("%d\n", BAR(arr)); // 5
+
+    // printf("%d\n", FOO(5,2)); // error
+
+    return 0;
+}
+```
