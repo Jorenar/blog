@@ -34,6 +34,7 @@ useful**</span>! I'm putting faith into readers' _common sense_.
   * [Some dark corners of C](https://docs.google.com/presentation/d/1h49gY3TSiayLMXYmRMaAEMl05FaJ-Z6jDOWOz3EsqqQ)
   * [The Preprocessor Iceberg Meme](https://jadlevesque.github.io/PPMP-Iceberg/)
   * [What your weirdest C feature? : r/C_Programming](https://www.reddit.com/r/C_Programming/comments/pxgyee/what_your_weirdest_c_feature/)
+  * [How to Get Fired Using Switch Statements & Statement Expressions](https://blog.robertelder.org/switch-statements-statement-expressions/)
 
 &nbsp;
 
@@ -1031,6 +1032,8 @@ Apparently there are methods for implementing coroutines in C:
 * [c-coroutine](https://zelang-dev.github.io/c-coroutine/)
 * [Libaco](https://libaco.org)
 * [Libtask](https://swtch.com/libtask/)
+* [Neco](https://github.com/tidwall/neco)
+* [How to Get Fired Using Switch Statements & Statement Expressions](https://blog.robertelder.org/switch-statements-statement-expressions/)
 
 ## Evaluate `sizeof` at compile time by causing duplicate case error
 
