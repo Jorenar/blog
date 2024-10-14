@@ -929,6 +929,56 @@ int main(void)
 > #define foo(...) foo((FooParam){.a=1,.b=2,.c=3,.d=4, .alwaysNamed=5, __VA_ARGS__})
 > ```
 
+<aside markdown="1">
+I've received an e-mail from [Miguel Borges](https://github.com/miguelrcborges/)
+mentioning that by using GNU extensions, we could make the dummy parameter
+costless with empty `struct`:
+
+<details markdown="1">
+<summary>Click to view sent example</summary>
+
+```c
+#include <stdio.h>
+
+typedef struct {
+} empty;
+
+typedef struct {
+	empty _;
+	int a;
+	int b;
+	int c;
+} Test;
+
+void _printTest(Test t) {
+	printf("a: %d\nb: %d\nc: %d\n\n", t.a, t.b, t.c);
+}
+#define printTest(...) _printTest((Test){.a = 1, .b = 2, .c = 3, ._ = (empty){}, __VA_ARGS__})
+
+int main(void) {
+	printf("size of empty: %zu\n", sizeof(empty));
+	printf("size of Test: %zu\n", sizeof(Test));
+	printf("\n");
+
+	printf("Default values\n");
+	printTest();
+
+	printf("Positional\n");
+	printTest(5, 4);
+
+	printf("Named\n");
+	printTest(.c = 10, .a = 4);
+
+	printf("Mixed\n");
+	printTest(202, .c = 20);
+
+	return sizeof(empty);
+}
+```
+
+</details>
+</aside>
+
 ## [Abusing unions for grouping things into namespaces](https://utcc.utoronto.ca/~cks/space/blog/programming/CUnionsForNamespaces)
 
 > Suppose that you have a `struct` with a bunch of fields, and you want to deal
