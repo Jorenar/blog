@@ -1202,14 +1202,14 @@ int sum(const BinaryTree *tree) {
 
 I've already mentioned some preprocessor tricks, but there's way more!
 In fact, I could easily make such a list out of preprocessor oddities alone.
-After all, it is a full fledged, Turing-complete language with its own rules,
-grammar and caveats; heck, it's not even strictly exclusive to C - there are
-madlads [using it in conjunction with e.g. JavaScript](https://www.nongnu.org/espresso/js-cpp.html)
+After all, it is a full fledged language with its own rules, grammar and
+caveats; heck, it's not even strictly exclusive to C - there are madlads
+[using it in conjunction with e.g. JavaScript](https://www.nongnu.org/espresso/js-cpp.html).
 
-Thankfully, [Tima "Hirrolot" Kinsart](https://hirrolot.github.io/) - developer
-of aforementioned Metalang99, already prepared
-[awesome-c-preprocessor](https://github.com/Hirrolot/awesome-c-preprocessor)
+Luckily for me, [Lewis "Hirrolot" Pearson](https://hirrolot.github.io/) - author
+of aforementioned Metalang99, already prepared [awesome-c-preprocessor](https://github.com/Hirrolot/awesome-c-preprocessor)
 list with sane and insane deeds possible to do in C preprocessor.
+
 ## CCAN
 
 [Comprehensive C Archive Network](https://ccodearchive.net/), modeled
