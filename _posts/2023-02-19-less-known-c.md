@@ -1206,7 +1206,7 @@ After all, it is a full fledged language with its own rules, grammar and
 caveats; heck, it's not even strictly exclusive to C - there are madlads
 [using it in conjunction with e.g. JavaScript](https://www.nongnu.org/espresso/js-cpp.html).
 
-Luckily for me, [Lewis "Hirrolot" Pearson](https://hirrolot.github.io/) - author
+Luckily for me, [Lewis Pearson](https://hirrolot.github.io/) - author
 of aforementioned Metalang99, already prepared [awesome-c-preprocessor](https://github.com/Hirrolot/awesome-c-preprocessor)
 list with sane and insane deeds possible to do in C preprocessor.
 
