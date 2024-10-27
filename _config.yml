@@ -10,5 +10,6 @@ plugins:
 
 kramdown:
   smart_quotes: ["apos", "apos", "quot", "quot"]
+  typographic_symbols: { hellip: ... , mdash: --- , ndash: -- }
   syntax_highlighter_opts:
     disable: true
