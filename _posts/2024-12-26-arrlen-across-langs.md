@@ -21,8 +21,6 @@ here, in this blogpost copy of the paper.
 
 Enjoy!
 
-[![ProgrammerHumor](https://i.redd.it/yexhn9of1i2e1.png)][ProgrammerHumor]
-
 * Table of Contents
 {:toc}
 
@@ -830,6 +828,8 @@ Enjoy!
   Including methods of calculating number of elements puts "bounds" in top 5 too.
 
 ##
+
+[![ProgrammerHumor](https://i.redd.it/yexhn9of1i2e1.png)][ProgrammerHumor]
 
 [n3369]: https://www.open-std.org/jtc1/sc22/wg14/www/docs/n3369.pdf
 
