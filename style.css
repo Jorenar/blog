@@ -150,14 +150,10 @@ pre {
   margin-left: 4ch;
 }
 
-#markdown-toc {
-  padding-left: 2ch;
-}
-
 #markdown-toc::before {
   content: "Table of Contents";
   font-weight: bold;
-  margin-left: -2ch;
+  margin-left: -3ch;
   margin-top: 1em;
 }
 
