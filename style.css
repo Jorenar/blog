@@ -153,6 +153,7 @@ pre {
 #markdown-toc::before {
   content: "Table of Contents";
   font-weight: bold;
+  display: block;
   margin-left: -3ch;
   margin-top: 1em;
 }
