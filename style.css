@@ -95,7 +95,7 @@ p {
   margin: 0;
 }
 
-p + p {
+p + p, ul + ul, ol + ol {
   margin-top: 1em;
 }
 
@@ -150,12 +150,12 @@ pre {
   margin-left: 4ch;
 }
 
-
 #markdown-toc::before {
   content: "Table of Contents";
   font-weight: bold;
   display: block;
-  margin-left: -2ch;
+  margin-left: -3ch;
+  margin-top: 1em;
 }
 
 .post-list {
