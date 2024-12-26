@@ -10,6 +10,7 @@ layout: default
 <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%F" }}</time>
 
 <script>
+// https://ryanfb.xyz/etc/2020/04/27/last_modified_dates_for_github_pages_jekyll_posts.html
 fetch("https://api.github.com/repos/{{ site.github.owner_name }}/{{ site.github.repository_name }}/commits?sha=posts&path={{ page.name }}")
   .then(res => res.json())
   .then((commits) => {
