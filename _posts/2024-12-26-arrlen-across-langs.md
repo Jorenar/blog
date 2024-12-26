@@ -105,7 +105,7 @@ Enjoy!
   <li>Mojo</li>
   <li>ML
     <ul>
-      <li>F{\#}</li>
+      <li>F#</li>
       <li>OCaml</li>
       <li>Standard ML</li>
     </ul>
@@ -393,7 +393,7 @@ Enjoy!
   length(myList)
   ```
 
-* F{\#} [[fsharp]]
+* F\# [[fsharp]]
   ```
   myArray |> Array.Length
   myArray |> Array.length
