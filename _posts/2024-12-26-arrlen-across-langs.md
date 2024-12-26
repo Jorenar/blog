@@ -26,7 +26,9 @@ Enjoy!
 * Table of Contents
 {:toc}
 
-## Popular high-level languages [[so2024]] [[tiobe]] [[ieee]] [[github]] [[godbolt]] [[so-tags]]
+## Popular high-level computer languages
+
+[[so2024]] [[tiobe]] [[ieee]] [[github]] [[godbolt]] [[so-tags]]
 
 * Ada
 * ABAP
@@ -226,7 +228,9 @@ Enjoy!
 
 * LabVIEW [[labview]]
 
-  _Array Size_ function
+  &nbsp;&nbsp;&nbsp;&nbsp; _Array Size_ function
+
+  &nbsp;
 
 * Maple [[maple]]
   ```
@@ -248,12 +252,12 @@ Enjoy!
   SIZE myArray
   ```
 
-* PHP [[php2]] &nbsp;&nbsp; <sup>(alias for <code>count()</code>)</sup>
+* PHP [[php2]] &nbsp;&nbsp; <sub>(alias for <code>count()</code>)</sub>
   ```
   sizeof($myArray)
   ```
 
-* Ruby [[ruby2]] [[ruby4]] &nbsp;&nbsp; <sup>(alias for <code>.length</code>)</sup>
+* Ruby [[ruby2]] [[ruby4]] &nbsp;&nbsp; <sub>(alias for <code>.length</code>)</sub>
   ```
   myArray.size
   ```
@@ -661,7 +665,9 @@ Enjoy!
 
 * Simulink [[simulink1]] [[simulink2]]
 
-  _Width_ block
+  &nbsp;&nbsp;&nbsp;&nbsp; _Width_ block
+
+  &nbsp;
 
 * SAS [[sas]]
   ```
@@ -707,7 +713,7 @@ Enjoy!
   $#
   ```
   <aside markdown="1">
-  (only one array per script/subshell/function in standard POSIX Shell language)
+  (only one array per script/subshell/function in standard POSIX Shell)
   </aside>
 
 ### Languages where length is computed
@@ -820,8 +826,9 @@ Enjoy!
 
   "Count" might be more popular for non-linear data structures, like e.g. graphs.
 
-* 4th most common word is "dimension"; 5th are ex aequo "elements" and "cardinality". \
+* 4th most common word is "dimension"; 5th are ex aequo "elements" and "cardinality".
   Including methods of calculating number of elements puts "bounds" in top 5 too.
+
 ##
 
 [n3369]: https://www.open-std.org/jtc1/sc22/wg14/www/docs/n3369.pdf
