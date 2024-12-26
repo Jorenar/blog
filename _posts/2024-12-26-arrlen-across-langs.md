@@ -3,6 +3,22 @@ layout: post
 title:  "Retrieving array length across computer languages"
 ---
 
+<style>
+  .langs-list {
+    column-count: 3;
+  }
+  @media only screen and (max-width: 700px) {
+    .langs-list {
+      column-count: 2;
+    }
+  }
+  @media only screen and (max-width: 500px) {
+    .langs-list {
+      column-count: 1;
+    }
+  }
+</style>
+
 The upcoming revision of the C language standard (for now called C2y) is
 about to feature a new operator that essentially is a standardization of
 ages old `sizeof arr / sizeof arr[0]` trick for getting number of elements
@@ -26,7 +42,7 @@ Enjoy!
 
 ## Popular high-level computer languages
 
-<ul style="column-count: 3">
+<ul class="langs-list">
   <li>Ada</li>
   <li>ABAP</li>
   <li>ALGOL</li>
