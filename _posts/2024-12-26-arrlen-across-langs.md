@@ -21,7 +21,7 @@ here, in this blogpost copy of the paper.
 
 Enjoy!
 
-[<img width=40% src="https://i.redd.it/yexhn9of1i2e1.png" alt="ProgrammerHumor" />][ProgrammerHumor]
+[![ProgrammerHumor](https://i.redd.it/yexhn9of1i2e1.png)][ProgrammerHumor]
 
 * Table of Contents
 {:toc}
