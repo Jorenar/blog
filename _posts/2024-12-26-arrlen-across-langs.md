@@ -787,23 +787,18 @@ Enjoy!
     by using `std::size()` function, by passing the type to `std::extent_v<T>`
     trait template, and couple other ways.
 
-  If such additional method was not a primary or prominent way, or
-  at least from the focus group, it might be missing from this paper.
+  If such additional method was not a primary or prominent way,
+  or at least from the focus group, it might be missing from the list.
 
-* The vast majority of languages use derivatives of either "length" or "size", \\
+* The vast majority of languages use derivatives of either "length" or "size",
   with "length" being the dominat base.
 
 * "Length" and "size" are also often used for other linear data structures
   beside arrays, like strings, linked lists, queues, etc.
 
-* Documentations, specifications and communities\footnote{Communities speaking
-  natural languages, different than English, also can have similar experience;
-  for example in Polish: "rozmiar tablicy" ("size of array") and "długość tablicy"
-  ("length of array") are similarly quite often seen interchanged in literature
-  and conversations.} use terms "length" and "size" quite freely and interchangeably
-  in the meaning of "the number of elements in data structure". Sometimes languages
-  make them alias one another.
-  \begin{itemize}
+* Documentations, specifications and communities use terms "length" and "size"
+  quite freely and interchangeably in the meaning of "the number of elements
+  in data structure". Sometimes languages make them alias one another.
 
   * Other words also sometimes are seen as synonyms, although rarely and/or in
     specific contexts (e.g. "dimension" or "extent" would primarily be present
@@ -813,16 +808,6 @@ Enjoy!
   languages represent this category. Sometimes it is a side effect of more
   versatile feature (e.g. in meaning "count of X in Y", where Y might contain
   more than just Xs).
-
-  * PowerShell -- dedicates `.Length` to arrays, `.Count` is inherited from underlying type;
-  * Ruby -- uses "count" to, nomen omen, count elements meeting condition; \
-      only if condition is empty then `.count` gives equivalent of `.length`;
-  * SQL -- in similar fashion to Ruby, uses `COUNT` for more generic purpose.
-
-  Additionally, Clojure has also `alength` (for Java arrays, but supposedly
-  "works for all arrays"), and PHP provides alias: `sizeof()`.
-
-  "Count" might be more popular for non-linear data structures, like e.g. graphs.
 
 * 4th most common word is "dimension"; 5th are ex aequo "elements" and "cardinality".
   Including methods of calculating number of elements puts "bounds" in top 5 too.
