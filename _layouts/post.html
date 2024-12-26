@@ -8,4 +8,17 @@ layout: default
 {% include anchor_headings.html html=content anchorClass="hanchor" anchorBody="#" %}
 
 <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%F" }}</time>
+
+<script>
+// https://ryanfb.xyz/etc/2020/04/27/last_modified_dates_for_github_pages_jekyll_posts.html
+fetch("https://api.github.com/repos/{{ site.github.owner_name }}/{{ site.github.repository_name }}/commits?sha=posts&path={{ page.path | split: '/' | last }}")
+  .then(res => res.json())
+  .then((commits) => {
+    const modified = commits[0]['commit']['committer']['date'].slice(0,10);
+    if (modified != "{{ page.date | date: "%Y-%m-%d" }}") {
+      document.querySelector('time').textContent += ' - ' + modified;
+    }
+  });
+</script>
+
 </article>

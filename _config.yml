@@ -7,6 +7,7 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-redirect-from
+  - jekyll-github-metadata
 
 kramdown:
   smart_quotes: ["apos", "apos", "quot", "quot"]
