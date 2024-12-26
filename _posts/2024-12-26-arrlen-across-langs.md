@@ -28,123 +28,157 @@ Enjoy!
 
 ## Popular high-level computer languages
 
-[[so2024]] [[tiobe]] [[ieee]] [[github]] [[godbolt]] [[so-tags]]
+<ul style="column-count: 3">
+  <li>Ada</li>
+  <li>ABAP</li>
+  <li>ALGOL</li>
+  <li>Apex</li>
+  <li>APL</li>
+  <li>AWK
+    <ul>
+      <li>gawk</li>
+    </ul>
+  </li>
+  <li>BASIC</li>
+  <li>Batch files</li>
+  <li>C</li>
+  <li>C#</li>
+  <li>C++</li>
+  <li>CHILL</li>
+  <li>CLIPS</li>
+  <li>CMake</li>
+  <li>COBOL</li>
+  <li>Cobra</li>
+  <li>ColdFusion</li>
+  <li>Crystal</li>
+  <li>Curl</li>
+  <li>D</li>
+  <li>Dart</li>
+  <li>ECMAScript
+    <ul>
+      <li>ActionScript</li>
+      <li>JavaScript
+        <ul>
+          <li>CoffeeScript</li>
+          <li>JScript</li>
+          <li>TypeScript</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Elixir</li>
+  <li>Elm</li>
+  <li>Erlang</li>
+  <li>Flutter</li>
+  <li>Forth</li>
+  <li>Fortran</li>
+  <li>FoxPro</li>
+  <li>GAMS</li>
+  <li>GDScript</li>
+  <li>GLSL</li>
+  <li>Go</li>
+  <li>Groovy</li>
+  <li>Hack</li>
+  <li>Haskell</li>
+  <li>Icon</li>
+  <li>Java</li>
+  <li>Julia</li>
+  <li>Kotlin</li>
+  <li>LabVIEW</li>
+  <li>Lisp
+    <ul>
+      <li>Clojure</li>
+      <li>Common Lisp</li>
+      <li>Emacs Lisp</li>
+      <li>Racket</li>
+      <li>Scheme</li>
+    </ul>
+  </li>
+  <li>Logo</li>
+  <li>Lua</li>
+  <li>Makefile
+    <ul>
+      <li>GNU Make</li>
+    </ul>
+  </li>
+  <li>Maple</li>
+  <li>MATLAB</li>
+  <li>Modula-2</li>
+  <li>Mojo</li>
+  <li>ML
+    <ul>
+      <li>F{\#}</li>
+      <li>OCaml</li>
+      <li>Standard ML</li>
+    </ul>
+  </li>
+  <li>MQL5</li>
+  <li>Nim</li>
+  <li>occam 2</li>
+  <li>Objective-C</li>
+  <li>Odin</li>
+  <li>Pascal
+    <ul>
+      <li>Delphi</li>
+      <li>Object Pascal</li>
+    </ul>
+  </li>
+  <li>Perl</li>
+  <li>PHP</li>
+  <li>PL/I</li>
+  <li>PostScript</li>
+  <li>PowerShell</li>
+  <li>Prolog</li>
+  <li>Python</li>
+  <li>R</li>
+  <li>Raku</li>
+  <li>Ring</li>
+  <li>RPG</li>
+  <li>Ruby</li>
+  <li>Rust</li>
+  <li>SAS</li>
+  <li>Scala</li>
+  <li>Shell script
+    <ul>
+      <li>Bash</li>
+      <li>Korn Shell</li>
+    </ul>
+  </li>
+  <li>Simula</li>
+  <li>Simulink</li>
+  <li>Smalltalk</li>
+  <li>Solidity</li>
+  <li>SPARK</li>
+  <li>SQL
+    <ul>
+      <li>PL/SQL</li>
+      <li>PostgreSQL</li>
+      <li>Snowflake</li>
+    </ul>
+  </li>
+  <li>Swift</li>
+  <li>SystemVerilog</li>
+  <li>TeX
+    <ul>
+      <li>LaTeX</li>
+    </ul>
+  </li>
+  <li>Tcl</li>
+  <li>V</li>
+  <li>Vala</li>
+  <li>VBA</li>
+  <li>VBScript</li>
+  <li>VHDL</li>
+  <li>Vim script</li>
+  <li>Visual Basic</li>
+  <li>Wolfram Language</li>
+  <li>X++</li>
+  <li>Zig</li>
+</ul>
 
-* Ada
-* ABAP
-* ALGOL
-* Apex
-* APL
-* AWK
-  * gawk
-* BASIC
-* Batch files
-* C
-* C\#
-* C++
-* CHILL
-* CLIPS
-* CMake
-* COBOL
-* Cobra
-* ColdFusion
-* Crystal
-* Curl
-* D
-* Dart
-* ECMAScript
-  * ActionScript
-  * JavaScript
-    * CoffeeScript
-    * JScript
-    * TypeScript
-* Elixir
-* Elm
-* Erlang
-* Flutter
-* Forth
-* Fortran
-* FoxPro
-* GAMS
-* GDScript
-* GLSL
-* Go
-* Groovy
-* Hack
-* Haskell
-* Icon
-* Java
-* Julia
-* Kotlin
-* LabVIEW
-* Lisp
-  * Clojure
-  * Common Lisp
-  * Emacs Lisp
-  * Racket
-  * Scheme
-* Logo
-* Lua
-* Makefile
-  * GNU Make
-* Maple
-* MATLAB
-* Modula-2
-* Mojo
-* ML
-  * F{\#}
-  * OCaml
-  * Standard ML
-* MQL5
-* Nim
-* occam 2
-* Objective-C
-* Odin
-* Pascal
-  * Delphi
-  * Object Pascal
-* Perl
-* PHP
-* PL/I
-* PostScript
-* PowerShell
-* Prolog
-* Python
-* R
-* Raku
-* Ring
-* RPG
-* Ruby
-* Rust
-* SAS
-* Scala
-* Shell script
-  * Bash
-  * Korn Shell
-* Simula
-* Simulink
-* Smalltalk
-* Solidity
-* SPARK
-* SQL
-  * PL/SQL
-  * PostgreSQL
-  * Snowflake
-* Swift
-* SystemVerilog
-* TeX
-  * LaTeX
-* Tcl
-* V
-* Vala
-* VBA
-* VBScript
-* VHDL
-* Vim script
-* Visual Basic
-* Wolfram Language
-* X++
-* Zig
+&nbsp;
+
+[[so2024]] [[tiobe]] [[ieee]] [[github]] [[godbolt]] [[so-tags]]
 
 ## Getting length of array-like objects
 ### Languages using "size"
