@@ -21,8 +21,6 @@ here, in this blogpost copy of the paper.
 
 Enjoy!
 
-&nbsp;
-
 * Table of Contents
 {:toc}
 
