@@ -10,7 +10,7 @@ layout: default
 <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%F" }}</time>
 
 <script>
-fetch("https://api.github.com/repos/{{ site.github.owner_name }}/{{ site.github.repository_name }}/commits?sha=posts&path={{ page.path }}")
+fetch("https://api.github.com/repos/{{ site.github.owner_name }}/{{ site.github.repository_name }}/commits?sha=posts&path={{ page.name }}")
   .then(res => res.json())
   .then((commits) => {
     const modified = commits[0]['commit']['committer']['date'].slice(0,10);
