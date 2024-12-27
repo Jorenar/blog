@@ -267,6 +267,7 @@ Enjoy!
 * Julia [[julia1]] [[julia2]]
   ```
   size(myArray)[1]
+  size(myArray, 1)
   ```
 
 * Kotlin [[kotlin1]] [[kotlin2]]
@@ -862,7 +863,9 @@ Enjoy!
 * 4th most common word is "dimension"; 5th are ex aequo "elements" and "cardinality".
   Including methods of calculating number of elements puts "bounds" in top 5 too.
 
-## 
+&nbsp;
+
+##
 
 [![ProgrammerHumor](https://i.redd.it/yexhn9of1i2e1.png)][ProgrammerHumor]
 
