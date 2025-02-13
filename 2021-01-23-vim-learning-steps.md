@@ -26,6 +26,7 @@ redirect_from:
   * [r/vim](https://old.reddit.com/r/vim/)
   * [romainl/vim-gists.md](https://gist.github.com/romainl/4b9f139d2a8694612b924322de1025ce)
   * [Seven habits of effective text editing](https://www.moolenaar.net/habits.html) by Bram Moolenaar
+  * [Some Facts About Vim · JetBrains/ideavim Wiki](https://github.com/JetBrains/ideavim/wiki/Some-Facts-About-Vim)
   * [The Viminator](https://www.theviminator.com/)
   * [Vi and Vim Stack Exchange](https://vi.stackexchange.com/)
   * [Vim - Curated learning resources](https://learnbyexample.github.io/curated_resources/vim.html)
