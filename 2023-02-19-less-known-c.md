@@ -1224,7 +1224,7 @@ is interesting enough to warrant a mention.
 Right now `_Generic` doesn't allow for matching arrays, but document
 [N3348](https://www.open-std.org/jtc1/sc22/wg14/www/docs/n3348.pdf)
 by Martin Uecker mentions [a trick](https://godbolt.org/z/bqhrEcGn4)
-to make them match by wrapping the type into function pointer:
+to make them match by wrapping the type into a function pointer:
 
 ```c
 #include <stdio.h>
@@ -1259,3 +1259,35 @@ int main()
     return 0;
 }
 ```
+## [Polyglot files](https://en.wikipedia.org/wiki/Polyglot_(computing)#C,_PHP,_and_Bash)
+
+A polyglot file is composed by combining syntax from different languages.
+The linked Wikipedia article showcases such combination of C, PHP and Bash.
+
+A more realistic example for C would be for embedding compilation command:
+
+```c
+#if 0
+cc -o hello $0 && exec ./hello
+exit # in case of compilation failure
+#endif
+
+#include <stdio.h>
+
+int main(void)
+{
+    puts("Hello World!");
+    return 0;
+}
+```
+
+And because POSIX specifies that text files without shebang shall
+be executes as shell script, in compliant environment you can have:
+
+```sh
+$ ./hello.c
+Hello World!
+$
+```
+
+[Here you can see a real life example of this technique usage](https://github.com/skeeto/w64devkit/blob/master/src/libmemory.c).

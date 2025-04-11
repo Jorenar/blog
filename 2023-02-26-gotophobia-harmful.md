@@ -1340,7 +1340,7 @@ ALLOC:      temp = arrayAllocSmart(buf, sz, pos);
 
 ### `goto`-less alternative 1: guard flag
 
-I probably says more about the state of my sleep deprived brain than anything
+It probably says more about the state of my sleep deprived brain than anything
 else, but I actually managed to make an honest, very dumb mistake in this
 simple snippet. I didn't notice until after examining the assembly output
 and seeing way less instructions than expected. Since it's simple, yet quite
