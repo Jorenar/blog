@@ -56,6 +56,7 @@ Enjoy!
   <li>BASIC</li>
   <li>Batch files</li>
   <li>C</li>
+  <li>C Shell</li>
   <li>C#</li>
   <li>C++</li>
   <li>CHILL</li>
@@ -118,6 +119,7 @@ Enjoy!
   <li>Maple</li>
   <li>MATLAB</li>
   <li>Modula-2</li>
+  <li>Modula-3</li>
   <li>Mojo</li>
   <li>ML
     <ul>
@@ -192,7 +194,7 @@ Enjoy!
 
 &nbsp;
 
-[[so2024]] [[tiobe]] [[ieee]] [[github]] [[godbolt]] [[so-tags]]
+[[so2024]] [[tiobe]] [[ieee]] [[github]] [[godbolt]] [[so-tags]] [[debian]]
 
 ## Getting length of array-like objects
 ### Languages using "size"
@@ -687,9 +689,14 @@ Enjoy!
   table.getn(myArray)
   ```
 
-* Modula-2 [[modula]]
+* Modula-2 [[modula2]]
   ```
   HIGH(myArray)+1
+  ```
+
+* Modula-3 [[modula3]]
+  ```
+  NUMBER(myArray)
   ```
 
 * PL/I [[pli1]] [[pli2]]
@@ -739,6 +746,11 @@ Enjoy!
 * Bash [[bash]]
   ```
   ${#myArray[@]}
+  ```
+
+* C Shell [csh]
+  ```
+  $#myArray
   ```
 
 * Icon [[icon]]
@@ -879,6 +891,7 @@ Enjoy!
 [ieee]: https://spectrum.ieee.org/top-programming-languages-2024
 [github]: https://innovationgraph.github.com/global-metrics/programming-languages
 [godbolt]: https://godbolt.org/api/languages
+[debian]: https://sources.debian.org/stats
 
 [abap1]: https://help.sap.com/doc/abapdocu_752_index_htm/7.52/en-US/abendescriptive_functions_table.htm
 [abap2]: https://stackoverflow.com/q/394375
@@ -913,6 +926,7 @@ Enjoy!
 [cpp5]: https://en.cppreference.com/w/cpp/types/extent
 [cpp6]: https://godbolt.org/z/nEPKP79fY
 [crystal]: https://crystal-lang.org/api/1.13.3/Array.html#size%3AInt32-instance-method
+[csh]: https://linux.die.net/man/1/csh
 [csharp1]: https://learn.microsoft.com/en-us/dotnet/api/system.array.length
 [csharp2]: https://learn.microsoft.com/en-us/dotnet/api/system.array.length
 [curl]: https://www.curlap.com/support/developers/curl/docs/rte/latest/en/docs/en/api-ref/Array-of.html#size
@@ -957,7 +971,8 @@ Enjoy!
 [lua]: https://www.lua.org/pil/19.1.html
 [maple]: https://www.maplesoft.com/support/help/maple/view.aspx?path=ArrayTools%2FSize
 [matlab]: https://www.mathworks.com/help/matlab/ref/double.size.html
-[modula]: https://www.modula2.org/tutor/chapter6.php
+[modula2]: https://www.modula2.org/tutor/chapter6.php
+[modula3]: https://modula3.github.io/cm3/reference/complete/html/2_6_13Type_operations.html
 [mojo]: https://docs.modular.com/mojo/stdlib/builtin/len/
 [mql5]: https://www.mql5.com/en/docs/array/arraysize
 [nim1]: https://nim-lang.org/docs/manual.html#types-array-and-sequence-types
