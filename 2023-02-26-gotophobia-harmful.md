@@ -3,8 +3,8 @@ layout: post
 title:  "GOTOphobia considered harmful"
 ---
 
-> **gotophobia** -- fear of `goto` statement, usually caused by misunderstanding
-> and lack of context of stories from dark ages of programming. Programmers with
+> **gotophobia** -- fear of `goto` statement; usually caused by and lack context,
+> and misunderstanding of stories from dark ages of programming. Programmers with
 > gotophobia tend to make their code less readable just to avoid using `goto`.
 
 Everybody and their grandpa knows (the meme title of) Dijkstra's
@@ -27,6 +27,7 @@ who needs to learn good practices and discipline, right? It's obviously better
 to just ignore the topic entirely and let the students later wonder why they get
 [attacked by velociraptors](https://www.explainxkcd.com/wiki/index.php/292:_goto).
 
+[On 2003-01-12, Scott Robert Ladd wrote](https://lkml.org/lkml/2003/1/12/245):
 > A "goto" is not, in and of itself, dangerous -- it is a language feature,
 > one that directly translates to the jump instructions implemented in machine
 > code. Like pointers, operator overloading, and a host of other "perceived"
@@ -41,8 +42,6 @@ to just ignore the topic entirely and let the students later wonder why they get
 > constructs. The "goto" may also be safer and more intuitive than the
 > alternative. A "break" is a goto; a "continue" is a "goto" -- these are
 > statements that move the point of execution explicitly.
->
-> ~ [Scott Robert Ladd](https://lkml.org/lkml/2003/1/12/245)
 
 Linux kernel is one thing, but if even such restrictive coding standard
 as MISRA C (2012 edition) can downgrade the prohibition on `goto` from
@@ -1206,9 +1205,9 @@ break_while:
   </g>
 
   <g fill="black">
-    <text x="75" y="105">A</text>
-    <text x="155" y="105">B</text>
-    <text x="115" y="45">C</text>
+    <text x="73" y="106">A</text>
+    <text x="154" y="106.5">B</text>
+    <text x="114" y="47">C</text>
   </g>
 
   <g fill="white">
@@ -1260,6 +1259,8 @@ break_while:
     </g>
   </g>
 </svg>
+
+&nbsp;
 
 The following is a 1:1, not far from **verbatim mathematical notation**,
 implementation of the above automata:
