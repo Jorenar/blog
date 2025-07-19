@@ -42,6 +42,18 @@ useful**</span>! I'm putting faith into readers' _common sense_.
 * Table of Contents
 {:toc}
 
+## Variables declaration in parentheses
+
+Names of variables can be wrapped in parentheses in declarations:
+
+```c
+int (v);
+void (*p);
+float (ar1)[16];
+double (ar1[8]);
+int x, (*y), (z);
+```
+
 ## Array pointers
 
 Decay-to-pointer makes regular pointers to array usually not needed:
@@ -1292,3 +1304,43 @@ $
 ```
 
 [Here you can see a real life example of this technique usage](https://github.com/skeeto/w64devkit/blob/master/src/libmemory.c).
+
+## Forward declaration is optional
+
+Normally forward declaration is done as following:
+```c
+struct Foo;
+void bar(int n, struct Foo *a)
+{
+    if (n) bar(n-1, a);
+}
+```
+
+but we can declare and initialize a pointer in one go too:
+```c
+struct Foo *g = 0;
+void bar(int n, struct Foo *a)
+{
+    if (n) bar(n-1, a);
+}
+```
+
+or skip global forward declaration:
+```c
+void bar(int n, struct Foo *a)
+{
+    if (n) bar(n-1, a);
+}
+```
+
+Although, beware: technically in
+```
+void bar(int n, struct Foo *a);
+void baz(struct Foo *b);
+```
+pointers `a` and `b` are incompatible.
+
+
+<aside markdown="1">
+* [Strange compiler warning C: warning: 'struct' declared inside parameter list - Stack Overflow](https://stackoverflow.com/questions/16831605)
+</aside>
