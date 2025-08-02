@@ -72,7 +72,7 @@ I'll also try to mention `goto`-less alternatives and their potential drawbacks
   * ["GOTO Considered Harmful" Considered Harmful](http://web.archive.org/web/20090320002214/http://www.ecn.purdue.edu/ParaMount/papers/rubin87goto.pdf)
   * [When is it appropriate to use GOTO? : r/C_Programming](https://www.reddit.com/r/C_Programming/comments/wimvdf/when_is_it_appropriate_to_use_goto/)
   * [Programming With(out) the GOTO](https://dl.acm.org/doi/pdf/10.1145/800194.805859)
-  * [Ian Mallett - Tutorials: The goto Statement is Good](https://geometrian.com/programming/tutorials/gotogood/index.php)
+  * [The Go-To Statement is Good, Actually](https://geometrian.com/projects/blog/the_goto_statement_is_good_actually.html)
   * [MEM12-C. Consider using a goto chain when leaving a function on error when using and releasing resources -&nbsp;SEI&nbsp;CERT C Coding Standard](https://wiki.sei.cmu.edu/confluence/display/c/MEM12-C.+Consider+using+a+goto+chain+when+leaving+a+function+on+error+when+using+and+releasing+resources)
   * [Valid use of goto for error management in C? - Stack Overflow](https://stackoverflow.com/q/788903/10247460)
   * [LKML: Rob Wilkens: Re: any chance of 2.6.0-test\*?](https://lkml.org/lkml/2003/1/12/126)
