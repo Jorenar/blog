@@ -23,6 +23,7 @@ useful**</span>! I'm putting faith into readers' _common sense_.
 
 **Resources:**
   * [Advanced C: The UB and optimizations that trick good programmers.](https://www.youtube.com/watch?v=w3_e9vZj7D8)
+  * [Bit Twiddling Hacks](https://graphics.stanford.edu/~seander/bithacks.html)
   * [C99 with Technical corrigenda TC1, TC2, and TC3 included](http://www.open-std.org/JTC1/SC22/WG14/www/docs/n1256.pdf)
   * [Deep C (and C++) _by Olve Maudal and Jon Jagger_](http://www.pvv.org/~oma/DeepC_slides_oct2011.pdf)
   * [Hidden features of C - Stack Overflow](https://stackoverflow.com/q/132241/10247460)
