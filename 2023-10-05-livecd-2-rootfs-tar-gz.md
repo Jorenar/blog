@@ -73,7 +73,7 @@ $ sudo mkdir /mnt/fedora
 
 The syntax for mounting an ISO file is: `mount -o loop disk1.iso /mnt/disk`
 
-Therefore let's mount our images:
+Therefore, let's mount our images:
 ```
 $ sudo mount -o loop debian-live-12.1.0-amd64-standard.iso /mnt/debian
 $ sudo mount -o loop Fedora-Workstation-Live-x86_64-38-1.6.iso /mnt/fedora
@@ -161,6 +161,6 @@ $ sudo rm -r "$TMPDIR"/debian "$TMPDIR"/fedora
 ```
 
 # Done
-
-Great! Now that we know how get filesystem from Linux LiveCD ISO into `rootfs.tar.gz` archive, we can use it to e.g.
+ 
+Great! Now that we know how to get filesystem from Linux LiveCD ISO into `rootfs.tar.gz` archive, we can use it to e.g.
 [create an instance of Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/en-us/windows/wsl/use-custom-distro#import-the-tar-file-into-wsl).

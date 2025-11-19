@@ -4,10 +4,10 @@ title:  "Legitimate use-cases of VM types in C"
 ---
 
 An earlier version of my [Pitfalls of VLA in C](/blog/vla-pitfalls) article
-contained an example of useful case of VLA, which I pulled out of it as I decided
-the two -- although I'd be overjoyed being presented with more -- cases where VLA
-are clearly useful, deserve their dedicated, if low effort, post. After all, those
-use-cases are the only reason why I compile with `-Wvla-larger-than=0` rather than
+contained an example of useful case of VLA, but since there are actually
+two of them (and I'd be overjoyed being presented with more), they deserve
+a dedicated, if low effort, post of their own. After all, those use-cases
+are the only reason why I compile with `-Wvla-larger-than=0` rather than
 more strict and reliable `-Wvla`.
 
 # Size check when passing to function

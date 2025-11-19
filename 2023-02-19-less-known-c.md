@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  "Lesser known tricks, quirks and features of C"
+title:  "Lesser known tricks, quirks, and features of C"
 ---
 
-There are some tricks, quirks and features which seems to throw even
-experienced developers off the track. Thus I periodically revisit this
+There are some tricks, quirks, and features which seems to throw even
+experienced developers off the track. Thus, I periodically revisit this
 blogpost, to do a sloppy job of gathering them in an unordered list with
 some short explanations, examples, quotes, or references.
 
@@ -492,7 +492,7 @@ about whitespace.
 
 ## `idx[arr]`
 
-Square brace notation of accessing array elements is a syntactic sugar for pointer arithmetics:
+Square brace notation of accessing array elements is a syntactic sugar for pointer arithmetic:
 
 <div markdown="1" style="width:100%; text-align:center">
 `arr[5]` &equiv; `*(arr + 5)` &equiv; `*(5 + arr)` &equiv; `5[arr]`
@@ -512,7 +512,7 @@ myorder.product[products].box[boxes].weight;
 
 For quick and dirty debugging purposes I wanted to check if padding at the end
 of an array is filled with correct value, but I didn't know where the padding
-starts. Thus I did the following:
+starts. Thus, I did the following:
 
 ```c
 int *end = arr + (len - 1);
@@ -703,7 +703,7 @@ C11 §6.5.16.1 ¶1:
 </blockquote>
 
 `void*` was added to C89 because of a need for generic pointer
-type which can be implicitly casted back and forth.
+type which can be implicitly cast back and forth.
 
 In fact, explicitly casting `void` pointers has the following problems:
 
@@ -804,9 +804,9 @@ struct {
 
 ## Function types
 
-Function pointers ought to be well known, but as we know the syntax is bit awkward.
-On the other hand, less people know you can (as with most objects in C) create
-a `typedef` for function type.
+Function pointers ought to be well known, but as we know the syntax is
+a bit awkward. On the other hand, less people know you can (as with most
+objects in C) create a `typedef` for function type.
 
 ```c
 #include <stdio.h>
@@ -1216,7 +1216,7 @@ int sum(const BinaryTree *tree) {
 
 I've already mentioned some preprocessor tricks, but there's way more!
 In fact, I could easily make such a list out of preprocessor oddities alone.
-After all, it is a full fledged language with its own rules, grammar and
+After all, it is a full fledged language with its own rules, grammar, and
 caveats; heck, it's not even strictly exclusive to C - there are madlads
 [using it in conjunction with e.g. JavaScript](https://www.nongnu.org/espresso/js-cpp.html).
 
@@ -1231,8 +1231,8 @@ list with sane and insane deeds possible to do in C preprocessor.
 after Perl's [CPAN](https://www.cpan.org/) (which in turn was modeled
 after [CTAN](https://en.wikipedia.org/wiki/CTAN)) is a repository of
 C code snippets. While it's not such a necessity like for Perl, nor
-is it officially endorsed or widely used, I think it's existence
-is interesting enough to warrant a mention.
+is it officially endorsed or widely used, I think its existence is
+interesting enough to warrant a mention.
 ## Function pointers to match arrays in `_Generic`
 
 Right now `_Generic` doesn't allow for matching arrays, but document
@@ -1276,7 +1276,7 @@ int main()
 ## [Polyglot files](https://en.wikipedia.org/wiki/Polyglot_(computing)#C,_PHP,_and_Bash)
 
 A polyglot file is composed by combining syntax from different languages.
-The linked Wikipedia article showcases such combination of C, PHP and Bash.
+The linked Wikipedia article showcases such combination of C, PHP, and Bash.
 
 A more realistic example for C would be for embedding compilation command:
 

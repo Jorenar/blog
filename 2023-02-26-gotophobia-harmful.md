@@ -13,7 +13,7 @@ Everybody and their grandpa knows (the meme title of) Dijkstra's
 but most forget the context of the 60s in which it was written,
 things we take for granted were a novelty back then.
 
-A lot programmers learnt the craft in a world where `goto` was the main method
+A lot of programmers learnt the craft in a world where `goto` was the main method
 of flow control; even in structured languages it was easy for them to fall back
 on the learned bad habits and techniques.
 On the other hand, today we have the very opposite situation: programmers not
@@ -48,11 +48,11 @@ as MISRA C (2012 edition) can downgrade the prohibition on `goto` from
 _required_ to _advisory_, I think in regular code we can safely use `goto`
 in judicious manner.
 
-Thus I want to present some situations and patterns where `goto` could be acceptable
-(perhaps the best?) choice and you could maybe want to *consider* using it.
-I'll also try to mention `goto`-less alternatives and their potential drawbacks
-(you presumably already are familiar with their advantages as well as with
- the possible hitches of `goto` versions).
+Thus, I want to present some situations and patterns where `goto` could be
+acceptable (perhaps the best?) choice and you could maybe want to *consider*
+using it. I'll also try to mention `goto`-less alternatives and their potential
+drawbacks (you presumably already are familiar with their advantages as well
+as with the possible hitches of `goto` versions).
 
 **Resources**
   * _The C Programming Language, 2nd ed._ by Kernighan & Ritchie
@@ -86,7 +86,7 @@ I'll also try to mention `goto`-less alternatives and their potential drawbacks
 
 # Error/exception handling & cleanup
 
-Poster child of using `goto` -- most of the times accepted, often recommended,
+Poster child of using `goto` -- most of the time accepted, often recommended,
 sometimes even straight up mandated. This idiom results in a good quality code,
 because the operations of the algorithm are _structured_ in a clear order,
 while errors and other overhead is handled somewhere else, outside the mainline.
@@ -1426,7 +1426,7 @@ Often extensions like [computed `goto`](https://gcc.gnu.org/onlinedocs/gcc/Label
 </aside>
 
 Beej shows [tail call optimization](https://beej.us/guide/bgc/html/split/goto.html#tail-call-optimization)
-as an example in his book. Unfortunately (from educational standpoint! otherwise it's very good thing)
+as an example in his book. Unfortunately (from educational standpoint! otherwise, it's a great thing)
 modern compilers easily optimize something as simple as factorial to the very same assembly which we get
 using the `goto` optimization. On the other hand, not everybody is blessed with modern, optimizing compiler...
 
@@ -1441,7 +1441,7 @@ If I started from Dijkstra, it's only natural I need to conclude with Knuth. \
 Almost anybody who says anything positive about `goto` refers to this paper.
 And rightfully so! To this day it's one of most comprehensive resources
 on the topic (it's a go to resource about `goto`). Perhaps some examples
-are quite dated, some concerns less crucial today than back in the days,
+are quite dated, some concerns less crucial today than back in the day,
 but nevertheless it's an excellent read.
 
 > One thing we haven't spelled out clearly, however, is what makes some

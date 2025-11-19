@@ -846,7 +846,7 @@ Enjoy!
 
   * e.g. Ruby has `.length`, but `.count` without condition also gives
     the number of elements;
-  * e.g. C++ allows to calculate array length via `sizeof arr / sizeof arr[0]`,
+  * e.g. C++ allows calculating array length via `sizeof arr / sizeof arr[0]`,
     by using `std::size()` function, by passing the type to `std::extent_v<T>`
     trait template, and couple other ways.
 

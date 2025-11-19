@@ -93,7 +93,7 @@ int main(void) {
 }
 ```
 
-In this case I was able to request over 4.5 GB before segfault. Almost few orders
+In this case I was able to request over 4.5 GiB before segfault. Almost few orders
 of magnitude more! But I still got the segfault, right? Well, the difference
 is in getting at least some\* chance of checking the value returned by `malloc()`
 and thus being able to, for example, inform the user about the error:
