@@ -3,11 +3,11 @@ layout: post
 title:  "GOTOphobia considered harmful"
 ---
 
-> **gotophobia** -- fear of `goto` statement; usually caused by and lack context,
+> **gotophobia** -- fear of `goto` statement; usually caused by a lack of context,
 > and misunderstanding of stories from dark ages of programming. Programmers with
 > gotophobia tend to make their code less readable just to avoid using `goto`.
 
-Everybody and their grandpa knows (the meme title of) Dijkstra's
+Everybody and their grandpa knows (the meme-ish title of) Dijkstra's
 [_Letters to the editor: go to statement considered harmful_](https://dl.acm.org/doi/epdf/10.1145/362929.362947)
 (submitted under the title: _A case against the goto statement_),
 but most forget the context of the 60s in which it was written,
@@ -15,7 +15,7 @@ things we take for granted were a novelty back then.
 
 A lot of programmers learnt the craft in a world where `goto` was the main method
 of flow control; even in structured languages it was easy for them to fall back
-on the learned bad habits and techniques.
+on the bad habits and techniques.
 On the other hand, today we have the very opposite situation: programmers not
 using `goto` when it's appropriate and abusing other constructs, what ironically
 makes code only less readable. They overfocus on the _WHAT_ ("remove `goto`")
