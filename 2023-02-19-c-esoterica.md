@@ -1,6 +1,8 @@
 ---
 layout: post
-title:  "Lesser known tricks, quirks, and features of C"
+title:  "Short list of C esoterica"
+redirect_from:
+  - /less-known-c
 ---
 
 There are some tricks, quirks, and features which seems to throw even
