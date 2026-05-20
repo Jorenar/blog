@@ -197,6 +197,7 @@ Enjoy!
 [[so2024]] [[tiobe]] [[ieee]] [[github]] [[godbolt]] [[so-tags]] [[debian]]
 
 ## Getting length of array-like objects
+
 ### Languages using "size"
 
 * ALGOL [[algol]] &nbsp;&nbsp; (for ClearPath MCP Software by Unisys)

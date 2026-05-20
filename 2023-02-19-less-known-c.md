@@ -1121,6 +1121,7 @@ error: duplicate case value '16'
         case sizeof(struct Foo): return c + 2;
              ^
 ```
+
 ## Detecting constant expressions
 
 ```
@@ -1233,6 +1234,7 @@ after [CTAN](https://en.wikipedia.org/wiki/CTAN)) is a repository of
 C code snippets. While it's not such a necessity like for Perl, nor
 is it officially endorsed or widely used, I think its existence is
 interesting enough to warrant a mention.
+
 ## Function pointers to match arrays in `_Generic`
 
 Right now `_Generic` doesn't allow for matching arrays, but document
@@ -1273,6 +1275,7 @@ int main()
     return 0;
 }
 ```
+
 ## [Polyglot files](https://en.wikipedia.org/wiki/Polyglot_(computing)#C,_PHP,_and_Bash)
 
 A polyglot file is composed by combining syntax from different languages.
