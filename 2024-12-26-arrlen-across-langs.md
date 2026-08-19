@@ -84,7 +84,6 @@ Enjoy!
   <li>Elixir</li>
   <li>Elm</li>
   <li>Erlang</li>
-  <li>Flutter</li>
   <li>Forth</li>
   <li>Fortran</li>
   <li>FoxPro</li>
@@ -146,6 +145,7 @@ Enjoy!
   <li>PowerShell</li>
   <li>Prolog</li>
   <li>Python</li>
+  <li>qmake</li>
   <li>R</li>
   <li>Raku</li>
   <li>Ring</li>
@@ -309,6 +309,11 @@ Enjoy!
   sizeof($myArray)
   ```
 
+* qmake [[qmake]]
+  ```
+  $$size(myList)
+  ```
+
 * Ruby [[ruby2]] [[ruby4]] &nbsp;&nbsp; <sub>(alias for <code>.length</code>)</sub>
   ```
   myArray.size
@@ -417,11 +422,6 @@ Enjoy!
   ```
   myArray |> Array.Length
   myArray |> Array.length
-  ```
-
-* Flutter [[flutter]]
-  ```
-  myList.length
   ```
 
 * FoxPro [[foxpro1]] [[foxpro2]] [[foxpro3]]
@@ -939,7 +939,6 @@ Enjoy!
 [emacs]: https://ftp.gnu.org/old-gnu/Manuals/elisp-manual-20-2.5/html_chapter/elisp_7.html
 [erlang1]: https://www.erlang.org/doc/apps/stdlib/array.html#size/1
 [erlang2]: https://www.erlang.org/docs/26/man/erlang#length-1
-[flutter]: https://api.flutter.dev/flutter/dart-core/List/length.html
 [fortran1]: https://www.intel.com/content/www/us/en/docs/fortran-compiler/developer-guide-reference/2024-2/size-function.html
 [fortran2]: https://gcc.gnu.org/onlinedocs/gcc-13.3.0/gfortran/SIZE.html
 [foxpro1]: https://learn.microsoft.com/en-us/previous-versions/visualstudio/foxpro/aa977250(v=vs.71)
@@ -997,9 +996,10 @@ Enjoy!
 [postscript3]: https://github.com/Chubek/postscript-dossier/blob/master/ps-arrays.md#operations-on-arrays
 [prolog1]: https://www.swi-prolog.org/pldoc/man?predicate=length/2
 [prolog2]: https://en.wikipedia.org/w/index.php?title=Prolog&oldid=1246276957#Predicates_and_programs
-[python]: https://docs.python.org/3/library/functions.html#len
 [ps1]: https://devblogs.microsoft.com/scripting/powertip-find-number-elements-in-a-powershell-array/
 [ps2]: https://learn.microsoft.com/en-us/powershell/scripting/lang-spec/chapter-07?view=powershell-7.4#7141-subscripting-an-array
+[python]: https://docs.python.org/3/library/functions.html#len
+[qmake]: https://doc.qt.io/qt-6/qmake-function-reference.html#size-variablename
 [r1]: https://cran.r-project.org/doc/manuals/r-release/R-intro.html
 [r2]: https://rforhealthcare.org/array-sizes/
 [r3]: https://www.educative.io/answers/how-to-obtain-the-length-of-an-array-in-r
