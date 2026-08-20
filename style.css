@@ -1,12 +1,11 @@
 @import "assets/fonts/Courier-Prime.css";
 
 html {
-  background-color: #111;
+  background-color: #080808;
   scrollbar-color: #111 #222;
 }
 
 body {
-  background-color: #000;
   color: #aaa;
   display: flex;
   flex-direction: column;
