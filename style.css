@@ -105,15 +105,11 @@ ul, ol {
 }
 
 ul {
-  padding-left: 2ch;
+  padding-left: 3ch;
 }
 
 ul > li::marker {
   content: '* ';
-}
-
-p + ul {
-  padding-left: 3ch;
 }
 
 aside {
