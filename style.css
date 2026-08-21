@@ -130,6 +130,7 @@ tr, td, th {
 
 code {
   font-family: "Courier Prime", monospace;
+  font-size: 0.9em;
   color: #feda;
   text-wrap: nowrap;
 }
