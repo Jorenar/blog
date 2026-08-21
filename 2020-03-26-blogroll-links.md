@@ -1,6 +1,9 @@
 ---
 layout: post
-title: "Blogroll and other resources"
+title: "Blogroll and links"
+redirect_from:
+  - /links
+  - /blogroll
 ---
 
 <style> article { max-width: max-content !important; } </style>
