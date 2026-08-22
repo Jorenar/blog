@@ -154,7 +154,7 @@ pre {
   margin-top: 1em;
 }
 
-.post-list {
+#post-list {
   line-height: 1.5em;
   list-style: none;
   margin: 20px auto;
