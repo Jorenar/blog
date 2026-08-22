@@ -8,16 +8,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="https://codeberg.org/Jorenar/dotfiles/raw/branch/master/img/avatar.svg">
-  <link rel="stylesheet" href="{{ "/style.css" | relative_url }}">
-  <link type="application/atom+xml" rel="alternate" href="{{ "/feed.xml" | relative_url }}" title="{{ site.title }}">
+  <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
+  <link type="application/atom+xml" rel="alternate" href="{{ '/feed.xml' | relative_url }}" title="{{ site.title }}">
 </head>
 <body>
   <nav>
-    <a href="{{ site.baseurl }}">Index</a>
+    <a href="{{ '/' | relative_url }}">Index</a>
     <span>Copyright &copy; {{ site.author | escape }}</span>
     <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
   </nav>
   {{ content }}
-  <a href="{{ site.baseurl }}/sitemap.xml"></a>
+  <a href="{{ '/sitemap.xml' | relative_url }}"></a>
 </body>
 </html>
