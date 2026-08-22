@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Retrieving array length across computer languages"
+title:  "Retrieving array length across languages"
 ---
 
 <style>
