@@ -15,6 +15,7 @@ body {
   margin: auto;
   max-width: max-content;
   text-align: left;
+  text-wrap: balance;
 }
 
 nav {
