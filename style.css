@@ -103,9 +103,8 @@ p + p, ul + ul, ol + ol {
   margin-top: 1em;
 }
 
-ul, ol {
-  margin: 0;
-  line-height: 1.3em;
+li {
+  margin: 0.2em 0;
 }
 
 ul {
