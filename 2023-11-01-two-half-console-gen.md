@@ -1,9 +1,6 @@
 ---
 layout: post
 title:  "Generation 2½ of video game consoles"
-redirect_from:
-  - /gen-2.5-of-consoles
-  - /note/gen-2.5-of-consoles
 ---
 
 Initially I wanted to write a full fledged text about the topic, but then I've found

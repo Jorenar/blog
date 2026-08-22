@@ -2,7 +2,7 @@
 layout: post
 title:  "Short list of C esoterica"
 redirect_from:
-  - /less-known-c
+  - /blog/less-known-c
 ---
 
 There are some tricks, quirks, and features which seems to throw even

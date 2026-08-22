@@ -1,6 +1,8 @@
 ---
 layout: post
 title:  "GOTOphobia considered harmful"
+redirect_from:
+  - /blog/gotophobia-harmful
 ---
 
 > **gotophobia** -- fear of `goto` statement; usually caused by a lack of context,

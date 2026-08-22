@@ -2,6 +2,7 @@
 layout: post
 title:  "Steps to learn Vim"
 redirect_from:
+  - /blog/vim-learning-steps
   - /tools/vim-learning-steps
 ---
 
@@ -12,7 +13,7 @@ redirect_from:
 3. [`:h faq`](https://vimhelp.org/vim_faq.txt.html) - Frequently Asked Questions
 4. [`:h quickref`](https://vimhelp.org/quickref.txt.html) - quick reference guide
 5. [`:help`](https://vimhelp.org/) and `:helpgrep` to find more details about a specific feature
-6. [Check other resources I've gathered](/blog/links#vim)
+6. [Check other resources I've gathered](/blogroll#vim)
 7. USE IT!
 
 ---

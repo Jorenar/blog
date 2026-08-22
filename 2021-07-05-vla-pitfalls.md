@@ -1,9 +1,6 @@
 ---
 layout: post
 title:  "Pitfalls of VLA in C"
-redirect_from:
-  - /programming/vla-bad
-  - /vla-bad
 ---
 
 > It generates much more code, and much _slower_ code (and more fragile code),
