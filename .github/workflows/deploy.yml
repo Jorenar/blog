@@ -1,0 +1,34 @@
+name: Deploy whole site
+on:
+  push:
+    branches: [ master ]
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout master
+        uses: actions/checkout@v4
+        with:
+          ref: master
+      - name: Checkout posts
+        uses: actions/checkout@v4
+        with:
+          ref: posts
+          path: _posts
+      - name: Dependencies
+        run: |
+          curl -fL --create-dirs -O --output-dir _includes \
+            https://github.com/allejo/jekyll-anchor-headings/raw/master/_includes/anchor_headings.html
+      - name: Cleanup
+        run: |
+          rm -rf _posts/.git
+          rm -rf _posts/.github
+      - name: Deploy site
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./
+          enable_jekyll: true
+          keep_files: false
+          force_orphan: true
+          cname: jorenar.com
