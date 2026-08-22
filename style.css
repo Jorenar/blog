@@ -78,18 +78,19 @@ a:visited {
 }
 
 blockquote {
-  margin-left: 2ch;
-  padding-left: 1ch;
-  padding-right: 1ch;
+  margin-left: 0;
+
+  --line-height: 1em;
+  line-height: var(--line-height);
   position: relative;
-  border-left: 1px dotted;
+  padding-left: 2ch;
 }
 
 blockquote::before {
-  content: '>';
-  font-weight: bold;
-  margin-left: -3ch;
-  position: absolute;
+  --mask: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='4 -16 16 24'><text font-family='sans' font-weight='bold'>&gt;</text></svg>");
+  content: ""; background-color: currentColor;
+  position: absolute; inset: 0; z-index: -1;
+  mask: var(--mask) repeat-y left top / 1em var(--line-height);
 }
 
 img {
