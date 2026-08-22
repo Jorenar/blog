@@ -105,9 +105,9 @@ From SEI CERT C Coding Standard:
 > the order of freed resources.
 
 ```c
-int* foo(int bar)
+int *foo(int bar)
 {
-    int* return_value = NULL;
+    int *return_value = NULL;
 
     if (!do_something(bar)) {
         goto error_didnt_sth;
@@ -191,9 +191,9 @@ Drawbacks:
  * potentially duplicated code (see example function from Linux)
 
 ```c
-int* foo(int bar)
+int *foo(int bar)
 {
-    int* return_value = NULL;
+    int *return_value = NULL;
 
     if (do_something(bar)) {
         if (init_stuff(bar)) {
@@ -254,9 +254,9 @@ Drawbacks:
   * multiple exit points
 
 ```c
-int* foo(int bar)
+int *foo(int bar)
 {
-    int* return_value = NULL;
+    int *return_value = NULL;
 
     if (!do_something(bar)) {
         undo_something();
@@ -326,9 +326,9 @@ Drawbacks:
  * potential complicated boolean expressions
 
 ```c
-int* foo(int bar)
+int *foo(int bar)
 {
-    int* return_value = NULL;
+    int *return_value = NULL;
 
     bool flag_1 = false;
     bool flag_2 = false;
@@ -614,9 +614,9 @@ Drawbacks:
     ("breaking on error" will stop only that one loop/`switch` instead of whole thing)
 
 ```c
-int* foo(int bar)
+int *foo(int bar)
 {
-    int* return_value = NULL;
+    int *return_value = NULL;
 
     do {
         if (!do_something(bar)) break;
@@ -996,7 +996,7 @@ Drawbacks:
 
 ```c
 struct foo_context {
-    int* something;
+    int *something;
     // ...
 };
 
@@ -1268,7 +1268,7 @@ The following is a 1:1, not far from **verbatim mathematical notation**,
 implementation of the above automata:
 
 ```c
-_Bool machine(const char* c)
+_Bool machine(const char *c)
 {
 qA:
     switch (*(c++)) {
@@ -1317,11 +1317,11 @@ analysis.
 
 int main()
 {
-    int* buf = NULL;
+    int *buf = NULL;
     size_t pos = 0;
     size_t sz = 8;
 
-    int* temp;
+    int *temp;
 
     goto ALLOC;
     do {
@@ -1358,7 +1358,7 @@ The drawbacks as per usual: nesting and keeping track of flags.
 
 int main()
 {
-    int* buf = NULL;
+    int *buf = NULL;
     size_t pos = 0;
     size_t sz = 8;
 
@@ -1373,7 +1373,7 @@ int main()
                 firstIter = false;
             }
 
-            int* temp = arrayAllocSmart(buf, sz, pos);
+            int *temp = arrayAllocSmart(buf, sz, pos);
             /* handle errors ... */
             buf = temp;
         }
@@ -1398,13 +1398,13 @@ int main()
     size_t pos = 0;
     size_t sz = 8;
 
-    int* buf = arrayAllocSmart(NULL, sz, pos);
+    int *buf = arrayAllocSmart(NULL, sz, pos);
     /* handle errors ... */
 
     do {
         if (pos > sz) { // resize array
             sz *= 2;
-            int* temp = arrayAllocSmart(buf, sz, pos);
+            int *temp = arrayAllocSmart(buf, sz, pos);
             /* handle errors ... */
             buf = temp;
         }

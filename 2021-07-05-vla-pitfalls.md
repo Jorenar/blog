@@ -83,7 +83,7 @@ array would be too wasteful? It's&nbsp;simple:&nbsp;use&nbsp;`malloc()`!
 int main(void) {
     int n;
     scanf("%d", &n);
-    char* arr = malloc(n * (sizeof *arr));
+    char *arr = malloc(n * (sizeof *arr));
     printf("%d", arr[0]);
     free(arr);
     return 0;
@@ -95,7 +95,7 @@ of magnitude more! But I still got the segfault, right? Well, the difference
 is in getting at least some\* chance of checking the value returned by `malloc()`
 and thus being able to, for example, inform the user about the error:
 ```c
-    char* arr = malloc(n * (sizeof *arr));
+    char *arr = malloc(n * (sizeof *arr));
     if (arr == NULL) {
         perror("malloc()"); // output: "malloc(): Cannot allocate memory"
     }

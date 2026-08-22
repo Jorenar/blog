@@ -51,7 +51,7 @@ The VLA-free alternatives aren't as sexy:
 
   * **piecemeal allocation**
 ```c
-int** arr = malloc(n * (sizeof *arr));
+int **arr = malloc(n * (sizeof *arr));
 if (arr) {
         for (int i = 0; i < n; ++i) {
             arr[i] = malloc(m * (sizeof *arr[i]));
@@ -66,7 +66,7 @@ if (arr) {
 
   * **1D array with offsets**
 ```c
-int* arr = malloc(n * m * (sizeof *arr));
+int *arr = malloc(n * m * (sizeof *arr));
 if (arr) {
         // arr[i*n + j] = ...
         free(arr);
