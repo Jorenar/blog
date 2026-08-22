@@ -1,7 +1,7 @@
 @import "assets/fonts/Courier-Prime.css";
 
 html {
-  background-color: #080808;
+  background-color: #060606;
   scrollbar-color: #111 #222;
 }
 
@@ -133,10 +133,12 @@ tr, td, th {
 }
 
 code {
-  font-family: "Courier Prime", monospace;
-  font-size: 0.9em;
-  color: #feda;
+  font-family: inherit;
   text-wrap: nowrap;
+}
+
+:not(pre) > code {
+  background: #111a;
 }
 
 :not(pre) > code::before,
@@ -145,6 +147,7 @@ code {
 }
 
 pre {
+  font-family: inherit;
   overflow: auto;
   padding: 10px;
   margin-left: 4ch;
