@@ -3,16 +3,16 @@ layout: post
 title:  "Use-cases of VM types in C"
 ---
 
-An earlier version of my [Pitfalls of VLA in C](/blog/vla-pitfalls) article
-contained an example of useful case of VLA, but since there are actually
+An earlier version of my [Pitfalls of VLA in C](/vla-pitfalls) article
+contained an example of usefulness of VLA. But since there are actually
 two of them (and I'd be overjoyed being presented with more), they deserve
 a dedicated, if low effort, post of their own. After all, those use-cases
 are the only reason why I compile with `-Wvla-larger-than=0` rather than
-more strict and reliable `-Wvla`.
+stricter and more reliable `-Wvla`.
 
 # Size check when passing to function
 
-"Only" a bit over two decades after the introduction of VLA to C language,
+"Only" a bit over two decades after the standardization of VLA in C language,
 GCC started giving warnings about passing to functions bigger than declared
 size of arrays when we actually decide to utilize VLA syntax in parameters.
 
@@ -47,36 +47,34 @@ if (arr) {
 }
 ```
 
-The VLA-free alternatives aren't as sexy:
+The VLA-free alternatives aren't as attractive:
 
-  * **piecemeal allocation**
-```c
-int **arr = malloc(n * (sizeof *arr));
-if (arr) {
-        for (int i = 0; i < n; ++i) {
-            arr[i] = malloc(m * (sizeof *arr[i]));
-        }
-        // arr[i][j] = ...
-        for (int i = 0; i < n; ++i) {
-            free(arr[i]);
-        }
-        free(arr);
-}
-```
+* **piecemeal allocation**
+  ```c
+  int **arr = malloc(n * (sizeof *arr));
+  if (arr) {
+      for (int i = 0; i < n; ++i) {
+          arr[i] = malloc(m * (sizeof *arr[i]));
+      }
+      // arr[i][j] = ...
+      for (int i = 0; i < n; ++i) {
+          free(arr[i]);
+      }
+      free(arr);
+  }
+  ```
 
-  * **1D array with offsets**
-```c
-int *arr = malloc(n * m * (sizeof *arr));
-if (arr) {
-        // arr[i*n + j] = ...
-        free(arr);
-}
-```
+* **1D array with offsets**
+  ```c
+  int *arr = malloc(n * m * (sizeof *arr));
+  if (arr) {
+      // arr[i*n + j] = ...
+      free(arr);
+  }
+  ```
 
-  * **big fixed array**
-```c
-int arr[SAFE_SIZE][SAFE_SIZE]; // SAFE_SIZE must be safe for SAFE_SIZE*SAFE_SIZE
-// arr[i][j] = ...;
-```
-
-<!-- Some bug(?) eats 4 first spaces of indent, thus 8 spaces used -->
+* **big fixed array**
+  ```c
+  int arr[SAFE_SIZE][SAFE_SIZE]; // SAFE_SIZE must be safe for SAFE_SIZE*SAFE_SIZE
+  // arr[i][j] = ...;
+  ```
