@@ -6,54 +6,53 @@ layout: default
   #header {
     align-items: center;
     display: flex;
+    flex-wrap: wrap;
     font-family: "DejaVu Serif", Times, serif;
     gap: 3em;
+    justify-content: center;
     margin: 2em;
   }
 
   #avatar {
-    width: 100%;
-    max-width: 100vw;
     filter: drop-shadow(0 0 3px #fff);
+    width: 100%;
   }
 
   #motto {
-    font: italic min(1.1em, 4vw);
     font-family: inherit;
-    margin: auto 1em;
+    font-size: 0.8em;
+    font-style: italic;
+    margin-top: -1em;
     text-align: center;
     white-space: pre-line;
   }
 
   #sns a {
-    font-size: 1.75em;
     display: block;
+    font-size: 1.5em;
   }
 </style>
 
 <style>
   #post-list {
-    line-height: 1.5em;
-    list-style: none;
+    line-height: 1.2em;
     margin: 0 auto;
-    padding: 0;
   }
 </style>
 
 <div id="header">
   <div>
-    <img id="avatar" alt="Jorenar" height="160" src="https://codeberg.org/Jorenar/dotfiles/raw/branch/master/img/avatar.svg">
-    <pre id="motto">
+    <img id="avatar" alt="Jorenar" height="120" src="https://codeberg.org/Jorenar/dotfiles/raw/branch/master/img/avatar.svg">
+    <div id="motto">
       to problem quell
       first go to Shell
       then after Perl
       test C as well
-    </pre>
+    </div>
   </div>
   <div id="sns">
     <a href="https://anilist.co/user/Jorenar">AniList</a>
     <a href="https://codeberg.org/Jorenar">Codeberg</a>
-    <a href="https://github.com/Jorenar">GitHub</a>
     <a href="https://goodreads.com/user/show/200282765">Goodreads</a>
     <a href="https://infinitebacklog.net/users/Jorenar">Infinite&nbsp;Backlog</a>
     <a href="mailto:mail&#x40;jorenar&period;com">
