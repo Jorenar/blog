@@ -11,6 +11,7 @@ body {
   flex-direction: column;
   font-family: "Courier Prime", monospace;
   font-size: 18px;
+  font-size-adjust: from-font;
   font-variant-ligatures: no-common-ligatures;
   margin: auto;
   max-width: max-content;
