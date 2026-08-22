@@ -1,13 +1,15 @@
 author: "Jorenar"
 title:  "Jorenar"
+avatar: https://codeberg.org/Jorenar/dotfiles/raw/branch/master/img/avatar.svg
 
 permalink: /:categories/:title
 
 plugins:
   - jekyll-feed
-  - jekyll-sitemap
-  - jekyll-redirect-from
   - jekyll-github-metadata
+  - jekyll-redirect-from
+  - jekyll-seo-tag
+  - jekyll-sitemap
 
 kramdown:
   smart_quotes: ["apos", "apos", "quot", "quot"]
