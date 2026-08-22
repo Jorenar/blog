@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Legitimate use-cases of VM types in C"
+title:  "Use-cases of VM types in C"
 ---
 
 An earlier version of my [Pitfalls of VLA in C](/blog/vla-pitfalls) article

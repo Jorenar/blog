@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Creating rootfs.tar.gz from Linux LiveCD"
+title:  "rootfs.tar.gz from Linux LiveCD"
 ---
 
 While the user facing part of LiveCD works mostly the same across Linux distros,
