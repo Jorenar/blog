@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Use-cases of VM types in C"
+last_modified_at: 2023-02-10
 ---
 
 An earlier version of my [Pitfalls of VLA in C](/vla-pitfalls) article

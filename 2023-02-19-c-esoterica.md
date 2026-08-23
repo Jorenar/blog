@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Short list of C esoterica"
+last_modified_at: 2025-07-19
 redirect_from:
   - /blog/less-known-c
 ---

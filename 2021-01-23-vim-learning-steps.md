@@ -1,9 +1,9 @@
 ---
 layout: post
 title:  "Steps to learn Vim"
+last_modified_at: 2026-08-21
 redirect_from:
   - /blog/vim-learning-steps
-  - /tools/vim-learning-steps
 ---
 
 {:start="0"}

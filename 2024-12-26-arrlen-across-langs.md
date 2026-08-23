@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Retrieving array length"
+last_modified_at: 2026-08-19
 ---
 
 <style>

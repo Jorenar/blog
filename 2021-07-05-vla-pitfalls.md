@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Pitfalls of VLA in C"
+last_modified_at: 2023-03-02
 ---
 
 > It generates much more code, and much _slower_ code (and more fragile code),
