@@ -38,12 +38,17 @@ article {
 }
 
 header {
-  font-weight: bold;
   margin-bottom: 1em;
+  border-bottom: 2px solid;
+  max-width: max-content;
 }
 
-header::before {
-  content: '# ';
+header .title {
+  font-weight: bold;
+}
+
+header .datetime {
+  opacity: 0.75;
 }
 
 h1, h2, h3, h4, h5 {
@@ -155,12 +160,6 @@ pre {
   font-weight: bold;
   display: block;
   margin-left: -3ch;
-  margin-top: 1em;
-}
-
-.datetime {
-  float: right;
-  font-size: 0.8em;
   margin-top: 1em;
 }
 

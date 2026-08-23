@@ -3,19 +3,22 @@ layout: default
 ---
 
 <article>
-<header>{{ page.title | escape }}</header>
+<header>
+  <div class="title">{{ page.title | escape }}</div>
+
+  <div class="datetime">
+    <time datetime="{{ page.date | date_to_xmlschema }}">
+      {{ page.date | date: "%F" }}
+    </time>
+    {% if page.last_modified_at %}
+    <span>-</span>
+    <time datetime="{{ page.last_modified_at | date_to_xmlschema }}">
+      {{ page.last_modified_at | date: "%F" }}
+    </time>
+    {% endif %}
+  </div>
+</header>
 
 {% include anchor_headings.html html=content anchorClass="hanchor" anchorBody="#" %}
 
-<div class="datetime">
-  <time datetime="{{ page.date | date_to_xmlschema }}">
-    {{ page.date | date: "%F" }}
-  </time>
-  {% if page.last_modified_at %}
-  <span>-</span>
-  <time datetime="{{ page.last_modified_at | date_to_xmlschema }}">
-    {{ page.last_modified_at | date: "%F" }}
-  </time>
-  {% endif %}
-</div>
 </article>
