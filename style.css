@@ -16,15 +16,15 @@ body {
   margin: auto;
   min-width: min(600px, 100vw);
   max-width: max-content;
+  padding: 1ch;
   text-align: left;
   text-wrap: balance;
 }
 
 nav {
-  font-size: 0.9em;
-  padding: 10px;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 2em;
 }
 
 nav > span {
@@ -33,7 +33,6 @@ nav > span {
 
 article {
   flex: 1 0 auto;
-  padding: 2ch;
   max-width: 80ch;
 }
 
@@ -46,8 +45,11 @@ header {
 
 h1, h2, h3, h4, h5 {
   font-size: inherit;
-  margin-bottom: 0.5em;
-  margin-top: 1.5em;
+  margin: 1em 0;
+}
+
+:not(header, h1, h2, h3, h4, h5) + :is(h1, h2, h3, h4, h5) {
+  margin-top: 2em;
 }
 
 h1::before { content: "# "; }
@@ -148,8 +150,7 @@ code {
 
 pre {
   font-family: inherit;
-  overflow: auto;
-  padding: 0.5ch;
+  padding: 0 0.5ch;
   border-left: 3.5ch double #1114;
 }
 
@@ -173,7 +174,6 @@ pre {
 
 
 .hanchor {
-  font-size: 0.8em;
   opacity: 0.5;
 }
 
