@@ -152,8 +152,8 @@ code {
 pre {
   font-family: inherit;
   overflow: auto;
-  padding: 10px;
-  margin-left: 4ch;
+  padding: 0.5ch;
+  border-left: 3.5ch solid #1114;
 }
 
 #markdown-toc::before {
