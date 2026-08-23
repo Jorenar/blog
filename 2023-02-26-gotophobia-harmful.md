@@ -51,7 +51,7 @@ _required_ to _advisory_, I think in regular code we can safely use `goto`
 in judicious manner.
 
 Thus, I want to present some situations and patterns where `goto` could be
-acceptable (perhaps the best?) choice and you could maybe want to *consider*
+acceptable (perhaps the best?) choice, and you could maybe want to *consider*
 using it. I'll also try to mention `goto`-less alternatives and their potential
 drawbacks (you presumably already are familiar with their advantages as well
 as with the possible hitches of `goto` versions).
@@ -668,10 +668,10 @@ static int mmp2_audio_clk_probe(struct platform_device *pdev)
 
 # Restart/retry
 
-Common especially on \*nix systems when dealing with system calls returning
-an error after being interrupted by a signal + setting `errno` to `EINTR`
-to indicate the it was doing fine and was just interrupted.
-Of course, it's not limited to system calls.
+Not uncommon pattern, especially on Unix systems, when dealing with
+system calls returning an error after being interrupted by a signal,
+but indicating via `errno` set to `EINTR` that it was doing fine but
+just got interrupted. Of course, it's not limited to system calls.
 
 ```c
 #include <errno.h>
@@ -692,8 +692,8 @@ RETRY_SYSCALL:
 ```
 
 <aside markdown="1">
-I think in this particular case this one level of additional nesting isn't so
-bad, but to be fair, without rewriting it I wouldn't be able to fairly present
+I think in this particular case one level of additional nesting isn't
+so bad, but without rewriting it I wouldn't be able to fairly present
 the `goto`-less alternative.
 
 <details>
@@ -751,11 +751,11 @@ by making it immediately clear the looping is not a desirable situation, while
 
 ## Less trivial example
 
-For those, I'm willing to break the overall monochrome theme of the site and
-define colors for syntax highlights. Even with simple parsing done by kramdown
-(your code editor would certainty do a better job here), we already notice
-labels and `goto` statements standing out a little from the rest of the code.
-Flags on the other hand get lost among other variables.
+For those examples I'm willing to break the overall monochrome theme of
+the site and define colors for syntax highlights. Even with simple parsing
+done by kramdown (your code editor would certainty do a better job here),
+we already notice labels and `goto` statements standing out a little from
+the rest of the code. Flags on the other hand get lost among other variables.
 
 <style>
 .k, .kt  { color: #66d9ef; font-weight:bold }
@@ -942,14 +942,15 @@ int parse_packet()
 
 # Common code in `switch` statement
 
-This situation may be a good opportunity to check if the code doesn't need to
-be refactored altogether; that being said, sometimes you want to have `switch`
+This situation is a good indicator the code may need to be refactored
+altogether; that being said, sometimes you might want to have `switch`
 statement where cases make minor changes then run the same code.
 
-Sure, you could extract the common code into function, but then you need to pass
-all the context to it, but that may be inconvenient (for you may need to pass
-a lot of parameters or making a dedicated structure, in both cases probably with
-pointers) and may increase complexity of the code; in some cases, you may wish
+Sure, you could (and usually should) extract the common code into
+function, but then you need to pass all the context to it. That could
+be quite inconvenient, for you might need to pass a lot of parameters
+or making a dedicated structure, in both cases probably with pointers)
+and thus increase complexity of the code. In some cases, you may wish
 there being only one call to the function instead of multiple.
 
 So why not just jump to the common code?
@@ -962,24 +963,24 @@ int foo(int v)
     switch (v) {
     case FIRST_CASE:
         something = 2;
-        goto common1;
+        goto common123;
     case SECOND_CASE:
         something = 7;
-        goto common1;
+        goto common123;
     case THIRD_CASE:
         something = 9;
-        goto common1;
-common1:
+        goto common123;
+common123:
         /* code common to FIRST, SECOND and THIRD cases */
         break;
 
     case FOURTH_CASE:
         something = 10;
-        goto common2;
+        goto common45;
     case FIFTH_CASE:
         something = 42;
-        goto common2;
-common2:
+        goto common45;
+common45:
         /* code common to FOURTH and FIFTH cases */
         break;
     }
@@ -990,7 +991,7 @@ common2:
 ## `goto`-less alternative 1: functions
 
 Drawbacks:
- * <span title="Things should not be multiplied beyond what is required">"Entia non sunt multiplicanda praeter necessitatem"</span>
+ * blow-up of new entities
  * reading bottom-up instead of top-bottom
  * may require passing context around
 
@@ -1000,12 +1001,12 @@ struct foo_context {
     // ...
 };
 
-static void common1(struct foo_context ctx)
+static void common123(struct foo_context ctx)
 {
     /* code common to FIRST, SECOND and THIRD cases */
 }
 
-static void common2(struct foo_context ctx)
+static void common45(struct foo_context ctx)
 {
     /* code common to FOURTH and FIFTH cases */
 }
@@ -1020,24 +1021,24 @@ int foo(int v)
     switch (v) {
     case FIRST_CASE:
         something = 2;
-        common1(ctx);
+        common123(ctx);
         break;
     case SECOND_CASE:
         something = 7;
-        common1(ctx);
+        common123(ctx);
         break;
     case THIRD_CASE:
         something = 9;
-        common1(ctx);
+        common123(ctx);
         break;
 
     case FOURTH_CASE:
         something = 10;
-        common2(ctx);
+        common45(ctx);
         break;
     case FIFTH_CASE:
         something = 42;
-        common2(ctx);
+        common45(ctx);
         break;
     }
     // ...
@@ -1046,7 +1047,7 @@ int foo(int v)
 
 ## `goto`-less alternative 2: `if`s
 
-We can abandon elegance and replace the `switch` statement with `if`s
+We can abandon all elegance and replace the `switch` statement with `if`s
 
 ```c
 int foo(int v)
@@ -1077,7 +1078,7 @@ int foo(int v)
 ## `goto`-less alternative 3: interlacing `if (0)`
 
 Do... do I really need to comment? \
-You cannot say "interlacing good" while at the same time claiming "`goto` bad"!
+You cannot say "`goto` bad" while claiming "interlacing good"!
 
 ```c
 int foo(int v)
