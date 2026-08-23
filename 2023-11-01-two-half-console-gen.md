@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Gen. 2½ of game consoles"
+title:  "Generation 2½ of game consoles"
 ---
 
 Initially I wanted to write a full fledged text about the topic, but then I've found
