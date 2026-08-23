@@ -40,7 +40,7 @@ article {
 header {
   font-weight: bold;
   margin-bottom: 1em;
-  border-bottom: 2px solid;
+  border-bottom: 0.5ch double;
   max-width: max-content;
 }
 
@@ -111,10 +111,10 @@ ul > li::marker {
 }
 
 aside {
-  border-left: 2px dashed #222;
-  color: #bbbb;
   margin: 1em 0;
-  padding-left: 1em;
+  opacity: 0.75;
+  border: 2px dashed;
+  padding: calc(1ch - 2px);
 }
 
 table {
@@ -133,7 +133,7 @@ code {
 }
 
 :not(pre) > code {
-  background: #111a;
+  filter: brightness(1.5);
 }
 
 :not(pre) > code::before,
@@ -145,7 +145,7 @@ pre {
   font-family: inherit;
   overflow: auto;
   padding: 0.5ch;
-  border-left: 3.5ch solid #1114;
+  border-left: 3.5ch double #1114;
 }
 
 #markdown-toc::before {
