@@ -76,16 +76,12 @@ img {
   max-width: 100%;
 }
 
-p {
+p, ul, ol {
   margin: 0;
 }
 
 p + p, ul + ul, ol + ol {
   margin-top: 1em;
-}
-
-li {
-  margin: 0.2em 0;
 }
 
 ul {
@@ -95,6 +91,10 @@ ul {
 ul > li::marker {
   content: '* ';
 }
+
+ol { padding-left: 4ch; }
+ol:has(> li:nth-of-type(10)) { padding-left: 5ch; }
+ol:has(> li:nth-of-type(100)) { padding-left: 6ch; }
 
 aside {
   margin: 1em 0;
