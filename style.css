@@ -52,11 +52,11 @@ h1, h2, h3, h4, h5 {
   margin-top: 2em;
 }
 
-h1::before { content: "# "; }
-h2::before { content: "## " }
-h3::before { content: "### " }
-h4::before { content: "#### " }
-h5::before { content: "##### " }
+h1 .hanchor::after { content: "#"; }
+h2 .hanchor::after { content: "##"; }
+h3 .hanchor::after { content: "###"; }
+h4 .hanchor::after { content: "####"; }
+h5 .hanchor::after { content: "#####"; }
 
 a {
   color: inherit;
@@ -170,11 +170,6 @@ pre {
 
 .highlight {
   margin: 0;
-}
-
-
-.hanchor {
-  opacity: 0.5;
 }
 
 
