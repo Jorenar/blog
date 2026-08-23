@@ -63,27 +63,11 @@ a {
 }
 
 a:hover {
-  text-decoration: underline dashed;
+  text-decoration: underline dashed 1px;
 }
 
 a:visited {
   color: inherit;
-}
-
-blockquote {
-  margin-left: 0;
-
-  --line-height: 1em;
-  line-height: var(--line-height);
-  position: relative;
-  padding-left: 2ch;
-}
-
-blockquote::before {
-  --mask: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='4 -16 16 24'><text font-family='sans' font-weight='bold'>&gt;</text></svg>");
-  content: ""; background-color: currentColor;
-  position: absolute; inset: 0; z-index: -1;
-  mask: var(--mask) repeat-y left top / 1em var(--line-height);
 }
 
 img {
@@ -113,8 +97,29 @@ ul > li::marker {
 aside {
   margin: 1em 0;
   opacity: 0.75;
-  border: 2px dashed;
-  padding: calc(1ch - 2px);
+  --mask: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='6 -15 16 24'><text font-family='monospace' font-size='16'>//</text></svg>");
+}
+
+blockquote {
+  margin-left: 0;
+  --mask: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='8 -16 16 24'><text font-family='sans' font-weight='bold'>&gt;</text></svg>");
+}
+
+aside, blockquote {
+  --mask-width: 2ch;
+  --line-height: 1em;
+  line-height: var(--line-height);
+  position: relative;
+  padding-left: var(--mask-width);
+}
+
+aside::before, blockquote::before {
+  content: "";
+  background-color: currentColor;
+  position: absolute;
+  inset: 0;
+  width: var(--mask-width);
+  mask: var(--mask) repeat-y left top / var(--mask-width) var(--line-height);
 }
 
 table {
