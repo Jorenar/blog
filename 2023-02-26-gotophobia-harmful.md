@@ -375,7 +375,7 @@ int foo(int bar)
     bool stuff_prepared = false;
     bool oksofar = true;
 
-    if (oksofar) {  // this IF is optional (always execs) but included for consistency
+    if (oksofar) {  // unnecessary, but kept for consistency
         if (do_something(bar)) {
             something_done = true;
         } else {

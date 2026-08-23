@@ -198,7 +198,7 @@ sub     rsp, rax       ;
 mov     r14, rsp       ; ... and there "ends"
 ```
 
-The aVLA-free version on the other hand generates:
+Meanwhile, the aVLA-free version generates:
 ```nasm
 push    r12
 push    rbp

@@ -1,15 +1,14 @@
 ---
 layout: post
 title:  "Use-cases of VM types in C"
-last_modified_at: 2023-02-10
 ---
 
 An earlier version of my [Pitfalls of VLA in C](/vla-pitfalls) article
 contained an example of usefulness of VLA. But since there are actually
 two of them (and I'd be overjoyed being presented with more), they deserve
 a dedicated, if low effort, post of their own. After all, those use-cases
-are the only reason why I compile with `-Wvla-larger-than=0` rather than
-stricter and more reliable `-Wvla`.
+are the reason why I opt for `-Wvla-larger-than=0` rather than stricter
+and more reliable `-Wvla`.
 
 # Size check when passing to function
 
