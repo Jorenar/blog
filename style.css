@@ -99,16 +99,17 @@ ol:has(> li:nth-of-type(100)) { padding-left: 6ch; }
 aside {
   margin: 1em 0;
   opacity: 0.75;
-  --mask: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='6 -15 16 24'><text font-family='monospace' font-size='16'>//</text></svg>");
+  --mask-width: 3ch;
+  --mask: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='9 -16 18 24'><text font-family='monospace' font-size='18'>//</text></svg>");
 }
 
 blockquote {
   margin-left: 0;
-  --mask: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='8 -16 16 24'><text font-family='sans' font-weight='bold'>&gt;</text></svg>");
+  --mask-width: 2ch;
+  --mask: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='6 -16 18 24'><text font-family='monospace' font-size='18'>&gt;</text></svg>");
 }
 
 aside, blockquote {
-  --mask-width: 2ch;
   --line-height: 1em;
   line-height: var(--line-height);
   position: relative;
