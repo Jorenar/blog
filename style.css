@@ -10,7 +10,7 @@ body {
   display: flex;
   flex-direction: column;
   font-family: "Courier Prime", monospace;
-  font-size: 18px;
+  font-size: 18px; /* remember also about SVG markers */
   font-size-adjust: from-font;
   font-variant-ligatures: no-common-ligatures;
   margin: auto;
@@ -34,6 +34,9 @@ nav > span {
 article {
   flex: 1 0 auto;
   max-width: 80ch;
+
+  --line-height: 1em;
+  line-height: var(--line-height);
 }
 
 header {
@@ -110,8 +113,6 @@ blockquote {
 }
 
 aside, blockquote {
-  --line-height: 1em;
-  line-height: var(--line-height);
   position: relative;
   padding-left: var(--mask-width);
 }
@@ -141,7 +142,7 @@ code {
 }
 
 :not(pre) > code {
-  filter: brightness(1.5);
+  filter: brightness(1.25);
 }
 
 :not(pre) > code::before,
