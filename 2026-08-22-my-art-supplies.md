@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "My art supplies"
+pin: 2
 ---
 
 ## Mechanical pencils
