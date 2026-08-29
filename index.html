@@ -32,7 +32,7 @@ layout: default
     font-size: 1.5em;
   }
 
-  #post-list {
+  #posts-list {
     margin: 0 auto;
     font-size: 1.1em;
   }
@@ -59,10 +59,12 @@ layout: default
   </div>
 </div>
 
-<ul id="post-list">
-{%- for post in site.posts -%}
-  <li>
-    <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-  </li>
-{%- endfor -%}
-</ul>
+<div id="posts-list">
+  {% assign pinned = site.posts | where_exp: "post", "post.pin != nil" | sort: "pin" %}
+  {% include posts-list.html posts=pinned %}
+
+  {% if pinned.size > 0 %}<hr style="opacity: 0.25;">{% endif %}
+
+  {% assign regular = site.posts | where_exp: "post", "post.pin == nil" %}
+  {% include posts-list.html posts=regular %}
+</div>
