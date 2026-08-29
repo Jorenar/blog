@@ -46,7 +46,7 @@ sudo rm -r /tmp/squashfs
 
 # Prerequisites
 
-* Linux environment (probably any other \*nix will also do)
+* Linux environment (probably any other Unix will also do)
 * `tar` program
 * `unsquashfs` - usually part of [squashfs-tools](https://github.com/plougher/squashfs-tools)
                  package ([see at command-not-found.com](https://command-not-found.com/unsquashfs))
