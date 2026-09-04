@@ -1,0 +1,187 @@
+@import "assets/fonts/Courier-Prime.css";
+
+html {
+  background-color: #060606;
+  scrollbar-color: #111 #222;
+}
+
+body {
+  color: #aaa;
+  display: flex;
+  flex-direction: column;
+  font-family: "Courier Prime", monospace;
+  font-size: 18px; /* remember also about SVG markers */
+  font-size-adjust: from-font;
+  font-variant-ligatures: no-common-ligatures;
+  margin: auto;
+  min-width: min(600px, 100vw);
+  max-width: max-content;
+  padding: 1ch;
+  text-align: left;
+  text-wrap: balance;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2em;
+}
+
+nav > span {
+  margin: auto 3ch;
+}
+
+article {
+  flex: 1 0 auto;
+  max-width: 80ch;
+
+  --line-height: 1.1em;
+  line-height: var(--line-height);
+}
+
+header {
+  font-weight: bold;
+  margin-bottom: 1em;
+  border-bottom: 0.5ch double;
+  max-width: max-content;
+}
+
+h1, h2, h3, h4, h5 {
+  font-size: inherit;
+  margin: 1em 0;
+}
+
+:not(header, h1, h2, h3, h4, h5) + :is(h1, h2, h3, h4, h5) {
+  margin-top: 2em;
+}
+
+h1 .hanchor::after { content: "#"; }
+h2 .hanchor::after { content: "##"; }
+h3 .hanchor::after { content: "###"; }
+h4 .hanchor::after { content: "####"; }
+h5 .hanchor::after { content: "#####"; }
+
+a {
+  color: inherit;
+  text-decoration: underline dotted 1px #666;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  text-decoration: underline dashed 1px;
+}
+
+a:visited {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+p, ul, ol {
+  margin: 0;
+}
+
+p + p, ul + ul, ol + ol {
+  margin-top: 1em;
+}
+
+ul {
+  padding-left: 3ch;
+}
+
+ul > li::marker {
+  content: '* ';
+}
+
+ol { padding-left: 4ch; }
+ol:has(> li:nth-of-type(10)) { padding-left: 5ch; }
+ol:has(> li:nth-of-type(100)) { padding-left: 6ch; }
+
+aside {
+  margin: 1em 0;
+  opacity: 0.75;
+  --mask-width: 3ch;
+  --mask: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='9 -16 18 24'><text font-family='monospace' font-size='18'>//</text></svg>");
+}
+
+blockquote {
+  margin-left: 0;
+  --mask-width: 2ch;
+  --mask: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='6 -16 18 24'><text font-family='monospace' font-size='18'>&gt;</text></svg>");
+}
+
+aside, blockquote {
+  position: relative;
+  padding-left: var(--mask-width);
+}
+
+aside::before, blockquote::before {
+  content: "";
+  background-color: currentColor;
+  position: absolute;
+  inset: 0;
+  width: var(--mask-width);
+  mask: var(--mask) repeat-y left top / var(--mask-width) var(--line-height);
+}
+
+table {
+  border-collapse: collapse;
+  margin: 1em auto;
+}
+
+tr, td, th {
+  border: 1px solid #ddd;
+  padding: 0.5em;
+}
+
+code {
+  font-family: inherit;
+  text-wrap: nowrap;
+}
+
+:not(pre) > code {
+  filter: brightness(1.25);
+}
+
+:not(pre) > code::before,
+:not(pre) > code::after {
+  content: '`';
+}
+
+pre {
+  font-family: inherit;
+  padding: 0 0.5ch;
+  border-left: 3.5ch double #1114;
+}
+
+#markdown-toc::before {
+  content: "Table of Contents";
+  font-weight: bold;
+  display: block;
+  margin-left: -3ch;
+  margin-top: 1em;
+}
+
+.datetime {
+  float: right;
+  opacity: 0.5;
+  margin-top: 1em;
+}
+
+.highlight {
+  margin: 0;
+}
+
+
+.yt-container {
+  padding-bottom: 56.25%;
+  position: relative;
+}
+
+.yt-video {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}

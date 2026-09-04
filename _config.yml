@@ -1,0 +1,18 @@
+author: "Jorenar"
+title:  "Jorenar"
+avatar: https://codeberg.org/Jorenar/dotfiles/raw/branch/master/img/avatar.svg
+
+permalink: /:categories/:title
+
+plugins:
+  - jekyll-feed
+  - jekyll-github-metadata
+  - jekyll-redirect-from
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+kramdown:
+  smart_quotes: ["apos", "apos", "quot", "quot"]
+  typographic_symbols: { hellip: ... , mdash: --- , ndash: -- }
+  syntax_highlighter_opts:
+    disable: true
