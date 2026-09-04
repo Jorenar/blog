@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Retrieving array length"
-last_modified_at: 2026-08-19
+last_modified_at: 2026-09-04
 ---
 
 <style>
@@ -90,6 +90,7 @@ Enjoy!
   <li>FoxPro</li>
   <li>GAMS</li>
   <li>GDScript</li>
+  <li>Gleam</li>
   <li>GLSL</li>
   <li>Go</li>
   <li>Groovy</li>
@@ -195,7 +196,7 @@ Enjoy!
 
 &nbsp;
 
-[[so2024]] [[tiobe]] [[ieee]] [[github]] [[godbolt]] [[so-tags]] [[debian]]
+[[so2024]] [[tiobe]] [[ieee]] [[github]] [[godbolt]] [[so-tags]] [[debian]] [[lobsters]]
 
 ## Getting length of array-like objects
 
@@ -433,6 +434,11 @@ Enjoy!
 * gawk [[gawk]]
   ```
   length(myArray)
+  ```
+
+* Gleam [[gleam]]
+  ```
+  list.length(myList)
   ```
 
 * GLSL [[glsl]]
@@ -894,6 +900,7 @@ Enjoy!
 [github]: https://innovationgraph.github.com/global-metrics/programming-languages
 [godbolt]: https://godbolt.org/api/languages
 [debian]: https://sources.debian.org/stats
+[lobsters]: https://lobste.rs/tags#languages
 
 [abap1]: https://help.sap.com/doc/abapdocu_752_index_htm/7.52/en-US/abendescriptive_functions_table.htm
 [abap2]: https://stackoverflow.com/q/394375
@@ -950,6 +957,7 @@ Enjoy!
 [gams2]: https://forum.gams.com/t/finding-length-of-set/578
 [gawk]: https://www.gnu.org/software/gawk/manual/gawk.html
 [gdscript]: https://docs.godotengine.org/en/stable/classes/class_array.html#class-array-method-size
+[gleam]: https://gleam-stdlib.hexdocs.pm/gleam/list.html#length
 [glsl]: https://www.khronos.org/opengl/wiki/Data_Type_(GLSL)#Arrays
 [gmake]: https://www.gnu.org/software/make/manual/html_node/Text-Functions.html#index-words
 [go]: https://pkg.go.dev/builtin#len
