@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "My art supplies"
+last_modified_at: 2026-09-01
 pin: 2
 ---
 
@@ -42,7 +43,6 @@ pin: 2
 ## Pencil cases
 
 * Koh-I-Noor Rollo DJTB-24
-* Kalnex F9
 
 ## Brush pens
 
@@ -65,3 +65,7 @@ pin: 2
 ## Tablets
 
 * One by Wacom M
+
+## Scanners
+
+* Canon CanoScan LiDE 400
