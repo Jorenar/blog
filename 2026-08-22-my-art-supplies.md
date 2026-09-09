@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "My art supplies"
-last_modified_at: 2026-09-01
+last_modified_at: 2026-09-07
 pin: 2
 ---
 
@@ -29,16 +29,14 @@ pin: 2
 
 ## Inks
 
-* Astra Artea (black)
-* Astra Artea (karmin)
-* Parker Quink (black)
+* Astra Artea Czarny "Perła"
 * Koh-I-Noor 1417010
 * _generic printer refills_
 
 ## Inkwells
 
-* _20ml bottle with aluminium cap_
-* _mini tomato paste jar_
+* _mini bottle with aluminium cap_  
+  _(20 ml; 30 x 40 mm; cap: 21 mm)_
 
 ## Pencil cases
 
