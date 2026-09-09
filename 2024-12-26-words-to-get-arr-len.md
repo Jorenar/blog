@@ -1,7 +1,9 @@
 ---
 layout: post
-title:  "Retrieving array length"
+title:  "Words for getting array length"
 last_modified_at: 2026-09-04
+redirect_from:
+  - /arrlen-across-langs
 ---
 
 <style>
