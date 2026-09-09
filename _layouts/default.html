@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <base target="_parent" />
+  <title>{{ page.title | default: site.title }}</title>
+  <meta name="author" content="{{ site.author }}">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <link rel="shortcut icon" href="{{ site.avatar }}">
+  <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
+  <link type="application/atom+xml" rel="alternate" href="{{ '/feed.xml' | relative_url }}" title="{{ site.title }}">
+</head>
+<body>
+  <nav>
+    <a href="{{ '/' | relative_url }}">Index</a>
+    <span>Copyright &copy; {{ site.author | escape }}</span>
+    <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+  </nav>
+  {{ content }}
+  <a href="{{ '/sitemap.xml' | relative_url }}"></a>
+</body>
+</html>
