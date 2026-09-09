@@ -12,7 +12,7 @@ plugins:
   - jekyll-sitemap
 
 kramdown:
-  smart_quotes: ["apos", "apos", "quot", "quot"]
+  smart_quotes: apos,apos,quot,quot
   typographic_symbols: { hellip: ... , mdash: --- , ndash: -- }
   syntax_highlighter_opts:
     disable: true
