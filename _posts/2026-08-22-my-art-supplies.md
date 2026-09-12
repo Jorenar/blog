@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "My art supplies"
-last_modified_at: 2026-09-07
+last_modified_at: 2026-09-12
 pin: 2
 ---
 
@@ -14,6 +14,11 @@ pin: 2
 * KOS-01-KŁ
 * Pentel P205
 * Pilot H225
+
+## Pencil leads
+
+* Pentel Hi-Polymer
+* Pentel Ain Stein
 
 ## Nib holders
 
