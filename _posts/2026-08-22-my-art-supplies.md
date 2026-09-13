@@ -17,8 +17,9 @@ pin: 2
 
 ## Pencil leads
 
-* Pentel Hi-Polymer
-* Pentel Ain Stein
+* Pentel Hi-Polymer _(HB, B)_
+* Pentel Ain Stein _(H2-B4)_
+* Staedtler Mars micro carbon _(H2, H)_
 
 ## Nib holders
 
