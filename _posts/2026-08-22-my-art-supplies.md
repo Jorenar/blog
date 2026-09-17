@@ -36,7 +36,7 @@ pin: 2
 
 * Staedtler triplus fineliner 334 SB6P
 * Kuretake RB-6000AT-010
-* ~~Hero 602~~
+* ~~[Hero 602](https://web.archive.org/web/20260917082434/https://pic17.997788.com/_pic_search/00/43/61/36/43613698.jpg)~~
 
 ## Erasers
 
