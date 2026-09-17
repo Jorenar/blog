@@ -17,7 +17,7 @@ pin: 2
 * Pentel S475
 * Pilot H225
 * Staedtler graphite 778 0.5 mm
-* Staedtler Mars Technico 788
+* Staedtler Mars technico 788
 
 ## Pencil leads
 
@@ -28,6 +28,13 @@ pin: 2
 ## Nib holders
 
 * [Sunho Art 漫画笔杆B](https://web.archive.org/web/20130526114610/http://www.sunho-art.com/chinese/tool/201317.htm)
+* ~~MEMORY CP-568~~
+
+## Pens
+
+* Staedtler triplus fineliner 334 SB6P
+* Kuretake RB-6000AT-010
+* ~~Hero 602~~
 
 ## Erasers
 
@@ -53,10 +60,6 @@ pin: 2
 
 * Koh-I-Noor Rollo DJTB-24
 * ~~Kalnex F9~~
-
-## Brush pens
-
-* Kuretake RB-6000AT-010
 
 ## Sharpeners
 
