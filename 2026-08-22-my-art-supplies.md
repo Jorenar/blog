@@ -21,6 +21,8 @@ pin: 2
 
 ## Pencil leads
 
+* Koh-I-Noor 4190 6B 2mm
+* Koh-I-Noor Gioconda 8673/2
 * Pentel Ain Stein _(H2-B4)_
 * ~~Pentel Hi-Polymer _(HB, B)_~~
 * ~~Staedtler Mars micro carbon _(H2, H)_~~
@@ -66,10 +68,6 @@ pin: 2
 * Faber-Castell 184100
 * _generic sharpener_
 
-## Gloves
-
-* [Bview 2-finger/3-layer](https://aliexpress.com/item/1005005900912248.html)
-
 ## Sketchbooks
 
 * Canson ArtBook One (10.2 x 15.2 cm)
@@ -82,3 +80,7 @@ pin: 2
 ## Scanners
 
 * Canon CanoScan LiDE 400
+
+## Misc.
+
+* [Bview 2-finger/3-layer](https://aliexpress.com/item/1005005900912248.html)
