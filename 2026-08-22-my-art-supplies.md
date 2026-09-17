@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "My art supplies"
-last_modified_at: 2026-09-12
+last_modified_at: 2026-09-17
 pin: 2
 ---
 
@@ -12,14 +12,18 @@ pin: 2
 * Koh-I-Noor 5347
 * Koh-I-Noor 5900
 * KOS-01-KŁ
+* Pentel Orenz PP505
 * Pentel P205
+* Pentel S475
 * Pilot H225
+* Staedtler graphite 778 0.5 mm
+* Staedtler Mars Technico 788
 
 ## Pencil leads
 
-* Pentel Hi-Polymer _(HB, B)_
 * Pentel Ain Stein _(H2-B4)_
-* Staedtler Mars micro carbon _(H2, H)_
+* ~~Pentel Hi-Polymer _(HB, B)_~~
+* ~~Staedtler Mars micro carbon _(H2, H)_~~
 
 ## Nib holders
 
@@ -28,10 +32,11 @@ pin: 2
 ## Erasers
 
 * Faber-Castell kneadable eraser
+* Faber-Castell Precision Eraser Pen
 * [Karsten Crafts&Co electric eraser](https://www.action.com/pl-pl/p/3223678)
-* Koh-I-Noor Eraser Pencil 6312
 * Staedtler Rasoplast (black)
-* Tombow MONO zero
+* ~~Koh-I-Noor Eraser Pencil 6312~~
+* ~~Tombow MONO zero~~
 
 ## Inks
 
@@ -47,6 +52,7 @@ pin: 2
 ## Pencil cases
 
 * Koh-I-Noor Rollo DJTB-24
+* ~~Kalnex F9~~
 
 ## Brush pens
 
