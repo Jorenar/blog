@@ -81,6 +81,6 @@ pin: 2
 
 * Canon CanoScan LiDE 400
 
-## Misc.
+## Gloves
 
 * [Bview 2-finger/3-layer](https://aliexpress.com/item/1005005900912248.html)
