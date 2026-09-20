@@ -17,42 +17,44 @@ layout: default
 
   #avatar {
     filter: drop-shadow(0 0 3px #fff);
-    width: 100%;
   }
 
   #motto {
     font-family: inherit;
-    font-size: 0.8em;
+    font-size: 1.1em;
     font-style: italic;
     margin-top: -1em;
     text-align: center;
     white-space: pre-line;
   }
 
-  #sns a {
-    display: block;
+  #sns {
     font-size: 1.5em;
+    width: min-content;
   }
 
   #posts-list {
-    margin: 0 auto;
     font-size: 1.1em;
+  }
+
+  #posts-list hr {
+    margin-left: 3ch;
+    opacity: 0.25;
+    width: 25%;
   }
 </style>
 
 <div id="header">
-  <div>
-    <img id="avatar" alt="Jorenar" height="120" src="{{ site.avatar }}">
-    <div id="motto">
-      to problem quell
-      first go to Shell
-      then after Perl
-      test C as well
-    </div>
+  <div id="motto">
+    to problem quell
+    first go to Shell
+    then after Perl
+    test C as well
   </div>
+  <img id="avatar" height="120" width="120" src="{{ site.avatar }}" alt>
   <div id="sns">
-    <a href="https://anilist.co/user/Jorenar">AniList</a>
     <a href="https://codeberg.org/Jorenar">Codeberg</a>
+    <a href="https://anilist.co/user/Jorenar">AniList</a>
     <a href="https://infinitebacklog.net/users/Jorenar">Infinite&nbsp;Backlog</a>
     <a href="mailto:mail&#x40;jorenar&period;com">
       m<!-- Hello -->ai<!-- -->l&#64;jor<!-- nasty -->en<!-- spambot -->ar&period;com
@@ -64,7 +66,7 @@ layout: default
   {% assign pinned = site.posts | where_exp: "post", "post.pin != nil" | sort: "pin" %}
   {% include posts-list.html posts=pinned %}
 
-  {% if pinned.size > 0 %}<hr style="opacity: 0.25;">{% endif %}
+  {% if pinned.size > 0 %}<hr>{% endif %}
 
   {% assign regular = site.posts | where_exp: "post", "post.pin == nil" %}
   {% include posts-list.html posts=regular %}
