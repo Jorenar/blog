@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "My art supplies"
-last_modified_at: 2026-09-17
+last_modified_at: 2026-09-21
 pin: 2
 ---
 
@@ -81,6 +81,9 @@ pin: 2
 
 * Canon CanoScan LiDE 400
 
-## Gloves
+## Software
 
-* [Bview 2-finger/3-layer](https://aliexpress.com/item/1005005900912248.html)
+* [Inkscape](https://inkscape.org)
+* [Krita](https://krita.org)
+* [OpenSCAD](https://openscad.org)
+* [Side7](https://www.side7.com)
