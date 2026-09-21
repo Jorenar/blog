@@ -58,6 +58,12 @@ pin: 2
 * _mini bottle with aluminium cap_  
   _(20 ml; 30 x 40 mm; cap: 21 mm)_
 
+## Blenders
+
+* Koh-I-Noor Polycolor 3800/0
+* Maries blending stumps
+* _eyeshadow brush_
+
 ## Pencil cases
 
 * Koh-I-Noor Rollo DJTB-24
