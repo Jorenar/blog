@@ -1,0 +1,79 @@
+---
+layout: default
+---
+
+<style>
+  #header {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    font-family: "DejaVu Serif", Times, serif;
+    justify-content: center;
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+    border-bottom: 2px solid #222;
+    text-align: center;
+  }
+
+  #avatar {
+    filter: drop-shadow(0 0 3px #fff);
+  }
+
+  #motto {
+    font-family: inherit;
+    font-size: 1.1em;
+    font-style: italic;
+    margin: -1em 0 0 1em;
+    white-space: pre-line;
+  }
+
+  #sns {
+    font-size: 1.5em;
+    flex-basis: 100%;
+    width: min-content;
+  }
+
+  #sns a {
+    margin: 0 0.1em;
+  }
+
+  #posts-list {
+    font-size: 1.1em;
+  }
+
+  #posts-list hr {
+    margin-left: 3ch;
+    opacity: 0.25;
+    width: 25%;
+  }
+</style>
+
+<div id="header">
+  <img id="avatar" height="120" width="120" src="{{ site.avatar }}" alt>
+  <div id="motto">
+    to problem quell
+    first go to Shell
+    then after Perl
+    test C as well
+  </div>
+  <div id="sns">
+    <a href="https://codeberg.org/Jorenar">Codeberg</a>
+    <a href="https://ko-fi.com/jorenar">Ko-Fi</a>
+    <a href="https://www.side7.com/u/Jorenar/profile">Side7</a>
+    <a href="https://anilist.co/user/Jorenar">AniList</a>
+    <a href="https://infinitebacklog.net/users/Jorenar">Infinite&nbsp;Backlog</a>
+    <a href="mailto:mail&#x40;jorenar&period;com">
+      m<!-- Hello -->ai<!-- -->l&#64;jor<!-- nasty -->en<!-- spambot -->ar&period;com
+    </a>
+  </div>
+</div>
+
+<div id="posts-list">
+  {% assign pinned = site.posts | where_exp: "post", "post.pin != nil" | sort: "pin" %}
+  {% include posts-list.html posts=pinned %}
+
+  {% if pinned.size > 0 %}<hr>{% endif %}
+
+  {% assign regular = site.posts | where_exp: "post", "post.pin == nil" %}
+  {% include posts-list.html posts=regular %}
+</div>
