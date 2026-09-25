@@ -55,6 +55,10 @@ h1, h2, h3, h4, h5 {
   margin-top: 2em;
 }
 
+hr:has(+ :is(h1, h2, h3, h4, h5, h6)) {
+  margin-top: 2em;
+}
+
 h1 .hanchor::after { content: "#"; }
 h2 .hanchor::after { content: "##"; }
 h3 .hanchor::after { content: "###"; }
