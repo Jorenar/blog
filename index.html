@@ -8,11 +8,11 @@ layout: default
     display: flex;
     flex-wrap: wrap;
     font-family: "DejaVu Serif", Times, serif;
-    gap: 3em;
     justify-content: center;
     margin-bottom: 1em;
     padding-bottom: 1em;
     border-bottom: 2px solid #222;
+    text-align: center;
   }
 
   #avatar {
@@ -23,18 +23,18 @@ layout: default
     font-family: inherit;
     font-size: 1.1em;
     font-style: italic;
-    margin-top: -1em;
-    text-align: center;
+    margin: -1em 0 0 1em;
     white-space: pre-line;
   }
 
   #sns {
     font-size: 1.5em;
+    flex-basis: 100%;
     width: min-content;
   }
 
   #sns a {
-    display: inline-block;
+    margin: 0 0.1em;
   }
 
   #posts-list {
@@ -49,13 +49,13 @@ layout: default
 </style>
 
 <div id="header">
+  <img id="avatar" height="120" width="120" src="{{ site.avatar }}" alt>
   <div id="motto">
     to problem quell
     first go to Shell
     then after Perl
     test C as well
   </div>
-  <img id="avatar" height="120" width="120" src="{{ site.avatar }}" alt>
   <div id="sns">
     <a href="https://codeberg.org/Jorenar">Codeberg</a>
     <a href="https://ko-fi.com/jorenar">Ko-Fi</a>
