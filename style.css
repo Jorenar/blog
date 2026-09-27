@@ -22,13 +22,12 @@ body {
 }
 
 nav {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
+  text-align: center;
 }
 
 nav > span {
-  margin: auto 3ch;
+  margin: 0 8ch;
 }
 
 article {
