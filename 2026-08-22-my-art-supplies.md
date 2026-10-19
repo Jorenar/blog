@@ -42,7 +42,7 @@ pin: 2
 
 * Faber-Castell kneadable eraser
 * Faber-Castell Precision Eraser Pen
-* [Karsten Crafts&Co electric eraser](https://www.action.com/pl-pl/p/3223678)
+* Karsten Crafts&Co electric eraser
 * Staedtler Rasoplast (black)
 * ~~Koh-I-Noor Eraser Pencil 6312~~
 * ~~Tombow MONO zero~~
@@ -79,17 +79,16 @@ pin: 2
 * Canson ArtBook One (10.2 x 15.2 cm)
 * Artmate Field Sketch Pad HSB-A4
 
-## Tablets
-
-* One by Wacom M
-
-## Scanners
-
-* Canon CanoScan LiDE 400
-
 ## Software
 
 * [Inkscape](https://inkscape.org)
 * [Krita](https://krita.org)
 * [OpenSCAD](https://openscad.org)
 * [Side7](https://www.side7.com)
+
+## Hardware
+
+* Canon CanoScan LiDE 400
+* Canon EOS 400D
+* Canon PIXMA TR150
+* One by Wacom M
