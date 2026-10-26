@@ -27,7 +27,7 @@ nav {
 }
 
 nav > span {
-  margin: 0 8ch;
+  margin-left: 2ch;
 }
 
 article {
