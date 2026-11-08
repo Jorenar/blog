@@ -22,12 +22,13 @@ body {
 }
 
 nav {
+  margin-top: 2em;
   margin-bottom: 1em;
   text-align: center;
 }
 
 nav > span {
-  margin-left: 2ch;
+  margin: 0 2ch;
 }
 
 article {

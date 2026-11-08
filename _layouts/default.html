@@ -13,12 +13,12 @@
   <link type="application/atom+xml" rel="alternate" href="{{ '/feed.xml' | relative_url }}" title="{{ site.title }}">
 </head>
 <body>
+  {{ content }}
   <nav>
     <a href="{{ '/' | relative_url }}">Index</a>
-    <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
     <span>Copyright &copy; {{ site.author | escape }}</span>
+    <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
   </nav>
-  {{ content }}
   <a href="{{ '/sitemap.xml' | relative_url }}"></a>
 </body>
 </html>
